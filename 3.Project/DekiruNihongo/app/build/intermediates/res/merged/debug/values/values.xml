@@ -214,7 +214,12 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="app_name">Dekiru Nihongo</string>
+    <string name="flashcards">Flashcards</string>
+    <string name="grammar">Ngữ pháp</string>
+    <string name="listen">Nghe</string>
+    <string name="quiz">Quiz</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="vocabulary">Từ vựng</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

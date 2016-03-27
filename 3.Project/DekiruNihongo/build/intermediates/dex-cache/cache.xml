@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="E:\Dekiru Nihongo\trunk\3.Project\DekiruNihongo\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\jars\classes.jar"
+        jar="E:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
         jumboMode="false"
         revision="23.0.3"
-        sha1="673d77a5bbddd766037f088e775df525c46407f0">
-        <dex dex="E:\Dekiru Nihongo\trunk\3.Project\DekiruNihongo\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.2.1_f8cbee32c67023e710373cc169cf425529d147a4.jar" />
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="E:\Dekiru Nihongo\trunk\3.Project\DekiruNihongo\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.1_98a74b17567c06df80a231a407415a2cff9be890.jar" />
     </item>
     <item
         jar="E:\Dekiru Nihongo\trunk\3.Project\DekiruNihongo\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.1\jars\classes.jar"
@@ -23,11 +23,11 @@
         <dex dex="E:\Dekiru Nihongo\trunk\3.Project\DekiruNihongo\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.1_332c876117bc0768c48b5c40319c30dbd285b319.jar" />
     </item>
     <item
-        jar="E:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.1\support-annotations-23.2.1.jar"
+        jar="E:\Dekiru Nihongo\trunk\3.Project\DekiruNihongo\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.3"
-        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
-        <dex dex="E:\Dekiru Nihongo\trunk\3.Project\DekiruNihongo\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.1_98a74b17567c06df80a231a407415a2cff9be890.jar" />
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="E:\Dekiru Nihongo\trunk\3.Project\DekiruNihongo\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.2.1_f8cbee32c67023e710373cc169cf425529d147a4.jar" />
     </item>
     <item
         jar="E:\Dekiru Nihongo\trunk\3.Project\DekiruNihongo\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.1\jars\classes.jar"

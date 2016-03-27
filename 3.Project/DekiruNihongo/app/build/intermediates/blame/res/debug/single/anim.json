@@ -8,12 +8,12 @@
         "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_fade_out.xml"
-    },
-    {
         "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
         "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\anim\\abc_fade_out.xml"
     },
     {
         "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",

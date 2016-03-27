@@ -16,6 +16,10 @@
         "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_methods_lesson.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\activity_methods_lesson.xml"
+    },
+    {
         "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
         "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_menu_item_layout.xml"
     },
@@ -92,12 +96,12 @@
         "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_part_time.xml"
     },
     {
-        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_dialog_title_material.xml"
-    },
-    {
         "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
         "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
