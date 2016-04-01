@@ -1611,11 +1611,13 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020048;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020049;
         public static final int abc_textfield_search_material=0x7f02004a;
-        public static final int image_book_1=0x7f02004b;
-        public static final int image_book_2=0x7f02004c;
-        public static final int image_book_3=0x7f02004d;
-        public static final int image_screen=0x7f02004e;
-        public static final int notification_template_icon_bg=0x7f02004f;
+        public static final int dislay_screen=0x7f02004b;
+        public static final int image_book_1=0x7f02004c;
+        public static final int image_book_2=0x7f02004d;
+        public static final int image_book_3=0x7f02004e;
+        public static final int image_screen=0x7f02004f;
+        public static final int notification_template_icon_bg=0x7f020051;
+        public static final int poster=0x7f020050;
     }
     public static final class id {
         public static final int action0=0x7f0c0053;
@@ -1655,9 +1657,9 @@ containing a value of this type.
         public static final int expanded_menu=0x7f0c0038;
         public static final int home=0x7f0c0004;
         public static final int homeAsUp=0x7f0c000d;
-        public static final int ibtn1=0x7f0c0050;
-        public static final int ibtn2=0x7f0c0051;
-        public static final int ibtn3=0x7f0c0052;
+        public static final int iBtn1=0x7f0c0050;
+        public static final int iBtn2=0x7f0c0051;
+        public static final int iBtn3=0x7f0c0052;
         public static final int icon=0x7f0c0029;
         public static final int ifRoom=0x7f0c001e;
         public static final int image=0x7f0c0026;
