@@ -68,7 +68,12 @@ public class DataGetter {
         String u = HOST_ADDRESS + FILE_NAME + "?book=" + book +
                                               "&part=" + part +
                                               "&lesson=" + lesson;
-        gd.execute(u, requestCode, callback);
+        gd.execute(u, requestCode, "content", callback);
+    }
+
+    void requestData(String book, String requestCode, OnDataReceived callback) {
+        String u = HOST_ADDRESS + FILE_NAME + "?r=list&bookFL=" + book;
+        gd.execute(u, requestCode, "listFL",  callback);
     }
 
     /**
@@ -93,13 +98,15 @@ public class DataGetter {
     class GettingData extends AsyncTask<Object, Void, String> {
         String result = "";
         String rCode = "";
+        String rq = "";
         OnDataReceived odg;
 
         @Override
         protected String doInBackground(Object... params) {
             String url = (String)params[0];
             rCode = (String) params[1];
-            odg = (OnDataReceived) params[2];
+            rq = (String) params[2];
+            odg = (OnDataReceived) params[3];
             try {
                 URL = new URL(url);
                 con = (HttpURLConnection) URL.openConnection();
@@ -125,10 +132,14 @@ public class DataGetter {
             try {
                 JSONObject root = new JSONObject(s);
                 JSONArray array = root.getJSONArray("res");
-                for (int i = 0;i< array.length();i++) {
-                    JSONObject o = array.getJSONObject(i);
-                    key.add(o.getString("n"));
-                    value.add(o.getString("m"));
+                if (rq.equals("content")) {
+                    for (int i = 0;i< array.length();i++) {
+                        JSONObject o = array.getJSONObject(i);
+                        key.add(o.getString("n"));
+                        value.add(o.getString("m"));
+                    }
+                } else if (rq.equals("list")) {
+                    for (int i = 0;i<array.length();i++) key.add((String)array.get(i));
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
