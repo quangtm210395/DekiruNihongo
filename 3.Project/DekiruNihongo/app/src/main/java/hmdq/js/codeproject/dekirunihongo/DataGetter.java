@@ -26,7 +26,7 @@ import java.util.StringTokenizer;
  * <b>Class yêu cầu permisson INTERNET</b>
  */
 public class DataGetter {
-    public static final String HOST_ADDRESS = "http://10.22.172.16/MFS/";
+    public static final String HOST_ADDRESS = "http://10.20.5.253/MFS/";
     // String lưu địa chỉ của host, khi up server lên host cầm lưu ý chỉnh sửa
     // Nếu muốn test ở localhost, thay chuỗi trên bằng IP của máy
     // Cách lấy IP: http://cuuhotinhoc.com/2-cach-kiem-tra-dia-chi-ip-cua-may-tinh-nhanh-nhat/
@@ -71,6 +71,12 @@ public class DataGetter {
         gd.execute(u, requestCode, "content", callback);
     }
 
+    /**
+     * Hàm này trả về list bài học trong một quyển sách, ở List key
+     * @param book Số quyển sách được yêu cầu, đánh từ 1 đến 3
+     * @param requestCode Là một đoạn String sseer xác nhận xem lúc trả về có đúng kết quả được yêu cầu hay không
+     * @param callback Thực thì khi đã lấy được data về
+     */
     void requestData(String book, String requestCode, OnDataReceived callback) {
         String u = HOST_ADDRESS + FILE_NAME + "?r=list&bookFL=" + book;
         gd.execute(u, requestCode, "listFL",  callback);
@@ -138,8 +144,11 @@ public class DataGetter {
                         key.add(o.getString("n"));
                         value.add(o.getString("m"));
                     }
-                } else if (rq.equals("list")) {
-                    for (int i = 0;i<array.length();i++) key.add((String)array.get(i));
+                } else if (rq.equals("listFL")) {
+                    for (int i = 0;i<array.length();i++) {
+                        JSONObject o = array.getJSONObject(i);
+                        key.add(o.getString("n"));
+                    }
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
