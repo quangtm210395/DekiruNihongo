@@ -1,10 +1,12 @@
-package hmdq.js.codeproject.dekirunihongo;
+package hmdq.js.codeproject.dekirunihongo.Lesson;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import hmdq.js.codeproject.dekirunihongo.R;
 
 public class MethodsLesson extends AppCompatActivity {
 

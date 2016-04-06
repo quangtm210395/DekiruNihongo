@@ -5,4 +5,6 @@
     <string name="listen">Nghe</string>
     <string name="quiz">Quiz</string>
     <string name="flashcards">Flashcards</string>
+    <string name="title_activity_lesson">LessonActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>

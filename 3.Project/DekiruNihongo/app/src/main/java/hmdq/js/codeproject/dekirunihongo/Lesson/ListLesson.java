@@ -1,4 +1,4 @@
-package hmdq.js.codeproject.dekirunihongo;
+package hmdq.js.codeproject.dekirunihongo.Lesson;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+
+import hmdq.js.codeproject.dekirunihongo.R;
 
 public class ListLesson extends AppCompatActivity {
     ListView listViewLesson;
