@@ -1,10 +1,10 @@
 package hmdq.js.codeproject.dekirunihongo;
 
-import android.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MethodsLesson extends AppCompatActivity {
 
@@ -13,6 +13,17 @@ public class MethodsLesson extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // add actionbar;
         setContentView(R.layout.activity_methods_lesson);
+        Bundle bd = getIntent().getExtras();
+        String lesson = null;
+        if (bd != null){
+            lesson = bd.getString("lesson");
+        }
+        if (lesson != null) {
+            Toast.makeText(
+                    MethodsLesson.this,
+                    lesson,
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
