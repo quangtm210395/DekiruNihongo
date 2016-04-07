@@ -24,6 +24,7 @@
             android:name=".Lesson.LessonActivity"
             android:label="@string/title_activity_lesson"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Lesson.ListLesson"/>
     </application>
 
 </manifest>
