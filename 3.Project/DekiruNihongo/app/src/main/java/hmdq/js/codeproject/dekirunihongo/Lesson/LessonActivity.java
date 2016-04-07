@@ -35,7 +35,7 @@ public class LessonActivity extends AppCompatActivity {
 
     private void setLisview() {
         listViewVocabulary = (ListView)findViewById(R.id.listViewVocabulary);
-        ArrayList<Employee> arrayListVocabulary = new ArrayList<Employee>();
+        ArrayList<Employee> arrayListVocabulary = new ArrayList<>();
         tVToolbarLesson = (TextView) findViewById(R.id.tVToolbarLesson);
         Bundle bd = getIntent().getExtras();
         String lesson = null;
@@ -43,13 +43,10 @@ public class LessonActivity extends AppCompatActivity {
             lesson = bd.getString("lesson");
         }
         // set tên bài lên toolbar;
-        tVToolbarLesson.setText(lesson);
-        if (lesson != null) {
-            Toast.makeText(
-                    LessonActivity.this,
-                    lesson,
-                    Toast.LENGTH_SHORT).show();
+        if (lesson != null){
+            tVToolbarLesson.setText(lesson);
         }
+
         int indexMax;
         indexMax = 20;
         // nhâp dữ kiệu ở đây
