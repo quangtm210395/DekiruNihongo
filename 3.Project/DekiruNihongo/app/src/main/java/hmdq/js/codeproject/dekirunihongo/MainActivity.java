@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
         iBtn2 = (ImageButton)findViewById(R.id.iBtn2);
         iBtn3 = (ImageButton)findViewById(R.id.iBtn3);
 
-/// dùng tạm button 1 để test thử do chưa có list bài :V
-///
         iBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

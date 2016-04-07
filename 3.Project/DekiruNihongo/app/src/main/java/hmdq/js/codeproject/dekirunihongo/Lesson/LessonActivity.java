@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TabHost;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class LessonActivity extends AppCompatActivity {
 
     TabHost mTabHost;
     ListView listViewVocabulary;
+    TextView tVToolbarLesson;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +36,14 @@ public class LessonActivity extends AppCompatActivity {
     private void setLisview() {
         listViewVocabulary = (ListView)findViewById(R.id.listViewVocabulary);
         ArrayList<Employee> arrayListVocabulary = new ArrayList<Employee>();
+        tVToolbarLesson = (TextView) findViewById(R.id.tVToolbarLesson);
         Bundle bd = getIntent().getExtras();
         String lesson = null;
         if (bd!= null){
             lesson = bd.getString("lesson");
         }
+        // set tên bài lên toolbar;
+        tVToolbarLesson.setText(lesson);
         if (lesson != null) {
             Toast.makeText(
                     LessonActivity.this,
