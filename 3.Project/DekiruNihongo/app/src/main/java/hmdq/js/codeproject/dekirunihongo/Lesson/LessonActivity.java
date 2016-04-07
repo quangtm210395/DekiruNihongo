@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.Toast;
@@ -36,7 +35,16 @@ public class LessonActivity extends AppCompatActivity {
         listViewVocabulary = (ListView)findViewById(R.id.listViewVocabulary);
         ArrayList<Employee> arrayListVocabulary = new ArrayList<Employee>();
         Bundle bd = getIntent().getExtras();
-        String book = "";
+        String lesson = null;
+        if (bd!= null){
+            lesson = bd.getString("lesson");
+        }
+        if (lesson != null) {
+            Toast.makeText(
+                    LessonActivity.this,
+                    lesson,
+                    Toast.LENGTH_SHORT).show();
+        }
         int indexMax;
         indexMax = 20;
         // nhâp dữ kiệu ở đây

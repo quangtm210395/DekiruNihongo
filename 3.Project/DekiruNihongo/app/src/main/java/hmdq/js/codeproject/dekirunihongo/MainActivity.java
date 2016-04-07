@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
-import hmdq.js.codeproject.dekirunihongo.Lesson.LessonActivity;
 import hmdq.js.codeproject.dekirunihongo.Lesson.ListLesson;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         iBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mh2 = new Intent(MainActivity.this, LessonActivity.class);
+                Intent mh2 = new Intent(MainActivity.this, ListLesson.class);
                 mh2.putExtra("book", "book1");
                 startActivity(mh2);
             }

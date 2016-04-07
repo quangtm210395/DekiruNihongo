@@ -44,7 +44,7 @@ public class ListLesson extends AppCompatActivity {
             listViewLesson.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent mh3 = new Intent(ListLesson.this, MethodsLesson.class);
+                    Intent mh3 = new Intent(ListLesson.this, LessonActivity.class);
                     mh3.putExtra("lesson", "Lesson " + (position + 1));
                     startActivity(mh3);
                 }
