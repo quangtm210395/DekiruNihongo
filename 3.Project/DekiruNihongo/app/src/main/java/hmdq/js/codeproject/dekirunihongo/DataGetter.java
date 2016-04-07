@@ -26,7 +26,7 @@ import java.util.StringTokenizer;
  * <b>Class yêu cầu permisson INTERNET</b>
  */
 public class DataGetter {
-    public static final String HOST_ADDRESS = "http://10.20.5.253/MFS/";
+    public static final String HOST_ADDRESS = "http://dekirunihongo.esy.es/";
     // String lưu địa chỉ của host, khi up server lên host cầm lưu ý chỉnh sửa
     // Nếu muốn test ở localhost, thay chuỗi trên bằng IP của máy
     // Cách lấy IP: http://cuuhotinhoc.com/2-cach-kiem-tra-dia-chi-ip-cua-may-tinh-nhanh-nhat/
