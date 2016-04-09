@@ -17,12 +17,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="New Text"
+                android:textSize="20dp"
                 android:id="@+id/tvListTu" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="New Text"
+                android:textSize="20dp"
                 android:id="@+id/tvListNghia" />
         </TableRow>
     </TableLayout>
