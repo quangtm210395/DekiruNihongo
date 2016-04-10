@@ -1,8 +1,6 @@
 package hmdq.js.codeproject.dekirunihongo;
 
-import android.app.Activity;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,9 +13,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.StringTokenizer;
 
 /**
  * Class này có nhiệm vụ kết nối đến database và trả về dữ liệu cung cấp cho app<br>

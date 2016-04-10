@@ -14,12 +14,13 @@
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
-        <activity android:name=".Lesson.MethodsLesson" />
         <activity
             android:name=".Lesson.LessonActivity"
             android:label="@string/title_activity_lesson"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Lesson.ListLesson" />
+        <activity
+            android:name=".Lesson.ListLesson"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".splash" android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

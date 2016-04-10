@@ -50,7 +50,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     }
 
     private void setLisview() {
-        listViewVocabulary = (ListView)findViewById(R.id.listViewVocabulary);
+        listViewVocabulary = (ListView) findViewById(R.id.listViewVocabulary);
         ArrayList<Employee> arrayListVocabulary = new ArrayList<>();
         tVToolbarLesson = (TextView) findViewById(R.id.tVToolbarLesson);
         Bundle bd = getIntent().getExtras();
@@ -149,7 +149,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     }
 
     private void setToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarLesson);
         setSupportActionBar(toolbar);
         //Không hiện tiêu đề
         getSupportActionBar().setDisplayShowTitleEnabled(false);

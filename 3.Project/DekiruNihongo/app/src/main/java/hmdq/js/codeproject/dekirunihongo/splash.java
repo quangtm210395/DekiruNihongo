@@ -1,9 +1,9 @@
 package hmdq.js.codeproject.dekirunihongo;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.WindowManager;
 
 public class splash extends AppCompatActivity {
@@ -20,6 +20,7 @@ public class splash extends AppCompatActivity {
             @Override
             public void run() {
                 startActivity(new Intent(splash.this, MainActivity.class));
+                finish();
             }
         }, 3000);
     }

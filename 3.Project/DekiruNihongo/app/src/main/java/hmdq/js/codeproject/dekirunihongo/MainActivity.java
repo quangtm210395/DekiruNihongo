@@ -7,13 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
-import java.util.List;
-
 import hmdq.js.codeproject.dekirunihongo.Lesson.ListLesson;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton iBtn1,iBtn2,iBtn3;
+    ImageButton iBtnBook1, iBtnBook2, iBtnBook3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,11 +19,11 @@ public class MainActivity extends AppCompatActivity {
         // không cho màn hình xoay ngang
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        iBtn1 = (ImageButton)findViewById(R.id.iBtn1);
-        iBtn2 = (ImageButton)findViewById(R.id.iBtn2);
-        iBtn3 = (ImageButton)findViewById(R.id.iBtn3);
+        iBtnBook1 = (ImageButton) findViewById(R.id.iBtnBook1);
+        iBtnBook2 = (ImageButton) findViewById(R.id.iBtnBook2);
+        iBtnBook3 = (ImageButton) findViewById(R.id.iBtnBook3);
 
-        iBtn1.setOnClickListener(new View.OnClickListener() {
+        iBtnBook1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent mh2 = new Intent(MainActivity.this, ListLesson.class);
@@ -34,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        iBtn2.setOnClickListener(new View.OnClickListener() {
+        iBtnBook2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent mh2 = new Intent(MainActivity.this, ListLesson.class);
@@ -43,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        iBtn3.setOnClickListener(new View.OnClickListener() {
+        iBtnBook3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent mh2 = new Intent(MainActivity.this, ListLesson.class);
