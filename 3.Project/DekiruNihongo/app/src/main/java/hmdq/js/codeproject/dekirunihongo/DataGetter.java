@@ -61,25 +61,23 @@ public class DataGetter {
      * @param book Số quyển sách được yêu cầu, đánh từ 1 đến 3
      * @param part Phần đươck yêu cầu: vocab, gra, listen
      * @param lesson Số bài;
-     * @param requestCode Là một đoạn String sseer xác nhận xem lúc trả về có đúng kết quả được yêu cầu hay không
      * @param callback Thực thì khi đã lấy được data về
      */
-    void requestData(String book, String part, String lesson, String requestCode, OnDataReceived callback) {
+    void requestData(String book, String part, String lesson, OnDataReceived callback) {
         String u = HOST_ADDRESS + FILE_NAME + "?book=" + book +
                                               "&part=" + part +
                                               "&lesson=" + lesson;
-        gd.execute(u, requestCode, "content", callback);
+        gd.execute(u, "content", callback);
     }
 
     /**
      * Hàm này trả về list bài học trong một quyển sách, ở List key
      * @param book Số quyển sách được yêu cầu, đánh từ 1 đến 3
-     * @param requestCode Là một đoạn String sseer xác nhận xem lúc trả về có đúng kết quả được yêu cầu hay không
      * @param callback Thực thì khi đã lấy được data về
      */
-    void requestData(String book, String requestCode, OnDataReceived callback) {
+    void requestData(String book, OnDataReceived callback) {
         String u = HOST_ADDRESS + FILE_NAME + "?r=list&bookFL=" + book;
-        gd.execute(u, requestCode, "listFL",  callback);
+        gd.execute(u, "listFL",  callback);
     }
 
     /**
@@ -90,9 +88,8 @@ public class DataGetter {
          * Hàm được gọi khi dữ liệu đã được láy về theo request
          * @param key Giá trị ở chuổi thứ nhát (Từ vựng, cấu trúc,...)
          * @param value Giá trị tương ứng ở chuổi thứ hai (Nghĩa, giải thích,...)
-         * @param requestCode Là Code để xác nhận với requestCode ở hàm requestData
          */
-        public void onReceive(List<String> key, List<String> value, String requestCode);
+        public void onReceive(List<String> key, List<String> value);
     }
 
     /**
@@ -103,16 +100,14 @@ public class DataGetter {
      */
     class GettingData extends AsyncTask<Object, Void, String> {
         String result = "";
-        String rCode = "";
         String rq = "";
         OnDataReceived odg;
 
         @Override
         protected String doInBackground(Object... params) {
             String url = (String)params[0];
-            rCode = (String) params[1];
-            rq = (String) params[2];
-            odg = (OnDataReceived) params[3];
+            rq = (String) params[1];
+            odg = (OnDataReceived) params[2];
             try {
                 URL = new URL(url);
                 con = (HttpURLConnection) URL.openConnection();
@@ -153,7 +148,7 @@ public class DataGetter {
             } catch (JSONException e) {
                 e.printStackTrace();
             } finally {
-                odg.onReceive(key, value, rCode);
+                odg.onReceive(key, value);
             }
         }
     }

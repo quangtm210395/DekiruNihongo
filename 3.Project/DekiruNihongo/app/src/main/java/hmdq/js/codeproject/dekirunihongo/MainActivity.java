@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
+import java.util.List;
+
 import hmdq.js.codeproject.dekirunihongo.Lesson.ListLesson;
 
 public class MainActivity extends AppCompatActivity {
@@ -50,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
 }
