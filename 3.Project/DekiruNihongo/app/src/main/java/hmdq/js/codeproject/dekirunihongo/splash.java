@@ -1,6 +1,8 @@
 package hmdq.js.codeproject.dekirunihongo;
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -20,13 +22,15 @@ public class splash extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         txt = (TextView) findViewById(R.id.splashText);
-
+        if (!isOnline()) {
+            txt.setText("Checking aborted\nNo intenet access");
+            return;
+        }
         dp = new DataProvider(getApplicationContext());
         final int localRev = dp.getLocalRev();
         dp.requestData("getrev", new DataProvider.OnDataReceived() {
             @Override
             public void onReceive(String result) {
-                Log.v("TAG", result);
                 final int newestRev = Integer.parseInt(result);
                 if (localRev < newestRev) new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
                     @Override
@@ -50,5 +54,11 @@ public class splash extends AppCompatActivity {
                startActivity(new Intent(splash.this, MainActivity.class));
             }
         }, 2000);
+    }
+
+    boolean isOnline() {
+        ConnectivityManager cmgr = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo info = cmgr.getActiveNetworkInfo();
+        return ((info != null)&&(info.isConnectedOrConnecting()));
     }
 }
