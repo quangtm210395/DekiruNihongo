@@ -10,6 +10,7 @@
     tools:context="hmdq.js.codeproject.dekirunihongo.splash">
 
     <TextView
+        android:id="@+id/splashText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Loading..."
