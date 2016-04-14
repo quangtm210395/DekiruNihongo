@@ -33,11 +33,11 @@ public class splash extends AppCompatActivity {
                     public void onReceive(String result) {
                         dp.updateData(String.valueOf(newestRev), result);
                         txt.setText("Updated revision " + String.valueOf(newestRev));
-                        //enterMain();
+                        enterMain();
                     }
                 }); else {
                     txt.setText("No update");
-                    //enterMain();
+                    enterMain();
                 }
             }
         });
@@ -49,6 +49,6 @@ public class splash extends AppCompatActivity {
             public void run() {
                startActivity(new Intent(splash.this, MainActivity.class));
             }
-        }, 5000);
+        }, 2000);
     }
 }
