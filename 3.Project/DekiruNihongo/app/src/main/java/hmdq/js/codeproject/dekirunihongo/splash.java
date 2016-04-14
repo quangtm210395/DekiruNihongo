@@ -4,9 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.WindowManager;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class splash extends AppCompatActivity {
+    DataProvider dp;
+    TextView txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,14 +19,36 @@ public class splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        txt = (TextView) findViewById(R.id.splashText);
 
-        Handler h = new Handler();
-        h.postDelayed(new Runnable() {
+        dp = new DataProvider(getApplicationContext());
+        final int localRev = dp.getLocalRev();
+        dp.requestData("getrev", new DataProvider.OnDataReceived() {
+            @Override
+            public void onReceive(String result) {
+                Log.v("TAG", result);
+                final int newestRev = Integer.parseInt(result);
+                if (localRev < newestRev) new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
+                    @Override
+                    public void onReceive(String result) {
+                        dp.updateData(String.valueOf(newestRev), result);
+                        txt.setText("Updated revision " + String.valueOf(newestRev));
+                        //enterMain();
+                    }
+                }); else {
+                    txt.setText("No update");
+                    //enterMain();
+                }
+            }
+        });
+    }
+
+    void enterMain() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(splash.this, MainActivity.class));
-                finish();
+               startActivity(new Intent(splash.this, MainActivity.class));
             }
-        }, 3000);
+        }, 5000);
     }
 }

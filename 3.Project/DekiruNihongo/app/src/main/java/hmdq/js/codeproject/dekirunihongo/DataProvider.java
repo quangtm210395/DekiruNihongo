@@ -1,8 +1,11 @@
 package hmdq.js.codeproject.dekirunihongo;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,7 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DataProvider {
-    public static final String HOST_NAME = "http://localhost/MFS/cf.php";
+    public static final String HOST_NAME = "http://dekirunihongo.esy.es/cf.php";
 
     HttpURLConnection con;
 
@@ -33,30 +36,29 @@ public class DataProvider {
 
     gettingData gd;
 
-    public DataProvider() {
+    public DataProvider(Context context) {
         super();
         gd = new gettingData();
-        db = SQLiteDatabase.openOrCreateDatabase("jsdk.db",  null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS info (num integer, rev integer, dat text");
-        int num_row = db.rawQuery("SELECT count(*) from info", null).getInt(0);
+        db = context.openOrCreateDatabase("jsdk.db", Context.MODE_PRIVATE, null);
+        db.execSQL("CREATE TABLE IF NOT EXISTS info (num integer, rev integer, dat text)");
+        int num_row = db.rawQuery("SELECT * from info", null).getCount();
         if (num_row == 0) db.execSQL("insert into info (num, rev) values(1, 0)");
     }
 
     int getLocalRev() {
-        return db.rawQuery("SELECT rev FROM info", null).getInt(0);
+        query = db.rawQuery("SELECT rev FROM info", null);
+        query.moveToFirst();
+        return query.getInt(0);
     }
 
     String getLocalData() {
-        return db.rawQuery("SELECT dat FROM info",null).getString(0);
+        query = db.rawQuery("SELECT dat FROM info",null);
+        query.moveToFirst();
+        return query.getString(0);
     }
 
-    boolean updateData(String rev, String data) {
-        try {
-           db.execSQL("UPDATE info SET rev=" + rev + ", dat=" + data + " where num=1");
-        } catch (Exception e) {
-           return false;
-        }
-        return true;
+    void updateData(String rev, String data) {
+        db.execSQL("UPDATE info SET rev=" + rev + ", dat='" + data + "' where (num=1)");
     }
 
     HashMap<String, String> getData(String book, String part, String lesson) {
@@ -136,4 +138,5 @@ public class DataProvider {
             callback.onReceive(s);
         }
     }
+
 }
