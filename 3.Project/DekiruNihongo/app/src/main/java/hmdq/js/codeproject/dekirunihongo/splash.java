@@ -24,7 +24,7 @@ public class splash extends AppCompatActivity {
         txt = (TextView) findViewById(R.id.splashText);
         if (!isOnline()) {
             txt.setText("Checking aborted\nNo intenet access");
-            return;
+            enterMain();
         }
         dp = new DataProvider(getApplicationContext());
         final int localRev = dp.getLocalRev();
@@ -51,7 +51,8 @@ public class splash extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-               startActivity(new Intent(splash.this, MainActivity.class));
+                startActivity(new Intent(splash.this, MainActivity.class));
+                finish();
             }
         }, 2000);
     }
