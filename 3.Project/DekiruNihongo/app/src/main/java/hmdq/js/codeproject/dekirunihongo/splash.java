@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class splash extends AppCompatActivity {
     DataProvider dp;
     TextView txt;
+    int newestRev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,44 +23,52 @@ public class splash extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         txt = (TextView) findViewById(R.id.splashText);
-        if (isOnline()) {
-            txt.setText("Checking aborted\nNo internet access");
-            enterMain();
-        }
         dp = new DataProvider(getApplicationContext());
-        final int localRev = dp.getLocalRev();
-        dp.requestData("getrev", new DataProvider.OnDataReceived() {
-            @Override
-            public void onReceive(String result) {
-                final int newestRev = Integer.parseInt(result);
-                if (localRev < newestRev) new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
-                    @Override
-                    public void onReceive(String result) {
-                        dp.updateData(String.valueOf(newestRev), result);
-                        txt.setText("Updated revision " + String.valueOf(newestRev));
+        if (isOnline()) {
+            final int localRev = dp.getLocalRev();
+            dp.requestData("getrev", new DataProvider.OnDataReceived() {
+                @Override
+                public void onReceive(String result) {
+                    if (result.equals("")) {
+                        txt.setText("Chekcing aborted");
+                        enterMain();
+                        return;
+                    } else newestRev = Integer.parseInt(result);
+                    if (localRev < newestRev) new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
+                        @Override
+                        public void onReceive(String result) {
+                            if (result.equals("")) {
+                                txt.setText("Failed to get data\nNo change made");
+                                enterMain();
+                                return;
+                            }
+                            dp.updateData(String.valueOf(newestRev), result);
+                            txt.setText("Updated revision " + String.valueOf(newestRev));
+                            enterMain();
+                        }
+                    }); else {
+                        txt.setText("No update");
                         enterMain();
                     }
-                }); else {
-                    txt.setText("No update");
-                    enterMain();
                 }
-            }
-        });
+            });
+        } else {
+            txt.setText("Checking aborted");
+            enterMain();
+        }
     }
 
     void enterMain() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startActivity(new Intent(splash.this, MainActivity.class));
-                finish();
-            }
-        }, 2000);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        startActivity(new Intent(splash.this, MainActivity.class));
     }
 
     boolean isOnline() {
-        ConnectivityManager cmgr = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-        NetworkInfo info = cmgr.getActiveNetworkInfo();
-        return ((info != null));
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        return (cm.getActiveNetworkInfo() != null)&&(cm.getActiveNetworkInfo().isConnected());
     }
 }
