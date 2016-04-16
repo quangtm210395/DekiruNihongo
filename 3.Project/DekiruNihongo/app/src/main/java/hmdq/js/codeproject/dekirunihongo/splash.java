@@ -22,7 +22,7 @@ public class splash extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         txt = (TextView) findViewById(R.id.splashText);
-        if (!isOnline()) {
+        if (isOnline()) {
             txt.setText("Checking aborted\nNo internet access");
             enterMain();
         }
@@ -60,6 +60,6 @@ public class splash extends AppCompatActivity {
     boolean isOnline() {
         ConnectivityManager cmgr = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo info = cmgr.getActiveNetworkInfo();
-        return ((info != null)&&(info.isConnectedOrConnecting()));
+        return ((info != null));
     }
 }

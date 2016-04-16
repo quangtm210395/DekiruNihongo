@@ -37,6 +37,6 @@ public class netStateChanged extends BroadcastReceiver {
     boolean isOnline(Context context) {
         ConnectivityManager cmgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = cmgr.getActiveNetworkInfo();
-        return ((info != null)&&(info.isConnectedOrConnecting()));
+        return ((info != null));
     }
 }
