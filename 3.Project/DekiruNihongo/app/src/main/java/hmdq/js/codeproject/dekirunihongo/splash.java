@@ -23,7 +23,7 @@ public class splash extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         txt = (TextView) findViewById(R.id.splashText);
         if (!isOnline()) {
-            txt.setText("Checking aborted\nNo intenet access");
+            txt.setText("Checking aborted\nNo internet access");
             enterMain();
         }
         dp = new DataProvider(getApplicationContext());
