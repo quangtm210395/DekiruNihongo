@@ -70,6 +70,7 @@ public class splash extends AppCompatActivity {
             e.printStackTrace();
         }
         startActivity(new Intent(splash.this, MainActivity.class));
+        finish();
     }
 
     boolean isOnline() {
