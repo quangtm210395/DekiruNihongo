@@ -9,14 +9,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Locale;
 
+import hmdq.js.codeproject.dekirunihongo.DataProvider;
 import hmdq.js.codeproject.dekirunihongo.R;
 import hmdq.js.codeproject.dekirunihongo.Vocabulary.ArrayAdapterVocabulary;
 import hmdq.js.codeproject.dekirunihongo.Vocabulary.Employee;
@@ -29,44 +32,127 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     TabHost mTabHost;
     ListView listViewVocabulary;
     TextView tVToolbarLesson;
+    Button btnLearn;
+    String lesson, book;
+    DataProvider dp = null;
+    HashMap<String, String> mapVocab;
     // 2 mang sau đây là để test
-    private String[] sTu = {"わたし", "なまえ", "くに", "にほん", "かんこく", "ちゅうごく", "アメリカ", "イタリア", "オーストラリア", "ロシア", "タイ"};
-    private String[] sNghia = {"Tôi", "Tên", "Đất nước", "Nhật Bản", "Hàn Quốc", "Trung Quốc", "Mỹ", "Ý", "Úc", "Nga", "Thái Lan"};
-
+//    private String[] sTu = {"わたし", "なまえ", "くに", "にほん", "かんこく", "ちゅうごく", "アメリカ", "イタリア", "オーストラリア", "ロシア", "タイ"};
+//    private String[] sNghia = {"Tôi", "Tên", "Đất nước", "Nhật Bản", "Hàn Quốc", "Trung Quốc", "Mỹ", "Ý", "Úc", "Nga", "Thái Lan"};
+    private String[] sTu = new String[100];
+    private String[] sNghia = new String[100];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
-        // làm toolbar
+        mTabHost = (TabHost) findViewById(R.id.tabHostLesson);
+        mTabHost.setup();
+        // toolbar
         setToolbar();
-        // làm tabs
-        loadTabs();
-        // làm listView cho phần vocabulary
-        setLisview();
+        // tabs
+        tabVocabulary();
+        tabGrammar();
+        tabListen();
+        tabQuiz();
+        tabKanji();
         //check for TTS data TextToSpeech;
         Intent checkTTSIntent = new Intent();
         checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
         startActivityForResult(checkTTSIntent, MY_DATA_CHECK_CODE);
     }
 
+    private void tabVocabulary() {
+        //create tabVocabulary
+        TabHost.TabSpec tab;
+        tab = mTabHost.newTabSpec("vocab");
+        tab.setContent(R.id.tabVocabulary);
+        tab.setIndicator("Từ vựng");
+        mTabHost.addTab(tab);
+        // TODO
+        // listView for vocabulary
+        setLisview();
+        // lean vocabulary
+        btnLearn = (Button) findViewById(R.id.btnLearn);
+        btnLearn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenLeanVocab = new Intent(LessonActivity.this, LearnVocabulary.class);
+                intenLeanVocab.putExtra("lesson", lesson);
+                intenLeanVocab.putExtra("Tu", sTu);
+                intenLeanVocab.putExtra("Nghia", sNghia);
+                startActivity(intenLeanVocab);
+            }
+        });
+    }
+
+    private void tabGrammar() {
+        //create tabGrammar
+        TabHost.TabSpec tab;
+        tab = mTabHost.newTabSpec("gram");
+        tab.setContent(R.id.tabGrammar);
+        tab.setIndicator("Ngữ pháp");
+        mTabHost.addTab(tab);
+        // TODO
+
+    }
+
+    private void tabListen() {
+        //create tabListen
+        TabHost.TabSpec tab;
+        tab = mTabHost.newTabSpec("listen");
+        tab.setContent(R.id.tabListen);
+        tab.setIndicator("Listen");
+        mTabHost.addTab(tab);
+        // TODO
+
+    }
+
+    private void tabQuiz() {
+        //create tabQuiz
+        TabHost.TabSpec tab;
+        tab = mTabHost.newTabSpec("Quiz");
+        tab.setContent(R.id.tabQuiz);
+        tab.setIndicator("Quiz");
+        mTabHost.addTab(tab);
+        // TODO
+
+    }
+
+    private void tabKanji() {
+        //create Quiz
+        TabHost.TabSpec tab;
+        tab = mTabHost.newTabSpec("Kanji");
+        tab.setContent(R.id.tabKanji);
+        tab.setIndicator("Kanji");
+        mTabHost.addTab(tab);
+        // TODO
+
+    }
+
+
     private void setLisview() {
         listViewVocabulary = (ListView) findViewById(R.id.listViewVocabulary);
         ArrayList<Employee> arrayListVocabulary = new ArrayList<>();
         tVToolbarLesson = (TextView) findViewById(R.id.tVToolbarLesson);
         Bundle bd = getIntent().getExtras();
-        String lesson = null;
         if (bd!= null){
             lesson = bd.getString("lesson");
+            book = bd.getString("book");
         }
         // set tên bài lên toolbar;
         if (lesson != null){
             tVToolbarLesson.setText(lesson);
         }
-
+        // getdata
+        dp = new DataProvider(this);
+        if (dp != null) {
+            mapVocab = dp.getData(book, "vocab", lesson);
+            mapVocab.keySet().toArray(sTu);
+            mapVocab.values().toArray(sNghia);
         int indexMax;
-        indexMax = 10;
+            indexMax = sTu.length;
         // nhâp dữ kiệu ở đây
-        for (int i = 0; i <= indexMax; i++) {
+            for (int i = 0; i < indexMax; i++) {
             Employee emp = new Employee();
             emp.setTu(sTu[i]);
             emp.setNghia(sNghia[i]);
@@ -83,32 +169,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
                 speakWords(stringTu);
             }
         });
-    }
-
-    private void loadTabs() {
-        mTabHost = (TabHost)findViewById(R.id.tabHost);
-        mTabHost.setup();
-        TabHost.TabSpec spec;
-        //Tạo tabVocabulary
-        spec= mTabHost.newTabSpec("vocab");
-        spec.setContent(R.id.tabVocabulary);
-        spec.setIndicator("Vocabulary");
-        mTabHost.addTab(spec);
-        //Tạo tabGrammar
-        spec= mTabHost.newTabSpec("gram");
-        spec.setContent(R.id.tabGrammar);
-        spec.setIndicator("Grammar");
-        mTabHost.addTab(spec);
-        //Tạo tabListen
-        spec= mTabHost.newTabSpec("listen");
-        spec.setContent(R.id.tabListen);
-        spec.setIndicator("Listen");
-        mTabHost.addTab(spec);
-        //Tạo tabQuiz
-        spec= mTabHost.newTabSpec("Quiz");
-        spec.setContent(R.id.tabQuiz);
-        spec.setIndicator("Quiz");
-        mTabHost.addTab(spec);
+        }
     }
 
     // TEXT TO SPEECH
@@ -155,7 +216,6 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         //Hiện nút back
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
     }
 
 

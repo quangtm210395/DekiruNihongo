@@ -62,7 +62,7 @@ public class DataProvider {
         db.execSQL("UPDATE info SET rev=" + rev + ", dat='" + data + "' where (num=1)");
     }
 
-    HashMap<String, String> getData(String book, String part, String lesson) {
+    public HashMap<String, String> getData(String book, String part, String lesson) {
         String tableName = part + book;
         String lessonName = "l" + lesson;
         HashMap<String, String> result = new HashMap<>();

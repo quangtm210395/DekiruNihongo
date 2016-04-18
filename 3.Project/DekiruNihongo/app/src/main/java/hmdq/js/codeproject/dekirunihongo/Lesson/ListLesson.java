@@ -20,6 +20,7 @@ import hmdq.js.codeproject.dekirunihongo.R;
 public class ListLesson extends AppCompatActivity {
     ListView listViewLesson;
     TextView tVToolbarBook;
+    String book;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,7 @@ public class ListLesson extends AppCompatActivity {
         listViewLesson = (ListView)findViewById(R.id.listViewLesson);
 
         Bundle bd = getIntent().getExtras();
-        String book = "";
+        book = "";
         int indexMax;
         if (bd != null){
             book = bd.getString("book");
@@ -40,7 +41,7 @@ public class ListLesson extends AppCompatActivity {
         if (book != null) {
             tVToolbarBook.setText(book);
         }
-        if ( book != null &&( book.equals("book1") || book.equals("book2"))) indexMax = 15;
+        if (book != null && (book.equals("1") || book.equals("2"))) indexMax = 15;
         else indexMax = 20;
         ArrayList<String> arrayListLesson = new ArrayList<>();
         for (int i = 1; i <= indexMax; i ++){
@@ -58,7 +59,8 @@ public class ListLesson extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent mh3 = new Intent(ListLesson.this, LessonActivity.class);
-                    mh3.putExtra("lesson", "Lesson " + (position + 1));
+                    mh3.putExtra("lesson", "" + (position + 1));
+                    mh3.putExtra("book", book);
                     startActivity(mh3);
                 }
             });

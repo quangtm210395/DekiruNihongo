@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Lesson.LessonActivity"
-    tools:showIn="@layout/activity_lesson">
+    tools:context=".Lesson.LearnVocabulary"
+    tools:showIn="@layout/activity_lean_vocabulary">
 
     <TabHost
-        android:id="@+id/tabHostLesson"
+        android:id="@+id/tabHostLearn"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -21,7 +21,9 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></TabWidget>
+                android:layout_height="wrap_content">
+
+            </TabWidget>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
@@ -29,47 +31,39 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:id="@+id/tabVocabulary"
+                    android:id="@+id/tabFlashCards"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <include layout="@layout/tab_vocabulary" />
+                    <include layout="@layout/tab_flashcards" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tabGrammar"
+                    android:id="@+id/tabLearn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <include layout="@layout/tab_grammar" />
+                    <include layout="@layout/tab_learn" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tabListen"
+                    android:id="@+id/tabSpeller"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <include layout="@layout/tab_listen" />
+                    <include layout="@layout/tab_speller" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tabQuiz"
+                    android:id="@+id/tabTest"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <include layout="@layout/tab_quiz" />
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/tabKanji"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <include layout="@layout/tab_kanji" />
+                    <include layout="@layout/tab_test" />
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>
