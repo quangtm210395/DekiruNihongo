@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.WindowManager;
@@ -29,11 +30,13 @@ public class splash extends AppCompatActivity {
             dp.requestData("getrev", new DataProvider.OnDataReceived() {
                 @Override
                 public void onReceive(String result) {
-                    if (result.equals("")) {
-                        txt.setText("Chekcing aborted");
+                    try {
+                        newestRev = Integer.parseInt(result);
+                    } catch (Exception e) {
+                        txt.setText("Checking aborted");
                         enterMain();
                         return;
-                    } else newestRev = Integer.parseInt(result);
+                    }
                     if (localRev < newestRev) new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
                         @Override
                         public void onReceive(String result) {
@@ -55,6 +58,8 @@ public class splash extends AppCompatActivity {
         } else {
             txt.setText("Checking aborted");
             enterMain();
+
+
         }
     }
 
