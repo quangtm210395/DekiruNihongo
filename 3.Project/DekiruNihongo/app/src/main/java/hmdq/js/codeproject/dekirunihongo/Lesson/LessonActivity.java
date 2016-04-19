@@ -35,10 +35,8 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     // 2 mang sau đây là để test
 //    private String[] sTu = {"わたし", "なまえ", "くに", "にほん", "かんこく", "ちゅうごく", "アメリカ", "イタリア", "オーストラリア", "ロシア", "タイ"};
 //    private String[] sNghia = {"Tôi", "Tên", "Đất nước", "Nhật Bản", "Hàn Quốc", "Trung Quốc", "Mỹ", "Ý", "Úc", "Nga", "Thái Lan"};
-        private String[] sTu = {"わたし"};
-    private String[] sNghia = {"Tôi"};
-//    private String[] sTu;
-//    private String[] sNghia;
+    private String[] sTu;
+    private String[] sNghia;
     private TextToSpeech myTTS;
     //status check code
     private int MY_DATA_CHECK_CODE = 0;
@@ -151,12 +149,11 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         dp = new DataProvider(this);
         if (dp != null) {
             mapVocab = dp.getData(book, "vocab", lesson);
-//            indexMax = mapVocab.size();
-            indexMax= sTu.length;
-//            sTu = new String[indexMax];
-//            sNghia = new String[indexMax];
-//            mapVocab.keySet().toArray(sTu);
-//            mapVocab.values().toArray(sNghia);
+            indexMax = mapVocab.size();
+            sTu = new String[indexMax];
+            sNghia = new String[indexMax];
+            mapVocab.keySet().toArray(sTu);
+            mapVocab.values().toArray(sNghia);
         // nhâp dữ kiệu ở đây
             for (int i = 0; i < indexMax; i++) {
             Employee emp = new Employee();

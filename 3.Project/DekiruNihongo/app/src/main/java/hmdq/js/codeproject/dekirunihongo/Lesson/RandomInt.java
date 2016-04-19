@@ -21,11 +21,12 @@ public class RandomInt {
 
     public int Random() {
         int iRandom;
-        for (int i = 0; i < index; ) {
+        if (v.size() == index) return -1;
+        for (int i = 0; i < index;) {
             iRandom = rd.nextInt(index);
             if (!v.contains(iRandom)) {
-                i++;
                 v.add(iRandom);
+                i++;
                 return iRandom;
             }
         }
