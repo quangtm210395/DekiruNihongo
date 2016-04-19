@@ -12,6 +12,9 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
+import java.util.List;
+
 public class splash extends AppCompatActivity {
     DataProvider dp;
     TextView txt;
@@ -31,25 +34,31 @@ public class splash extends AppCompatActivity {
                 @Override
                 public void onReceive(String result) {
                     try {
+                        result = result.replaceAll("\\s+","");
                         newestRev = Integer.parseInt(result);
                     } catch (Exception e) {
+                        e.printStackTrace();
                         txt.setText("Checking aborted");
                         enterMain();
                         return;
                     }
-                    if (localRev < newestRev) new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
-                        @Override
-                        public void onReceive(String result) {
-                            if (result.equals("")) {
-                                txt.setText("Failed to get data\nNo change made");
+                    if (localRev < newestRev) {
+                        txt.setText("Update found");
+                        new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
+                            @Override
+                            public void onReceive(String result) {
+                                result = result.replaceAll("\\s+","");
+                                if (result.equals("")) {
+                                    txt.setText("Failed to get data\nNo change made");
+                                    enterMain();
+                                    return;
+                                }
+                                dp.updateData(String.valueOf(newestRev), result);
+                                txt.setText("Updated revision " + String.valueOf(newestRev));
                                 enterMain();
-                                return;
                             }
-                            dp.updateData(String.valueOf(newestRev), result);
-                            txt.setText("Updated revision " + String.valueOf(newestRev));
-                            enterMain();
-                        }
-                    }); else {
+                        });
+                    } else {
                         txt.setText("No update");
                         enterMain();
                     }
