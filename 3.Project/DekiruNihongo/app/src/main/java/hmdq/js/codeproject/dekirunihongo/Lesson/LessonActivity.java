@@ -26,22 +26,24 @@ import hmdq.js.codeproject.dekirunihongo.Vocabulary.Employee;
 
 public class LessonActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
-    private TextToSpeech myTTS;
-    //status check code
-    private int MY_DATA_CHECK_CODE = 0;
     TabHost mTabHost;
     ListView listViewVocabulary;
     TextView tVToolbarLesson;
     Button btnLearn;
-    String lesson, book;
     DataProvider dp = null;
     HashMap<String, String> mapVocab;
-
     // 2 mang sau đây là để test
 //    private String[] sTu = {"わたし", "なまえ", "くに", "にほん", "かんこく", "ちゅうごく", "アメリカ", "イタリア", "オーストラリア", "ロシア", "タイ"};
 //    private String[] sNghia = {"Tôi", "Tên", "Đất nước", "Nhật Bản", "Hàn Quốc", "Trung Quốc", "Mỹ", "Ý", "Úc", "Nga", "Thái Lan"};
-    private String[] sTu;
-    private String[] sNghia;
+        private String[] sTu = {"わたし"};
+    private String[] sNghia = {"Tôi"};
+//    private String[] sTu;
+//    private String[] sNghia;
+    private TextToSpeech myTTS;
+    //status check code
+    private int MY_DATA_CHECK_CODE = 0;
+    private String lesson, book;
+    private int indexMax;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +80,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
             @Override
             public void onClick(View v) {
                 Intent intenLeanVocab = new Intent(LessonActivity.this, LearnVocabulary.class);
+                intenLeanVocab.putExtra("sTuLength",indexMax);
                 intenLeanVocab.putExtra("lesson", lesson);
                 intenLeanVocab.putExtra("Tu", sTu);
                 intenLeanVocab.putExtra("Nghia", sNghia);
@@ -102,7 +105,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         TabHost.TabSpec tab;
         tab = mTabHost.newTabSpec("listen");
         tab.setContent(R.id.tabListen);
-        tab.setIndicator("Listen");
+        tab.setIndicator("Nghe");
         mTabHost.addTab(tab);
         // TODO
 
@@ -142,18 +145,18 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         }
         // set tên bài lên toolbar;
         if (lesson != null){
-            tVToolbarLesson.setText(lesson);
+            tVToolbarLesson.setText("Lesson " + lesson);
         }
         // getdata
         dp = new DataProvider(this);
         if (dp != null) {
             mapVocab = dp.getData(book, "vocab", lesson);
-            int indexMax;
-            indexMax = mapVocab.size();
-            sTu = new String[indexMax];
-            sNghia = new String[indexMax];
-            mapVocab.keySet().toArray(sTu);
-            mapVocab.values().toArray(sNghia);
+//            indexMax = mapVocab.size();
+            indexMax= sTu.length;
+//            sTu = new String[indexMax];
+//            sNghia = new String[indexMax];
+//            mapVocab.keySet().toArray(sTu);
+//            mapVocab.values().toArray(sNghia);
         // nhâp dữ kiệu ở đây
             for (int i = 0; i < indexMax; i++) {
             Employee emp = new Employee();

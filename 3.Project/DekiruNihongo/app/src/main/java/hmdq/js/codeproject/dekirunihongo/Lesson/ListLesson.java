@@ -39,7 +39,7 @@ public class ListLesson extends AppCompatActivity {
         }
         // set tên sách lên toolbar;
         if (book != null) {
-            tVToolbarBook.setText(book);
+            tVToolbarBook.setText("Book " + book);
         }
         if (book != null && (book.equals("1") || book.equals("2"))) indexMax = 15;
         else indexMax = 20;

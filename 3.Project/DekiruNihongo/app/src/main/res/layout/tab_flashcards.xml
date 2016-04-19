@@ -12,7 +12,7 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/iBtnSpeak"
+        android:id="@+id/iBtnSpeakFlash"
         android:src = "@android:drawable/ic_lock_silent_mode_off"
         android:layout_gravity="top|right" />
 

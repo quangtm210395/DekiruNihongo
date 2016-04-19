@@ -2,6 +2,7 @@ package hmdq.js.codeproject.dekirunihongo.Lesson;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -16,28 +17,27 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
-import java.util.Random;
-import java.util.Vector;
 
 import hmdq.js.codeproject.dekirunihongo.R;
 
-public class LearnVocabulary extends AppCompatActivity implements  TextToSpeech.OnInitListener {
+public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.OnInitListener {
+    TabHost mTabHostLearn;
+    Button btnBack, btnNext;
+    Button btnAnswerLearn, btnStartOverLearn, btnNextLearn, btnAnswerSpel, btnStartOverSpel;
+    TextView tVToolbarLearn;
+    TextView tvFlash, tvPhan;
+    TextView tvNumRemain, tvNumInCor, tvNumCor, tvCheckInOrCorLearn, tvLearnNghia, tvWriteTuLearn, tvNumFinish, tvCheckInOrCorSpel, tvSpelNghia, tvWriteTuSpel;
+    EditText edtLearnTu, edtSpelTu;
+    ImageButton iBtnSpeakFlash, iBtnSpeakSpel;
+    boolean checkFlash, checkLearn;
     private TextToSpeech myTTS;
     //status check code
     private int MY_DATA_CHECK_CODE = 0;
-    TabHost mTabH;
-    Button btnBack, btnNext;
-    Button btnAnswer, btnStartOver, btnNextLearn;
-    TextView tVToolbarLearn;
-    TextView tvFlash, tvPhan;
-    TextView tvNumRemain, tvNumInCor, tvNumCor, tvCheckInOrCor, tvLearnNghia, tvWriteTu;
-    EditText edtLearnTu;
-    ImageButton iBtnSpeak;
-    private String[] sTu = new String[20];
-    private String[] sNghia = new String[20];
-    boolean checkFlash;
-    private int indexFCards, indexRemain, indexLearn, indexInCor, indexCor;
+    private String[] sTu;
+    private String[] sNghia;
+    private int indexFCards, indexRemain, indexLearn, indexInCor, indexCor, indexFinish, indexSpel,sTuLength;
     private String lesson = null;
+    private RandomInt rdLearn, rdSpel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,52 +61,63 @@ public class LearnVocabulary extends AppCompatActivity implements  TextToSpeech.
     private void getData() {
         Bundle bd = getIntent().getExtras();
         if (bd != null) {
+            sTuLength = bd.getInt("sTuLength");
+            sTu = new String[sTuLength];
+            sNghia = new String[sTuLength];
             lesson = bd.getString("lesson");
             sTu = bd.getStringArray("Tu");
             sNghia = bd.getStringArray("Nghia");
         }
         // set tên bài lên toolbar;
         if (lesson != null) {
-            tVToolbarLearn.setText(lesson);
+            tVToolbarLearn.setText("Lesson " + lesson);
         }
     }
 
     private void setFromWidget() {
-        mTabH = (TabHost) findViewById(R.id.tabHostLearn);
-        mTabH.setup();
+        mTabHostLearn = (TabHost) findViewById(R.id.tabHostLearn);
+        mTabHostLearn.setup();
         // setFromWidget layout flashcards
         btnBack = (Button) findViewById(R.id.btnBack);
         btnNext = (Button) findViewById(R.id.btnNext);
         tvFlash = (TextView) findViewById(R.id.tvFlash);
         tvPhan = (TextView) findViewById(R.id.tvPhan);
         tVToolbarLearn = (TextView) findViewById(R.id.tVToolbarLearn);
-        iBtnSpeak = (ImageButton) findViewById(R.id.iBtnSpeak);
+        iBtnSpeakFlash = (ImageButton) findViewById(R.id.iBtnSpeakFlash);
         // setFromWidget layout Learn
-        btnAnswer = (Button) findViewById(R.id.btnAnswer);
-        btnStartOver = (Button) findViewById(R.id.btnStartOver);
+        btnAnswerLearn = (Button) findViewById(R.id.btnAnswerLearn);
+        btnStartOverLearn = (Button) findViewById(R.id.btnStartOverLearn);
         btnNextLearn = (Button) findViewById(R.id.btnNextLearn);
         tvNumRemain = (TextView) findViewById(R.id.tvNumRemain);
         tvNumInCor = (TextView) findViewById(R.id.tvNumIncor);
         tvNumCor = (TextView) findViewById(R.id.tvNumCor);
-        tvCheckInOrCor = (TextView) findViewById(R.id.tvCheckInOrCor);
+        tvCheckInOrCorLearn = (TextView) findViewById(R.id.tvCheckInOrCorLearn);
         tvLearnNghia = (TextView) findViewById(R.id.tvLearnNghia);
-        tvWriteTu = (TextView) findViewById(R.id.tvWriteTu);
+        tvWriteTuLearn = (TextView) findViewById(R.id.tvWriteTuLearn);
         edtLearnTu = (EditText) findViewById(R.id.edtLearnTu);
         // setFromWidget layout Speller
+        btnAnswerSpel = (Button) findViewById(R.id.btnAnswerSpel);
+        btnStartOverSpel = (Button) findViewById(R.id.btnStartOverSpel);
+        tvNumFinish = (TextView) findViewById(R.id.tvNumFinish);
+        tvCheckInOrCorSpel = (TextView) findViewById(R.id.tvCheckInOrCorSpel);
+        tvSpelNghia = (TextView) findViewById(R.id.tvSpelNghia);
+        tvWriteTuSpel = (TextView) findViewById(R.id.tvWriteTuSpel);
+        edtSpelTu = (EditText) findViewById(R.id.edtSpelTu);
+        iBtnSpeakSpel = (ImageButton) findViewById(R.id.iBtnSpeakSpel);
 
     }
 
     private void tabFlashCards() {
         //create tabFlashCards
         TabHost.TabSpec tab;
-        tab = mTabH.newTabSpec("flashcards");
+        tab = mTabHostLearn.newTabSpec("flashcards");
         tab.setContent(R.id.tabFlashCards);
         tab.setIndicator("Flashcards");
-        mTabH.addTab(tab);
+        mTabHostLearn.addTab(tab);
         // TODO
         indexFCards = 0;
         tvFlash.setText(sNghia[indexFCards]);
-        tvPhan.setText((indexFCards + 1) + " / " + sNghia.length);
+        tvPhan.setText((indexFCards + 1) + " / " + sTuLength);
         checkFlash = false;
         tvFlash.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,10 +135,10 @@ public class LearnVocabulary extends AppCompatActivity implements  TextToSpeech.
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (indexFCards < sNghia.length - 1) {
+                if (indexFCards < sTuLength - 1) {
                     indexFCards = indexFCards + 1;
                     tvFlash.setText(sNghia[indexFCards]);
-                    tvPhan.setText((indexFCards + 1) + " / " + sNghia.length);
+                    tvPhan.setText((indexFCards + 1) + " / " + sTuLength);
                     checkFlash = false;
                 }
             }
@@ -138,12 +149,12 @@ public class LearnVocabulary extends AppCompatActivity implements  TextToSpeech.
                 if (indexFCards > 0) {
                     indexFCards = indexFCards - 1;
                     tvFlash.setText(sNghia[indexFCards]);
-                    tvPhan.setText((indexFCards + 1) + " / " + sNghia.length);
+                    tvPhan.setText((indexFCards + 1) + " / " + sTuLength);
                     checkFlash = false;
                 }
             }
         });
-        iBtnSpeak.setOnClickListener(new View.OnClickListener() {
+        iBtnSpeakFlash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (checkFlash) {
@@ -156,107 +167,164 @@ public class LearnVocabulary extends AppCompatActivity implements  TextToSpeech.
     private void tabLearn() {
         //create tabLearn
         TabHost.TabSpec tab;
-        tab = mTabH.newTabSpec("learn");
+        tab = mTabHostLearn.newTabSpec("learn");
         tab.setContent(R.id.tabLearn);
         tab.setIndicator("Learn");
-        mTabH.addTab(tab);
+        mTabHostLearn.addTab(tab);
         // TODO
         resetLearn();
-        btnAnswer.setOnClickListener(new View.OnClickListener() {
+        btnAnswerLearn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String sAnswer = edtLearnTu.getText().toString();
-                sAnswer = trim(sAnswer);
+                STrim sLearnTrim = new STrim(sAnswer);
+                sAnswer = sLearnTrim.trim();
                 if (sAnswer.equals(sTu[indexLearn])) {
                     indexCor++;
-                    setTextAnswer("CORRECT");
+                    setTextAnswerLearn("CORRECT", "");
                 } else {
                     indexInCor++;
-                    setTextAnswer("INCORRECT");
+                    setTextAnswerLearn("INCORRECT", "Correct: " + sTu[indexLearn]);
                 }
             }
         });
-        btnStartOver.setOnClickListener(new View.OnClickListener() {
+
+        btnStartOverLearn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 resetLearn();
             }
         });
+
         btnNextLearn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tvNumRemain.setText(indexRemain + "");
                 if (indexRemain > 0) {
-                    if (!tvCheckInOrCor.getText().equals("")) {
-//                        randomLearn();
+                    if (!tvCheckInOrCorLearn.getText().equals("")) {
+                        setTextLearn();
                     } else {
                         Toast.makeText(LearnVocabulary.this, "Bạn hãy viết câu trả lời trước khi qua câu tiếp theo", Toast.LENGTH_SHORT).show();
                     }
                 } else {
+                    tvNumRemain.setText(indexRemain + "");
                     Toast.makeText(LearnVocabulary.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-    }
-    // setText khi chọn buttun Answer
-    private void setTextAnswer(String inCorOrCor) {
-        tvNumInCor.setText(indexInCor + "");
-        tvCheckInOrCor.setText(inCorOrCor);
-        tvWriteTu.setText("Correct: " + sTu[indexLearn]);
-    }
-
-    private void resetLearn() {
-        indexRemain = sNghia.length;
-        indexCor = 0;
-        indexInCor = 0;
-        tvNumCor.setText("" + indexCor);
-        tvNumInCor.setText("" + indexInCor);
-//        randomLearn();
-
-    }
-
-    //tạo ra
-//    private void randomLearn() {
-//        for (; indexRemain > 0; ) {
-//            indexLearn = rd.nextInt(sNghia.length);
-//            if (checkRadomLearn[indexLearn]) {
-//                checkRadomLearn[indexLearn] = false;
-//                tvNumRemain.setText(indexRemain + "");
-//                tvLearnNghia.setText(sNghia[indexLearn]);
-//                edtLearnTu.setText("");
-//                indexRemain--;
-//                tvCheckInOrCor.setText("");
-//                tvWriteTu.setText("");
-//                break;
-//            }
-//        }
-//    }
-
-    // xóa kí tự trắng đầu, cuối của từ
-    private String trim(String s) {
-        int i;
-        for (i = 0; i < s.length(); i++) {
-            if (s.charAt(i) != '　') break;
-        }
-        s = s.substring(i);
-        for (i = s.length() - 1; i > 0; i--) {
-            if (s.charAt(i) != '　') break;
-        }
-        s = s.substring(0, i + 1);
-        return s;
     }
 
     // thiết lập chức năng speller
     private void tabSpeller() {
         //create tabSpeller
         TabHost.TabSpec tab;
-        tab = mTabH.newTabSpec("speller");
+        tab = mTabHostLearn.newTabSpec("speller");
         tab.setContent(R.id.tabSpeller);
         tab.setIndicator("Speller");
-        mTabH.addTab(tab);
+        mTabHostLearn.addTab(tab);
         // TODO
+        resetSpel();
+        iBtnSpeakSpel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                speakWords(sTu[indexSpel]);
+            }
+        });
+        btnAnswerSpel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkLearn) {
+                    String sAnswer = edtSpelTu.getText().toString();
+                    STrim sSpelTrim = new STrim(sAnswer);
+                    sAnswer = sSpelTrim.trim();
+                    if (sAnswer.equals(sTu[indexSpel])) {
+                        setTextAnswerSpel("CORRECT", "");
+                        indexFinish++;
+                        tvNumFinish.setText(indexFinish + "");
+                    } else {
+                        rdSpel.remove(indexFinish % sTuLength);
+                        setTextAnswerSpel("INCORRECT", "Correct: " + sTu[indexLearn]);
+                    }
+                    checkLearn = false;
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        public void run() {
+                            indexSpel = rdSpel.Random();
+                            if (indexSpel > -1) {
+                                speakWords(sTu[indexSpel]);
+                                nextSpel();
+                            } else {
+                                Toast.makeText(LearnVocabulary.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    }, 2000);
+                }
+            }
+        });
+        btnStartOverSpel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetSpel();
+                speakWords(sTu[indexSpel]);
+            }
+        });
 
     }
+
+    private void setTextAnswerSpel(String inCorOrCor, String correct) {
+        tvSpelNghia.setText(sNghia[indexSpel]);
+        tvCheckInOrCorSpel.setText(inCorOrCor);
+        tvWriteTuSpel.setText(correct);
+    }
+
+    private void resetSpel() {
+        rdSpel = new RandomInt(sTuLength);
+        indexFinish = 0;
+        tvNumFinish.setText(indexFinish + "");
+        indexSpel = rdSpel.Random();
+        nextSpel();
+    }
+
+    private void nextSpel() {
+        tvCheckInOrCorSpel.setText("");
+        tvSpelNghia.setText("");
+        edtSpelTu.setText("");
+        checkLearn = true;
+        tvWriteTuSpel.setText("");
+
+    }
+
+    //TABLEARN
+    // setText khi chọn buttun Answer
+    private void setTextAnswerLearn(String inCorOrCor, String correct) {
+        tvNumInCor.setText(indexInCor + "");
+        tvCheckInOrCorLearn.setText(inCorOrCor);
+        tvWriteTuLearn.setText(correct);
+    }
+
+    // reset lại các biến trong tablearn;
+    private void resetLearn() {
+        indexRemain = sTuLength;
+        rdLearn = new RandomInt(indexRemain);
+        indexCor = 0;
+        indexInCor = 0;
+        tvNumCor.setText("" + indexCor);
+        tvNumInCor.setText("" + indexInCor);
+        setTextLearn();
+
+    }
+
+    //tạo ra setText toàn bộ learn
+    private void setTextLearn() {
+        indexLearn = rdLearn.Random();
+        tvNumRemain.setText(indexRemain + "");
+        tvLearnNghia.setText(sNghia[indexLearn]);
+        edtLearnTu.setText("");
+        indexRemain--;
+        tvCheckInOrCorLearn.setText("");
+        tvWriteTuLearn.setText("");
+    }
+    //TABLEARN
 
     // TEXT TO SPEECH
     //speak text
@@ -295,6 +363,7 @@ public class LearnVocabulary extends AppCompatActivity implements  TextToSpeech.
         }
     }
 
+    // TEXT TO SPEECH
     private void setToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarLesson);
         setSupportActionBar(toolbar);
