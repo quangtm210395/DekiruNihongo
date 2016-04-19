@@ -130,7 +130,7 @@ public class DataProvider {
             } finally {
                 if (con != null) con.disconnect();
             }
-            return result;
+            return result.trim();
         }
 
         @Override

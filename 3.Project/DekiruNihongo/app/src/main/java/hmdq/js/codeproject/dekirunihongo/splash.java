@@ -34,7 +34,7 @@ public class splash extends AppCompatActivity {
                 @Override
                 public void onReceive(String result) {
                     try {
-                        result = result.replaceAll("\\s+","");
+                        Log.v("TAG", result);
                         newestRev = Integer.parseInt(result);
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -47,7 +47,6 @@ public class splash extends AppCompatActivity {
                         new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
                             @Override
                             public void onReceive(String result) {
-                                result = result.replaceAll("\\s+","");
                                 if (result.equals("")) {
                                     txt.setText("Failed to get data\nNo change made");
                                     enterMain();
