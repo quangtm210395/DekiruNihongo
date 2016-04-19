@@ -1,6 +1,7 @@
 package hmdq.js.codeproject.dekirunihongo.Lesson;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -43,6 +44,8 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lean_vocabulary);
+        // không cho màn hình xoay ngang
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setFromWidget();
         // toolbar
         setToolbar();
