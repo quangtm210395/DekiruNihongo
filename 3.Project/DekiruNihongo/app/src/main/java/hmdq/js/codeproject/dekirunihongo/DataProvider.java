@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.util.StringBuilderPrinter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -62,6 +63,21 @@ public class DataProvider {
         db.execSQL("UPDATE info SET rev=" + rev + ", dat='" + data + "' where (num=1)");
     }
 
+    String rebuilt(String s) {
+        StringBuilder sb = new StringBuilder();
+        char[] chars = s.toCharArray();
+        for (char c : chars) {
+            switch (c) {
+                case '*':
+                    sb.append(System.getProperty("line.separator"));
+                    break;
+                default:
+                    sb.append(c);
+            }
+        }
+        return sb.toString();
+    }
+
     public HashMap<String, String> getData(String book, String part, String lesson) {
         String tableName = part + book;
         String lessonName = "l" + lesson;
@@ -70,7 +86,11 @@ public class DataProvider {
             JSONObject root = new JSONObject(getLocalData());
             root = root.getJSONObject("data");
             JSONArray unit = root.getJSONObject(tableName).getJSONArray(lessonName);
-            for (int i = 0; i< unit.length(); i++) {
+            if (part.equals("gra"))
+                for (int i = 0; i< unit.length(); i++) {
+                    JSONObject o = unit.getJSONObject(i);
+                    result.put(o.getString("n"), rebuilt(o.getString("m")));
+            } else for (int i = 0; i< unit.length(); i++) {
                 JSONObject o = unit.getJSONObject(i);
                 result.put(o.getString("n"), o.getString("m"));
             }
