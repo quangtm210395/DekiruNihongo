@@ -185,8 +185,10 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
                 if (sAnswer.equals(sTu[indexLearn])) {
                     indexCor++;
                     setTextAnswerLearn("CORRECT", "");
+                    tvNumCor.setText(indexCor + "");
                 } else {
                     indexInCor++;
+                    tvNumInCor.setText(indexInCor + "");
                     setTextAnswerLearn("INCORRECT", "Correct: " + sTu[indexLearn]);
                 }
             }
@@ -245,7 +247,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
                         tvNumFinish.setText(indexFinish + "");
                     } else {
                         rdSpel.remove(indexFinish % sTuLength);
-                        setTextAnswerSpel("INCORRECT", "Correct: " + sTu[indexLearn]);
+                        setTextAnswerSpel("INCORRECT", "Correct: " + sTu[indexSpel]);
                     }
                     checkLearn = false;
                     Handler handler = new Handler();
@@ -300,7 +302,6 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
     //TABLEARN
     // setText khi chọn buttun Answer
     private void setTextAnswerLearn(String inCorOrCor, String correct) {
-        tvNumInCor.setText(indexInCor + "");
         tvCheckInOrCorLearn.setText(inCorOrCor);
         tvWriteTuLearn.setText(correct);
     }
