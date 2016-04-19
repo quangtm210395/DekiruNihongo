@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dekiru Nihongo</string>
+    <string name="vocabulary">Từ vựng</string>
+    <string name="grammar">Ngữ pháp</string>
+    <string name="listen">Nghe</string>
+    <string name="quiz">Quiz</string>
+    <string name="flashcards">Flashcards</string>
+    <string name="title_activity_lesson">LessonActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_lean_vocabulary">LeanVocabulary</string>
+</resources>
