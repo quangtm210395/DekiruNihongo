@@ -36,11 +36,12 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     String lesson, book;
     DataProvider dp = null;
     HashMap<String, String> mapVocab;
+
     // 2 mang sau đây là để test
 //    private String[] sTu = {"わたし", "なまえ", "くに", "にほん", "かんこく", "ちゅうごく", "アメリカ", "イタリア", "オーストラリア", "ロシア", "タイ"};
 //    private String[] sNghia = {"Tôi", "Tên", "Đất nước", "Nhật Bản", "Hàn Quốc", "Trung Quốc", "Mỹ", "Ý", "Úc", "Nga", "Thái Lan"};
-    private String[] sTu = new String[100];
-    private String[] sNghia = new String[100];
+    private String[] sTu;
+    private String[] sNghia;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -147,10 +148,12 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         dp = new DataProvider(this);
         if (dp != null) {
             mapVocab = dp.getData(book, "vocab", lesson);
+            int indexMax;
+            indexMax = mapVocab.size();
+            sTu = new String[indexMax];
+            sNghia = new String[indexMax];
             mapVocab.keySet().toArray(sTu);
             mapVocab.values().toArray(sNghia);
-        int indexMax;
-            indexMax = sTu.length;
         // nhâp dữ kiệu ở đây
             for (int i = 0; i < indexMax; i++) {
             Employee emp = new Employee();

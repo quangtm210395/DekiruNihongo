@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
-import android.os.Handler;
 
 import java.util.Locale;
 
@@ -31,12 +30,12 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
         startActivityForResult(checkTTSIntent, MY_DATA_CHECK_CODE);
         // speak name project
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                    speakWords("こんにちは!　わたしは　できるにほんごです、いっしょに　べんきょうを　はじめましょう。");
-            }
-        }, 1000);
+//        Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            public void run() {
+//                    speakWords("こんにちは!　わたしは　できるにほんごです、いっしょに　べんきょうを　はじめましょう。");
+//            }
+//        }, 1000);
         iBtnBook1 = (ImageButton) findViewById(R.id.iBtnBook1);
         iBtnBook2 = (ImageButton) findViewById(R.id.iBtnBook2);
         iBtnBook3 = (ImageButton) findViewById(R.id.iBtnBook3);
