@@ -15,6 +15,8 @@ import java.util.Locale;
 import hmdq.js.codeproject.dekirunihongo.Lesson.ListLesson;
 
 public class MainActivity extends AppCompatActivity implements TextToSpeech.OnInitListener{
+    private static final int TIME_DELAY = 2000;
+    private static long back_pressed;
     private TextToSpeech myTTS;
     //status check code
     private int MY_DATA_CHECK_CODE = 0;
@@ -105,6 +107,16 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         } else if (initStatus == TextToSpeech.ERROR) {
             Toast.makeText(this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();
         }
+    }
+    @Override
+    public void onBackPressed() {
+        if (back_pressed + TIME_DELAY > System.currentTimeMillis()) {
+            super.onBackPressed();
+        } else {
+            Toast.makeText(getBaseContext(), "Nhấn back thêm 1 lần nữa để thoát",
+                    Toast.LENGTH_SHORT).show();
+        }
+        back_pressed = System.currentTimeMillis();
     }
 
 }
