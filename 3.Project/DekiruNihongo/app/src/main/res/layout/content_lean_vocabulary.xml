@@ -11,6 +11,7 @@
     <TabHost
         android:id="@+id/tabHostLearn"
         android:layout_width="match_parent"
+
         android:layout_height="match_parent">
 
         <LinearLayout
@@ -20,6 +21,7 @@
 
             <TabWidget
                 android:id="@android:id/tabs"
+                android:background="?attr/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 

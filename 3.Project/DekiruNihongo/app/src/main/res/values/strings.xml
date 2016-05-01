@@ -7,5 +7,11 @@
     <string name="flashcards">Flashcards</string>
     <string name="title_activity_lesson">LessonActivity</string>
     <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="book_1">Book 1</string>
+    <string name="book_2">Book 2</string>
+    <string name="book_3">Book 3</string>
+    <string name="about">Thông tin</string>
     <string name="title_activity_lean_vocabulary">LeanVocabulary</string>
+    <string name="title_activity_about">About</string>
 </resources>

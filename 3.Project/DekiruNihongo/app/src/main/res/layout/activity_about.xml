@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".Lesson.ListLesson">
+    tools:context="hmdq.js.codeproject.dekirunihongo.About">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbarListLesson"
+            android:id="@+id/toolbarAbout"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
@@ -21,14 +21,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Book...."
-                android:id="@+id/tVToolbarBook"
+                android:text="About"
+                android:id="@+id/tVToolbarAbout"
                 android:textSize="20dp"
                 android:textStyle="bold"/>
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_list_lesson" />
+    <include layout="@layout/content_about" />
 
 </android.support.design.widget.CoordinatorLayout>
-

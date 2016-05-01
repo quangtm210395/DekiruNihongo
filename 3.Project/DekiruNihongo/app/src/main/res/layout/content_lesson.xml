@@ -21,6 +21,8 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/AppTheme.AppBarOverlay"
                 android:layout_height="wrap_content"></TabWidget>
 
             <FrameLayout

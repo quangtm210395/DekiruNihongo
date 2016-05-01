@@ -14,5 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Học Từ Vựng"
+        android:background="?attr/colorPrimary"
+        android:foreground="?android:attr/selectableItemBackground"
         android:id="@+id/btnLearn" />
 </LinearLayout>

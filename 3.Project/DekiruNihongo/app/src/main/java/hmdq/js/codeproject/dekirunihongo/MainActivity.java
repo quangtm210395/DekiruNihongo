@@ -8,6 +8,7 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
@@ -21,7 +22,8 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
     //status check code
     private int MY_DATA_CHECK_CODE = 0;
     String speech = "にほん";
-    ImageButton iBtnBook1, iBtnBook2, iBtnBook3;
+    ImageButton iBtnBook1, iBtnBook2, iBtnBook3,iBtnAbout;
+    TextView tVBook1,tVBook2,tVBook3,tVAbout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,12 +44,15 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         iBtnBook1 = (ImageButton) findViewById(R.id.iBtnBook1);
         iBtnBook2 = (ImageButton) findViewById(R.id.iBtnBook2);
         iBtnBook3 = (ImageButton) findViewById(R.id.iBtnBook3);
-
+        iBtnAbout = (ImageButton) findViewById(R.id.iBtnAbout);
+        tVBook1 = (TextView) findViewById(R.id.tVBook1);
+        tVBook2 = (TextView) findViewById(R.id.tVBook2);
+        tVBook3 = (TextView) findViewById(R.id.tVBook3);
+        tVAbout = (TextView) findViewById(R.id.tVAbout);
+        final Intent mh2 = new Intent(MainActivity.this, ListLesson.class);
         iBtnBook1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent mh2 = new Intent(MainActivity.this, ListLesson.class);
                 mh2.putExtra("book", "1");
                 startActivity(mh2);
             }
@@ -56,19 +61,52 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         iBtnBook2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mh2 = new Intent(MainActivity.this, ListLesson.class);
+                mh2.putExtra("book", "2");
+                startActivity(mh2);
+            }
+        });
+        iBtnBook3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mh2.putExtra("book","3");
+                startActivity(mh2);
+
+            }
+        });
+        iBtnAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,About.class));
+            }
+        });
+        tVBook1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mh2.putExtra("book", "1");
+                startActivity(mh2);
+            }
+        });
+
+        tVBook2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 mh2.putExtra("book", "2");
                 startActivity(mh2);
             }
         });
 
-        iBtnBook3.setOnClickListener(new View.OnClickListener() {
+        tVBook3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mh2 = new Intent(MainActivity.this, ListLesson.class);
                 mh2.putExtra("book","3");
                 startActivity(mh2);
 
+            }
+        });
+        tVAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,About.class));
             }
         });
     }
