@@ -102,7 +102,11 @@ public class DataProvider {
 
     List<String> getListLesson(String book, String part) {
         String columnName = "b" + book;
-        String tableName = (part.equals("vocab")) ? "list1" : "list2";
+        String tableName;
+        if (part.equals("vocab")) tableName = "list1";
+        else if (part.equals("gra")) tableName = "list2";
+        else if (part.equals("quiz")) tableName = "list3";
+        else tableName = "list4";
         List<String> result = new ArrayList<>();
         try {
             JSONObject root = new JSONObject(getLocalData());
