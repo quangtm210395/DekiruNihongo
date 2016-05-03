@@ -10,10 +10,11 @@
     android:gravity="center_horizontal">
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/iBtnSpeakFlash"
-        android:src = "@android:drawable/ic_lock_silent_mode_off"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:background="@drawable/speaker"
         android:layout_gravity="top|right" />
 
     <TextView

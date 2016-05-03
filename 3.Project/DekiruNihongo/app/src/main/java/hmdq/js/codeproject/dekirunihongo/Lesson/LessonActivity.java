@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TabHost;
@@ -20,6 +21,7 @@ import java.util.HashMap;
 import java.util.Locale;
 
 import hmdq.js.codeproject.dekirunihongo.DataProvider;
+import hmdq.js.codeproject.dekirunihongo.Grammar.GrammarActivity;
 import hmdq.js.codeproject.dekirunihongo.R;
 import hmdq.js.codeproject.dekirunihongo.Vocabulary.ArrayAdapterVocabulary;
 import hmdq.js.codeproject.dekirunihongo.Vocabulary.Employee;
@@ -32,16 +34,22 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     Button btnLearn;
     DataProvider dp = null;
     HashMap<String, String> mapVocab;
+    ListView listViewGrammar;
     // 2 mang sau đây là để test
 //    private String[] sTu = {"わたし", "なまえ", "くに", "にほん", "かんこく", "ちゅうごく", "アメリカ", "イタリア", "オーストラリア", "ロシア", "タイ"};
 //    private String[] sNghia = {"Tôi", "Tên", "Đất nước", "Nhật Bản", "Hàn Quốc", "Trung Quốc", "Mỹ", "Ý", "Úc", "Nga", "Thái Lan"};
     private String[] sTu;
     private String[] sNghia;
+    private String[] sNameGram = {"Ngữ pháp 1", "Ngữ pháp 2", "Ngữ pháp 3", "Ngữ pháp 4", "Ngữ pháp 5", "Ngữ pháp 6", "Ngữ pháp 7", "Ngữ pháp 8", "Ngữ pháp 9", "Ngữ pháp 10"};
+    ;
+    private String[] sGram = {"Giải nghĩa 1", "Giải nghĩa 2", "Giải nghĩa 3", "Giải nghĩa 4", "Giải nghĩa 5", "Giải nghĩa 6", "Giải nghĩa 7", "Giải nghĩa 8", "Giải nghĩa 9", "Giải nghĩa 10"};
+    ;
     private TextToSpeech myTTS;
     //status check code
     private int MY_DATA_CHECK_CODE = 0;
     private String lesson, book;
     private int indexMax;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +86,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
             @Override
             public void onClick(View v) {
                 Intent intenLeanVocab = new Intent(LessonActivity.this, LearnVocabulary.class);
-                intenLeanVocab.putExtra("sTuLength",indexMax);
+                intenLeanVocab.putExtra("sTuLength", indexMax);
                 intenLeanVocab.putExtra("lesson", lesson);
                 intenLeanVocab.putExtra("Tu", sTu);
                 intenLeanVocab.putExtra("Nghia", sNghia);
@@ -95,7 +103,28 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         tab.setIndicator("Ngữ pháp");
         mTabHost.addTab(tab);
         // TODO
-
+        listViewGrammar = (ListView) findViewById(R.id.listViewGrammar);
+        int indexListGram = 10;
+        ArrayList<String> arrayListGram = new ArrayList<>();
+        for (int i = 0; i < indexListGram; i++) {
+            arrayListGram.add(sNameGram[i]);
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                LessonActivity.this,
+                android.R.layout.simple_list_item_1,
+                arrayListGram
+        );
+        listViewGrammar.setAdapter(adapter);
+        listViewGrammar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intentGram = new Intent(LessonActivity.this, GrammarActivity.class);
+                intentGram.putExtra("lesson", lesson);
+                intentGram.putExtra("namegram", sNameGram[position]);
+                intentGram.putExtra("gram", sGram[position]);
+                startActivity(intentGram);
+            }
+        });
     }
 
     private void tabListen() {
@@ -137,13 +166,13 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         ArrayList<Employee> arrayListVocabulary = new ArrayList<>();
         tVToolbarLesson = (TextView) findViewById(R.id.tVToolbarLesson);
         Bundle bd = getIntent().getExtras();
-        if (bd!= null){
+        if (bd != null) {
             lesson = bd.getString("lesson");
             book = bd.getString("book");
         }
         // set tên bài lên toolbar;
-        if (lesson != null){
-            tVToolbarLesson.setText("Lesson " + lesson);
+        if (lesson != null) {
+            tVToolbarLesson.setText(getString(R.string.lesson) + " " + lesson);
         }
         // getdata
         dp = new DataProvider(this);
@@ -154,24 +183,24 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
             sNghia = new String[indexMax];
             mapVocab.keySet().toArray(sTu);
             mapVocab.values().toArray(sNghia);
-        // nhâp dữ kiệu ở đây
+            // nhâp dữ kiệu ở đây
             for (int i = 0; i < indexMax; i++) {
-            Employee emp = new Employee();
-            emp.setTu(sTu[i]);
-            emp.setNghia(sNghia[i]);
-            arrayListVocabulary.add(emp);
-        }
-        ArrayAdapterVocabulary adapter = new ArrayAdapterVocabulary(this,R.layout.item_listview_vocabulary,arrayListVocabulary);
-        listViewVocabulary.setAdapter(adapter);
-        // sự kiện text to speech
-        listViewVocabulary.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView tvListTu = (TextView) view.findViewById(R.id.tvListTu);
-                String stringTu = tvListTu.getText().toString();
-                speakWords(stringTu);
+                Employee emp = new Employee();
+                emp.setTu(sTu[i]);
+                emp.setNghia(sNghia[i]);
+                arrayListVocabulary.add(emp);
             }
-        });
+            ArrayAdapterVocabulary adapter = new ArrayAdapterVocabulary(this, R.layout.item_listview_vocabulary, arrayListVocabulary);
+            listViewVocabulary.setAdapter(adapter);
+            // sự kiện text to speech
+            listViewVocabulary.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    TextView tvListTu = (TextView) view.findViewById(R.id.tvListTu);
+                    String stringTu = tvListTu.getText().toString();
+                    speakWords(stringTu);
+                }
+            });
         }
     }
 

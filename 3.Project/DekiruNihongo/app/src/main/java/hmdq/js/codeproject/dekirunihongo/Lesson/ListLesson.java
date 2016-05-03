@@ -39,13 +39,13 @@ public class ListLesson extends AppCompatActivity {
         }
         // set tên sách lên toolbar;
         if (book != null) {
-            tVToolbarBook.setText("Book " + book);
+            tVToolbarBook.setText(getString(R.string.book) + " "+ book );
         }
         if (book != null && (book.equals("1") || book.equals("2"))) indexMax = 15;
         else indexMax = 20;
         ArrayList<String> arrayListLesson = new ArrayList<>();
         for (int i = 1; i <= indexMax; i ++){
-            arrayListLesson.add("Lesson " + (i));
+            arrayListLesson.add(getString(R.string.lesson) + " "+ (i));
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 ListLesson.this,

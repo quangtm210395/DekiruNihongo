@@ -74,7 +74,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
         }
         // set tên bài lên toolbar;
         if (lesson != null) {
-            tVToolbarLearn.setText("Lesson " + lesson);
+            tVToolbarLearn.setText(getString(R.string.lesson) + " " + lesson);
         }
     }
 
@@ -185,43 +185,24 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
                     sAnswer = sLearnTrim.trim();
                     if (sAnswer.equals(sTu[indexLearn])) {
                         indexCor++;
-                        setTextAnswerLearn("CORRECT", "");
+                        setTextAnswerLearn(getString(R.string.CORRECT), "");
                         tvNumCor.setText(indexCor + "");
                     } else {
                         indexInCor++;
                         tvNumInCor.setText(indexInCor + "");
-                        setTextAnswerLearn("INCORRECT", "Correct: " + sTu[indexLearn]);
+                        setTextAnswerLearn(getString(R.string.INCORRECT), getString(R.string.correct)+ ": " + sTu[indexLearn]);
                     }
                     return true;
                 }
                 return false;
             }
         });
-//        btnAnswerLearn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String sAnswer = edtTuLearn.getText().toString();
-//                STrim sLearnTrim = new STrim(sAnswer);
-//                sAnswer = sLearnTrim.trim();
-//                if (sAnswer.equals(sTu[indexLearn])) {
-//                    indexCor++;
-//                    setTextAnswerLearn("CORRECT", "");
-//                    tvNumCor.setText(indexCor + "");
-//                } else {
-//                    indexInCor++;
-//                    tvNumInCor.setText(indexInCor + "");
-//                    setTextAnswerLearn("INCORRECT", "Correct: " + sTu[indexLearn]);
-//                }
-//            }
-//        });
-
         btnStartOverLearn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 resetLearn();
             }
         });
-
         btnNextLearn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -291,38 +272,6 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
                 speakWords(sTu[indexSpell]);
             }
         });
-//        btnAnswerSpell.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (checkLearn) {
-//                    String sAnswer = edtTuSpell.getText().toString();
-//                    STrim sSpellTrim = new STrim(sAnswer);
-//                    sAnswer = sSpellTrim.trim();
-//                    if (sAnswer.equals(sTu[indexSpell])) {
-//                        setTextAnswerSpell("CORRECT", "");
-//                        indexFinish++;
-//                        tvNumFinish.setText(indexFinish + "");
-//                    } else {
-//                        rdSpell.remove(indexFinish % sTuLength);
-//                        setTextAnswerSpell("INCORRECT", "Correct: " + sTu[indexSpell]);
-//                    }
-//                    checkLearn = false;
-//                    Handler handler = new Handler();
-//                    handler.postDelayed(new Runnable() {
-//                        public void run() {
-//                            indexSpell = rdSpell.Random();
-//                            if (indexSpell > -1) {
-//                                speakWords(sTu[indexSpell]);
-//                                nextSpell();
-//                            } else {
-//                                Toast.makeText(LearnVocabulary.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
-//                            }
-//
-//                        }
-//                    }, 2000);
-//                }
-//            }
-//        });
         btnStartOverSpell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -423,8 +372,8 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
             Toast.makeText(this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();
         }
     }
-
     // TEXT TO SPEECH
+
     private void setToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarLesson);
         setSupportActionBar(toolbar);

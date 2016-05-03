@@ -45,6 +45,10 @@
         <activity
             android:name=".About"
             android:label="@string/title_activity_about"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Grammar.GrammarActivity"
+            android:label="@string/title_activity_grammar"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
