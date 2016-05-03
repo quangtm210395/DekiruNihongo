@@ -12,6 +12,11 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_remain"
+            android:layout_gravity="center_vertical" />
 
         <TextView
             android:id="@+id/tvNumRemainTest"
@@ -35,7 +40,7 @@
             android:layout_gravity="center_vertical" />
 
         <TextView
-            android:id="@+id/tvNumIncorTest"
+            android:id="@+id/tvNumCorTest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"
@@ -56,7 +61,7 @@
             android:layout_gravity="center_vertical" />
 
         <TextView
-            android:id="@+id/tvNumCorTest"
+            android:id="@+id/tvNumIncorTest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"
@@ -75,11 +80,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textView2" />
+        android:text="Question"
+        android:id="@+id/tvQuestion" />
 
     <RadioGroup
         android:layout_width="wrap_content"
+        android:id="@+id/rGGram"
         android:layout_height="wrap_content">
 
         <RadioButton
@@ -114,7 +120,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="S"
-        android:id="@+id/button"
+        android:text="Start Over"
+        android:id="@+id/btnStartOverQuiz"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

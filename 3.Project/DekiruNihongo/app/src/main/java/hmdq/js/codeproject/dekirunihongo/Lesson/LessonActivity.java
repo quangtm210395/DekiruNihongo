@@ -1,6 +1,7 @@
 package hmdq.js.codeproject.dekirunihongo.Lesson;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +25,7 @@ import java.util.Locale;
 
 import hmdq.js.codeproject.dekirunihongo.DataProvider;
 import hmdq.js.codeproject.dekirunihongo.Grammar.GrammarActivity;
+import hmdq.js.codeproject.dekirunihongo.Quiz.ArrayQuiz;
 import hmdq.js.codeproject.dekirunihongo.R;
 import hmdq.js.codeproject.dekirunihongo.Vocabulary.ArrayAdapterVocabulary;
 import hmdq.js.codeproject.dekirunihongo.Vocabulary.Employee;
@@ -31,7 +35,12 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     TabHost mTabHost;
     ListView listViewVocabulary;
     TextView tVToolbarLesson;
+    TextView tvQuestion;
+    TextView tvNumIncorTest, tvNumCorTest, tvNumRemainTest;
+    RadioButton rBAnswer1, rBAnswer2, rBAnswer3, rBAnswer4;
+    RadioGroup rGGram;
     Button btnLearn;
+    Button btnStartOverQuiz;
     DataProvider dp = null;
     HashMap<String, String> mapVocab;
     HashMap<String, String> mapGram;
@@ -42,17 +51,24 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     private String[] sTu;
     private String[] sNghia;
     private String[] sNameGram;
-// = {"Ngữ pháp 1", "Ngữ pháp 2", "Ngữ pháp 3", "Ngữ pháp 4", "Ngữ pháp 5", "Ngữ pháp 6", "Ngữ pháp 7", "Ngữ pháp 8", "Ngữ pháp 9", "Ngữ pháp 10"};
+    // = {"Ngữ pháp 1", "Ngữ pháp 2", "Ngữ pháp 3", "Ngữ pháp 4", "Ngữ pháp 5", "Ngữ pháp 6", "Ngữ pháp 7", "Ngữ pháp 8", "Ngữ pháp 9", "Ngữ pháp 10"};
 //    ;
     private String[] sGram;
-//    = {"Giải nghĩa 1", "Giải nghĩa 2", "Giải nghĩa 3", "Giải nghĩa 4", "Giải nghĩa 5", "Giải nghĩa 6", "Giải nghĩa 7", "Giải nghĩa 8", "Giải nghĩa 9", "Giải nghĩa 10"};
+    //    = {"Giải nghĩa 1", "Giải nghĩa 2", "Giải nghĩa 3", "Giải nghĩa 4", "Giải nghĩa 5", "Giải nghĩa 6", "Giải nghĩa 7", "Giải nghĩa 8", "Giải nghĩa 9", "Giải nghĩa 10"};
 //    ;
+    private String[] sQuestion = {"cau hoi thu nhat", "cau hoi thu hai"};
     private TextToSpeech myTTS;
     //status check code
     private int MY_DATA_CHECK_CODE = 0;
     private String lesson, book;
+    private String answerQuiz;
     private int indexMax;
-
+    private int indexMaxQuiz;
+    private int indexQuiz;
+    private ArrayList<ArrayQuiz> arrayListQuiz = new ArrayList<>();
+    private RandomInt rdQuiz;
+    private boolean checkAnswer;
+    private int numCor,numIncor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,7 +130,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
             book = bd.getString("book");
         }
         dp = new DataProvider(this);
-        if (dp != null){
+        if (dp != null) {
             mapGram = dp.getData(book, "gra", lesson);
             indexListGram = mapGram.size();
             sNameGram = new String[indexListGram];
@@ -145,16 +161,16 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         });
     }
 
-    private void tabListen() {
-        //create tabListen
-        TabHost.TabSpec tab;
-        tab = mTabHost.newTabSpec("listen");
-        tab.setContent(R.id.tabListen);
-        tab.setIndicator("Nghe");
-        mTabHost.addTab(tab);
-        // TODO
-
-    }
+//    private void tabListen() {
+//        //create tabListen
+//        TabHost.TabSpec tab;
+//        tab = mTabHost.newTabSpec("listen");
+//        tab.setContent(R.id.tabListen);
+//        tab.setIndicator("Nghe");
+//        mTabHost.addTab(tab);
+//        // TODO
+//
+//    }
 
     private void tabQuiz() {
         //create tabQuiz
@@ -164,7 +180,119 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         tab.setIndicator("Quiz");
         mTabHost.addTab(tab);
         // TODO
+        // add data
+        tvNumCorTest = (TextView) findViewById(R.id.tvNumCorTest);
+        tvNumIncorTest = (TextView) findViewById(R.id.tvNumIncorTest);
+        tvQuestion = (TextView) findViewById(R.id.tvQuestion);
+        rBAnswer1 = (RadioButton) findViewById(R.id.rBAnswer1);
+        rBAnswer2 = (RadioButton) findViewById(R.id.rBAnswer2);
+        rBAnswer3 = (RadioButton) findViewById(R.id.rBAnswer3);
+        rBAnswer4 = (RadioButton) findViewById(R.id.rBAnswer4);
+        btnStartOverQuiz = (Button) findViewById(R.id.btnStartOverQuiz);
+        rGGram = (RadioGroup) findViewById(R.id.rGGram);
+        indexMaxQuiz = 2;
+        for (int i = 0; i < indexMaxQuiz; i++) {
+            ArrayQuiz arrayQuiz = new ArrayQuiz();
+            arrayQuiz.setQuestion(sQuestion[i]);
+            String[] answer = {"1", "2", "3", "4", (i + 1) + ""};
+            arrayQuiz.setAnswer(answer);
+            arrayListQuiz.add(arrayQuiz);
+        }
+        rdQuiz = new RandomInt(indexMaxQuiz);
+        setQuestion();
+        indexQuiz = rdQuiz.Random();
+        btnStartOverQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rdQuiz = new RandomInt(indexMaxQuiz);
+                setQuestion();
+                indexQuiz = rdQuiz.Random();
+                numCor = 0;
+                numIncor = 0;
+                tvNumIncorTest.setText(numIncor+"");
+                tvNumCorTest.setText(numCor+"");
+            }
+        });
+        rdQuiz = new RandomInt(indexMaxQuiz);
+        setQuestion();
+        indexQuiz = rdQuiz.Random();
+        rGGram.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkAnswer) {
+                    if (answerQuiz.equals(rBAnswer1.getText().toString())) {
+                        rBAnswer1.setTextColor(Color.parseColor("#00FB36"));
+                    }
+                    if (answerQuiz.equals(rBAnswer2.getText().toString())) {
+                        rBAnswer2.setTextColor(Color.parseColor("#00FB36"));
+                    }
+                    if (answerQuiz.equals(rBAnswer3.getText().toString())) {
+                        rBAnswer3.setTextColor(Color.parseColor("#00FB36"));
+                    }
+                    if (answerQuiz.equals(rBAnswer4.getText().toString())) {
+                        rBAnswer4.setTextColor(Color.parseColor("#00FB36"));
+                    }
+                    RadioButton radioAnswer = (RadioButton) findViewById(checkedId);
+                    String sAnswer = radioAnswer.getText().toString();
+                    if (sAnswer.equals(answerQuiz)) {
+                        numCor++;
+                        tvNumCorTest.setText(numCor + "");
+//                        Toast.makeText(LessonActivity.this, "dung", Toast.LENGTH_SHORT).show();
+                    } else {
+                        numIncor++;
+                        tvNumIncorTest.setText(numIncor + "");
+                        radioAnswer.setTextColor(Color.parseColor("#FF0000"));
+//                        Toast.makeText(LessonActivity.this, "sai", Toast.LENGTH_SHORT).show();
+                    }
+//                    Handler handler = new Handler();
+//                    handler.postDelayed(new Runnable() {
+//                        public void run() {
+//                            indexQuiz = rdQuiz.Random();
+//                            if (indexQuiz > -1) {
+//                                setQuestion();
+//                            } else {
+//                                Toast.makeText(LessonActivity.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
+//                            }
+//
+//                        }
+//                    }, 2000);
+                    checkAnswer = false;
+                }
+            }
+        });
+//        int id = rGGram.getCheckedRadioButtonId();
+//        if (id!=-1){
+//            RadioButton radioAnswer = (RadioButton) findViewById(id);
+//            String sAnswer = radioAnswer.getText() + "";
+//            if (sAnswer == answerQuiz){
+//                Toast.makeText(LessonActivity.this,"dung",Toast.LENGTH_SHORT).show();
+//            } else Toast.makeText(LessonActivity.this,"dung",Toast.LENGTH_SHORT).show();
+//        }
+//        RandomInt rdQuiz = new RandomInt(indexMaxQuiz);
+//        for (int i = 0; i < indexMaxQuiz; i++){
+//            indexQuiz = rdQuiz.Random();
+//        }
 
+        //
+
+    }
+
+    private void setQuestion() {
+        checkAnswer = true;
+        rBAnswer1.setText(arrayListQuiz.size() + "");
+        ArrayQuiz arrayQuiz = new ArrayQuiz();
+        arrayQuiz = arrayListQuiz.get(indexQuiz);
+        RandomInt rdAnsQuiz = new RandomInt(4);
+        tvQuestion.setText("Câu hỏi: " + arrayQuiz.getQuestion() + "(test. chua hoan thanh)");
+        rBAnswer1.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
+        rBAnswer1.setTextColor(Color.parseColor("#000000"));
+        rBAnswer2.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
+        rBAnswer2.setTextColor(Color.parseColor("#000000"));
+        rBAnswer3.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
+        rBAnswer3.setTextColor(Color.parseColor("#000000"));
+        rBAnswer4.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
+        rBAnswer4.setTextColor(Color.parseColor("#000000"));
+        answerQuiz = arrayQuiz.getAnswer(4);
     }
 
     private void tabKanji() {

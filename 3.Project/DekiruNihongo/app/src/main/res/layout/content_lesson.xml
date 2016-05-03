@@ -48,14 +48,14 @@
                     <include layout="@layout/tab_grammar" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/tabListen"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/tabListen"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="vertical">-->
 
-                    <include layout="@layout/tab_listen" />
-                </LinearLayout>
+                    <!--<include layout="@layout/tab_listen" />-->
+                <!--</LinearLayout>-->
 
                 <LinearLayout
                     android:id="@+id/tabQuiz"
