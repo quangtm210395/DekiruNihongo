@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                    speakWords("こんにちは!　わたしは　できるにほんごです、いっしょに　べんきょうを　はじめましょう。");
+                    speakWords("こんにちは!　いっしょに　べんきょうしましょう。");
             }
         }, 1000);
         iBtnBook1 = (ImageButton) findViewById(R.id.iBtnBook1);

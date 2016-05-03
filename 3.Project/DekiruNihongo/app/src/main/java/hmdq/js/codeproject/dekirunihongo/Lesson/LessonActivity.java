@@ -34,16 +34,19 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     Button btnLearn;
     DataProvider dp = null;
     HashMap<String, String> mapVocab;
+    HashMap<String, String> mapGram;
     ListView listViewGrammar;
     // 2 mang sau đây là để test
 //    private String[] sTu = {"わたし", "なまえ", "くに", "にほん", "かんこく", "ちゅうごく", "アメリカ", "イタリア", "オーストラリア", "ロシア", "タイ"};
 //    private String[] sNghia = {"Tôi", "Tên", "Đất nước", "Nhật Bản", "Hàn Quốc", "Trung Quốc", "Mỹ", "Ý", "Úc", "Nga", "Thái Lan"};
     private String[] sTu;
     private String[] sNghia;
-    private String[] sNameGram = {"Ngữ pháp 1", "Ngữ pháp 2", "Ngữ pháp 3", "Ngữ pháp 4", "Ngữ pháp 5", "Ngữ pháp 6", "Ngữ pháp 7", "Ngữ pháp 8", "Ngữ pháp 9", "Ngữ pháp 10"};
-    ;
-    private String[] sGram = {"Giải nghĩa 1", "Giải nghĩa 2", "Giải nghĩa 3", "Giải nghĩa 4", "Giải nghĩa 5", "Giải nghĩa 6", "Giải nghĩa 7", "Giải nghĩa 8", "Giải nghĩa 9", "Giải nghĩa 10"};
-    ;
+    private String[] sNameGram;
+// = {"Ngữ pháp 1", "Ngữ pháp 2", "Ngữ pháp 3", "Ngữ pháp 4", "Ngữ pháp 5", "Ngữ pháp 6", "Ngữ pháp 7", "Ngữ pháp 8", "Ngữ pháp 9", "Ngữ pháp 10"};
+//    ;
+    private String[] sGram;
+//    = {"Giải nghĩa 1", "Giải nghĩa 2", "Giải nghĩa 3", "Giải nghĩa 4", "Giải nghĩa 5", "Giải nghĩa 6", "Giải nghĩa 7", "Giải nghĩa 8", "Giải nghĩa 9", "Giải nghĩa 10"};
+//    ;
     private TextToSpeech myTTS;
     //status check code
     private int MY_DATA_CHECK_CODE = 0;
@@ -61,7 +64,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         // tabs
         tabVocabulary();
         tabGrammar();
-        tabListen();
+//        tabListen();
         tabQuiz();
         tabKanji();
         //check for TTS data TextToSpeech;
@@ -105,6 +108,21 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         // TODO
         listViewGrammar = (ListView) findViewById(R.id.listViewGrammar);
         int indexListGram = 10;
+        Bundle bd = getIntent().getExtras();
+        if (bd != null) {
+            lesson = bd.getString("lesson");
+            book = bd.getString("book");
+        }
+        dp = new DataProvider(this);
+        if (dp != null){
+            mapGram = dp.getData(book, "gra", lesson);
+            indexListGram = mapGram.size();
+            sNameGram = new String[indexListGram];
+            sGram = new String[indexListGram];
+            mapGram.keySet().toArray(sNameGram);
+            mapGram.values().toArray(sGram);
+        }
+
         ArrayList<String> arrayListGram = new ArrayList<>();
         for (int i = 0; i < indexListGram; i++) {
             arrayListGram.add(sNameGram[i]);
@@ -183,7 +201,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
             sNghia = new String[indexMax];
             mapVocab.keySet().toArray(sTu);
             mapVocab.values().toArray(sNghia);
-            // nhâp dữ kiệu ở đây
+            // nhâp dữ liệu ở đây
             for (int i = 0; i < indexMax; i++) {
                 Employee emp = new Employee();
                 emp.setTu(sTu[i]);
