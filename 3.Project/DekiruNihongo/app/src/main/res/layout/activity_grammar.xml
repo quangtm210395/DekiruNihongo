@@ -24,13 +24,15 @@
                 android:text="Bài ...."
                 android:id="@+id/tVToolbarGram"
                 android:textSize="20dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="#ffffff" />
         </android.support.v7.widget.Toolbar>
         <TextView
             android:layout_width="match_parent"
-            android:text="Grammar"
+            android:text="Giải thích và ví dụ"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:textColor="#ffdd00"
             android:gravity="center_vertical|center_horizontal"
             android:textStyle="bold"
             android:paddingBottom="10dp" />

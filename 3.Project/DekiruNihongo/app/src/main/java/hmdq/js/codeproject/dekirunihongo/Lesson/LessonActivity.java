@@ -41,6 +41,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     RadioGroup rGGram;
     Button btnLearn;
     Button btnStartOverQuiz;
+    Button btnNextQuiz;
     DataProvider dp = null;
     HashMap<String, String> mapVocab;
     HashMap<String, String> mapGram;
@@ -67,8 +68,12 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     private int indexQuiz;
     private ArrayList<ArrayQuiz> arrayListQuiz = new ArrayList<>();
     private RandomInt rdQuiz;
-    private boolean checkAnswer;
-    private int numCor,numIncor;
+    private int checkAnswer = 0;
+    private int numCor, numIncor;
+    private RadioButton answer;
+    private int idRBAnswer = -1;
+    private int countQuestion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -145,7 +150,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 LessonActivity.this,
-                android.R.layout.simple_list_item_1,
+                R.layout.simple_list_item,
                 arrayListGram
         );
         listViewGrammar.setAdapter(adapter);
@@ -181,6 +186,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         mTabHost.addTab(tab);
         // TODO
         // add data
+        tvNumRemainTest = (TextView) findViewById(R.id.tvNumRemainTest);
         tvNumCorTest = (TextView) findViewById(R.id.tvNumCorTest);
         tvNumIncorTest = (TextView) findViewById(R.id.tvNumIncorTest);
         tvQuestion = (TextView) findViewById(R.id.tvQuestion);
@@ -190,6 +196,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         rBAnswer4 = (RadioButton) findViewById(R.id.rBAnswer4);
         btnStartOverQuiz = (Button) findViewById(R.id.btnStartOverQuiz);
         rGGram = (RadioGroup) findViewById(R.id.rGGram);
+        btnNextQuiz = (Button) findViewById(R.id.btnNextQuiz);
         indexMaxQuiz = 2;
         for (int i = 0; i < indexMaxQuiz; i++) {
             ArrayQuiz arrayQuiz = new ArrayQuiz();
@@ -198,101 +205,105 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
             arrayQuiz.setAnswer(answer);
             arrayListQuiz.add(arrayQuiz);
         }
-        rdQuiz = new RandomInt(indexMaxQuiz);
+        resetQuiz();
         setQuestion();
-        indexQuiz = rdQuiz.Random();
         btnStartOverQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rdQuiz = new RandomInt(indexMaxQuiz);
+                if (idRBAnswer != -1) {
+                    RadioButton radio = (RadioButton) findViewById(idRBAnswer);
+                    radio.setChecked(false);
+                }
+                checkAnswer = 0;
+                resetQuiz();
                 setQuestion();
-                indexQuiz = rdQuiz.Random();
-                numCor = 0;
-                numIncor = 0;
-                tvNumIncorTest.setText(numIncor+"");
-                tvNumCorTest.setText(numCor+"");
             }
         });
-        rdQuiz = new RandomInt(indexMaxQuiz);
-        setQuestion();
-        indexQuiz = rdQuiz.Random();
+        btnNextQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                indexQuiz = rdQuiz.Random();
+                if (indexQuiz > -1) {
+                    if (idRBAnswer != -1) {
+                        RadioButton radio = (RadioButton) findViewById(idRBAnswer);
+                        radio.setChecked(false);
+                    }
+                    checkAnswer = 0;
+                    setQuestion();
+                } else {
+                    tvNumRemainTest.setText(indexMaxQuiz - countQuestion + "");
+                    Toast.makeText(LessonActivity.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
         rGGram.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkAnswer) {
+                if (checkAnswer == 1) {
+                    checkAnswer++;
                     if (answerQuiz.equals(rBAnswer1.getText().toString())) {
                         rBAnswer1.setTextColor(Color.parseColor("#00FB36"));
-                    }
-                    if (answerQuiz.equals(rBAnswer2.getText().toString())) {
+                    } else if (answerQuiz.equals(rBAnswer2.getText().toString())) {
                         rBAnswer2.setTextColor(Color.parseColor("#00FB36"));
-                    }
-                    if (answerQuiz.equals(rBAnswer3.getText().toString())) {
+                    } else if (answerQuiz.equals(rBAnswer3.getText().toString())) {
                         rBAnswer3.setTextColor(Color.parseColor("#00FB36"));
-                    }
-                    if (answerQuiz.equals(rBAnswer4.getText().toString())) {
+                    } else if (answerQuiz.equals(rBAnswer4.getText().toString())) {
                         rBAnswer4.setTextColor(Color.parseColor("#00FB36"));
                     }
                     RadioButton radioAnswer = (RadioButton) findViewById(checkedId);
                     String sAnswer = radioAnswer.getText().toString();
+                    idRBAnswer = checkedId;
                     if (sAnswer.equals(answerQuiz)) {
                         numCor++;
                         tvNumCorTest.setText(numCor + "");
-//                        Toast.makeText(LessonActivity.this, "dung", Toast.LENGTH_SHORT).show();
                     } else {
                         numIncor++;
                         tvNumIncorTest.setText(numIncor + "");
                         radioAnswer.setTextColor(Color.parseColor("#FF0000"));
-//                        Toast.makeText(LessonActivity.this, "sai", Toast.LENGTH_SHORT).show();
                     }
-//                    Handler handler = new Handler();
-//                    handler.postDelayed(new Runnable() {
-//                        public void run() {
-//                            indexQuiz = rdQuiz.Random();
-//                            if (indexQuiz > -1) {
-//                                setQuestion();
-//                            } else {
-//                                Toast.makeText(LessonActivity.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
-//                            }
-//
-//                        }
-//                    }, 2000);
-                    checkAnswer = false;
+                } else if (checkAnswer == 2) {
+                    RadioButton radio = (RadioButton) findViewById(idRBAnswer);
+                    radio.setChecked(true);
                 }
             }
         });
-//        int id = rGGram.getCheckedRadioButtonId();
-//        if (id!=-1){
-//            RadioButton radioAnswer = (RadioButton) findViewById(id);
-//            String sAnswer = radioAnswer.getText() + "";
-//            if (sAnswer == answerQuiz){
-//                Toast.makeText(LessonActivity.this,"dung",Toast.LENGTH_SHORT).show();
-//            } else Toast.makeText(LessonActivity.this,"dung",Toast.LENGTH_SHORT).show();
-//        }
-//        RandomInt rdQuiz = new RandomInt(indexMaxQuiz);
-//        for (int i = 0; i < indexMaxQuiz; i++){
-//            indexQuiz = rdQuiz.Random();
-//        }
-
-        //
 
     }
 
+    private void resetQuiz() {
+        rdQuiz = new RandomInt(indexMaxQuiz);
+        indexQuiz = rdQuiz.Random();
+        countQuestion = 0;
+        numCor = 0;
+        numIncor = 0;
+        tvNumIncorTest.setText(numIncor + "");
+        tvNumCorTest.setText(numCor + "");
+        tvNumRemainTest.setText(indexMaxQuiz + "");
+    }
+
     private void setQuestion() {
-        checkAnswer = true;
+        tvNumRemainTest.setText(indexMaxQuiz - countQuestion + "");
+        countQuestion++;
         rBAnswer1.setText(arrayListQuiz.size() + "");
         ArrayQuiz arrayQuiz = new ArrayQuiz();
         arrayQuiz = arrayListQuiz.get(indexQuiz);
         RandomInt rdAnsQuiz = new RandomInt(4);
-        tvQuestion.setText("Câu hỏi: " + arrayQuiz.getQuestion() + "(test. chua hoan thanh)");
+        tvQuestion.setText("Câu hỏi"+" "+countQuestion +": " + arrayQuiz.getQuestion());
         rBAnswer1.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
+        rBAnswer1.setChecked(false);
         rBAnswer1.setTextColor(Color.parseColor("#000000"));
+        rBAnswer2.setChecked(false);
         rBAnswer2.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
         rBAnswer2.setTextColor(Color.parseColor("#000000"));
+        rBAnswer3.setChecked(false);
         rBAnswer3.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
         rBAnswer3.setTextColor(Color.parseColor("#000000"));
+        rBAnswer4.setChecked(false);
         rBAnswer4.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
         rBAnswer4.setTextColor(Color.parseColor("#000000"));
-        answerQuiz = arrayQuiz.getAnswer(4);
+        answerQuiz = arrayQuiz.getAnswer(4).toString();
+        checkAnswer++;
     }
 
     private void tabKanji() {

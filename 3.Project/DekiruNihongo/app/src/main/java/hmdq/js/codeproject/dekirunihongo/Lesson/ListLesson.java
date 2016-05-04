@@ -49,7 +49,7 @@ public class ListLesson extends AppCompatActivity {
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 ListLesson.this,
-                android.R.layout.simple_list_item_1,
+                R.layout.simple_list_item,
                 arrayListLesson
         );
         listViewLesson.setAdapter(adapter);
