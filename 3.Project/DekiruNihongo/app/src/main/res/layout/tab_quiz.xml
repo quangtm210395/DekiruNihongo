@@ -82,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Question"
-        android:textColor="#3236b1"
+        android:textColor="@color/colorBlueDark"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold"
         android:textSize="25dp" />

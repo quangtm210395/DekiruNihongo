@@ -14,7 +14,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        
+
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -43,7 +43,7 @@
             android:layout_gravity="center_vertical" />
 
         <TextView
-            android:id="@+id/tvNumIncor"
+            android:id="@+id/tvNumCor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"
@@ -64,7 +64,7 @@
             android:layout_gravity="center_vertical" />
 
         <TextView
-            android:id="@+id/tvNumCor"
+            android:id="@+id/tvNumIncor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"
@@ -142,11 +142,11 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnStartOverLearn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Start Over" />
+        android:id="@+id/btnStartOverLearn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Start Over" />
 
         <Button
             android:id="@+id/btnNextLearn"
