@@ -38,7 +38,6 @@ public class splash extends AppCompatActivity {
                         newestRev = Integer.parseInt(result);
                     } catch (Exception e) {
                         e.printStackTrace();
-                        txt.setText("Checking aborted");
                         enterMain();
                         return;
                     }
@@ -48,26 +47,22 @@ public class splash extends AppCompatActivity {
                             @Override
                             public void onReceive(String result) {
                                 if (result.equals("")) {
-                                    txt.setText("Failed to get data\nNo change made");
                                     enterMain();
                                     return;
                                 }
+                                result = dp.rebuild(result);
                                 dp.updateData(String.valueOf(newestRev), result);
-                                txt.setText("Updated revision " + String.valueOf(newestRev));
+                                txt.setText("Cập nhật dữ liệu thành công");
                                 enterMain();
                             }
                         });
                     } else {
-                        txt.setText("No update");
                         enterMain();
                     }
                 }
             });
         } else {
-            txt.setText("Checking aborted");
             enterMain();
-
-
         }
     }
 

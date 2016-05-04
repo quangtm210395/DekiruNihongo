@@ -63,7 +63,7 @@ public class DataProvider {
         db.execSQL("UPDATE info SET rev=" + rev + ", dat='" + data + "' where (num=1)");
     }
 
-    String rebuilt(String s) {
+    public String rebuild(String s) {
         StringBuilder sb = new StringBuilder();
         char[] chars = s.toCharArray();
         for (char c : chars) {
@@ -86,11 +86,7 @@ public class DataProvider {
             JSONObject root = new JSONObject(getLocalData());
             root = root.getJSONObject("data");
             JSONArray unit = root.getJSONObject(tableName).getJSONArray(lessonName);
-            if (part.equals("gra"))
-                for (int i = 0; i< unit.length(); i++) {
-                    JSONObject o = unit.getJSONObject(i);
-                    result.put(o.getString("n"), rebuilt(o.getString("m")));
-            } else for (int i = 0; i< unit.length(); i++) {
+            for (int i = 0; i< unit.length(); i++) {
                 JSONObject o = unit.getJSONObject(i);
                 result.put(o.getString("n"), o.getString("m"));
             }
@@ -113,6 +109,26 @@ public class DataProvider {
             root = root.getJSONObject("data");
             JSONArray table = root.getJSONObject(tableName).getJSONArray(columnName);
             for (int i = 0; i< table.length(); i++) result.add(table.getString(i));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    HashMap<String, String> find(String text, int book) {
+        String tableName = "vocab" + book;
+        HashMap<String, String> result = new HashMap<>();
+        try {
+            JSONObject root = new JSONObject(getLocalData()).getJSONObject("data");
+            JSONObject table = root.getJSONObject(tableName);
+            int numLesson = table.length();
+            for (int i = 0;i < numLesson;i++) {
+                JSONArray unit = table.getJSONArray("l" + i);
+                for (int j = 0; j > unit.length();j++) {
+                    JSONObject o = unit.getJSONObject(j);
+                    if (o.getString("n").contains(text)) result.put(o.getString("n"), o.getString("m"));
+                }
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
