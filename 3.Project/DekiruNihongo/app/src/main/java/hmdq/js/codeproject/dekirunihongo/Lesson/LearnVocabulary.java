@@ -2,10 +2,12 @@ package hmdq.js.codeproject.dekirunihongo.Lesson;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -21,8 +23,11 @@ import android.widget.Toast;
 import java.util.Locale;
 
 import hmdq.js.codeproject.dekirunihongo.R;
+import hmdq.js.codeproject.dekirunihongo.SearchResult;
 
-public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.OnInitListener {
+public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.OnInitListener,SearchView.OnQueryTextListener {
+    private SearchView searchView;
+    private TextView tvNextSpell;
     TabHost mTabHostLearn;
     Button btnBack, btnNext;
     Button btnStartOverLearn, btnNextLearn, btnStartOverSpell;
@@ -106,6 +111,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
         tvWriteTuSpell = (TextView) findViewById(R.id.tvWriteTuSpell);
         edtTuSpell = (EditText) findViewById(R.id.edtTuSpell);
         iBtnSpeakSpell = (ImageButton) findViewById(R.id.iBtnSpeakSpell);
+        tvNextSpell = (TextView) findViewById(R.id.tvNextSpell);
 
     }
 
@@ -190,7 +196,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
                     } else {
                         indexInCor++;
                         tvNumInCor.setText(indexInCor + "");
-                        setTextAnswerLearn(getString(R.string.INCORRECT), getString(R.string.correct)+ ": " + sTu[indexLearn]);
+                        setTextAnswerLearn(getString(R.string.INCORRECT), getString(R.string.correct) + ": " + sTu[indexLearn]);
                     }
                     return true;
                 }
@@ -230,6 +236,18 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
         mTabHostLearn.addTab(tab);
         // TODO
         resetSpell();
+        tvNextSpell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                indexSpell = rdSpell.Random();
+                if (indexSpell > -1) {
+                    speakWords(sTu[indexSpell]);
+                    nextSpell();
+                } else {
+                    Toast.makeText(LearnVocabulary.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         edtTuSpell.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -239,28 +257,31 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
                         String sAnswer = edtTuSpell.getText().toString();
                         STrim sSpellTrim = new STrim(sAnswer);
                         sAnswer = sSpellTrim.trim();
+                        tvNumFinish.setText(indexFinish + "");
                         if (sAnswer.equals(sTu[indexSpell])) {
+                            tvCheckInOrCorSpell.setTextColor(Color.parseColor("#00FB36"));
                             setTextAnswerSpell("CORRECT", "");
                             indexFinish++;
-                            tvNumFinish.setText(indexFinish + "");
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                public void run() {
+                                    indexSpell = rdSpell.Random();
+                                    if (indexSpell > -1) {
+                                        speakWords(sTu[indexSpell]);
+                                        nextSpell();
+                                    } else {
+                                        Toast.makeText(LearnVocabulary.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                }
+                            }, 2000);
                         } else {
+                            tvNextSpell.setText("Tiếp tục");
                             rdSpell.remove(indexFinish % sTuLength);
+                            tvCheckInOrCorSpell.setTextColor(Color.parseColor("#FF0000"));
                             setTextAnswerSpell("INCORRECT", "Correct: " + sTu[indexSpell]);
                         }
                         checkLearn = false;
-                        Handler handler = new Handler();
-                        handler.postDelayed(new Runnable() {
-                            public void run() {
-                                indexSpell = rdSpell.Random();
-                                if (indexSpell > -1) {
-                                    speakWords(sTu[indexSpell]);
-                                    nextSpell();
-                                } else {
-                                    Toast.makeText(LearnVocabulary.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
-                                }
-
-                            }
-                        }, 2000);
                     }
                 }
                 return false;
@@ -297,6 +318,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
     }
 
     private void nextSpell() {
+        tvNextSpell.setText("");
         tvCheckInOrCorSpell.setText("");
         tvNghiaSpell.setText("");
         edtTuSpell.setText("");
@@ -388,6 +410,10 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
+        MenuItem itemSearch = menu.findItem(R.id.mnSearch);
+        searchView = (SearchView) itemSearch.getActionView();
+        //set OnQueryTextListener cho search view để thực hiện search theo text
+        searchView.setOnQueryTextListener(this);
         return true;
     }
 
@@ -406,6 +432,19 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        Intent intentSearch = new Intent(LearnVocabulary.this, SearchResult.class);
+        intentSearch.putExtra("sSearch",query);
+        startActivity(intentSearch);
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
     }
 
 }

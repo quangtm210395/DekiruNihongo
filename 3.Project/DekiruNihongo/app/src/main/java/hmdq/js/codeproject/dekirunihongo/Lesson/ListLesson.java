@@ -3,6 +3,7 @@ package hmdq.js.codeproject.dekirunihongo.Lesson;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,8 +18,10 @@ import java.util.ArrayList;
 
 import hmdq.js.codeproject.dekirunihongo.CommonData;
 import hmdq.js.codeproject.dekirunihongo.R;
+import hmdq.js.codeproject.dekirunihongo.SearchResult;
 
-public class ListLesson extends AppCompatActivity {
+public class ListLesson extends AppCompatActivity implements SearchView.OnQueryTextListener {
+    private SearchView searchView;
     ListView listViewLesson;
     TextView tVToolbarBook;
     String book;
@@ -88,6 +91,10 @@ public class ListLesson extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
+        MenuItem itemSearch = menu.findItem(R.id.mnSearch);
+        searchView = (SearchView) itemSearch.getActionView();
+        //set OnQueryTextListener cho search view để thực hiện search theo text
+        searchView.setOnQueryTextListener(this);
         return true;
     }
 
@@ -106,5 +113,18 @@ public class ListLesson extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        Intent intentSearch = new Intent(ListLesson.this, SearchResult.class);
+        intentSearch.putExtra("sSearch",query);
+        startActivity(intentSearch);
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
     }
 }

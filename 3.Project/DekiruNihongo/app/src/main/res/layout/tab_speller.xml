@@ -95,8 +95,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/tvNext"
+            android:text="Nhấn vào để tiếp tục"
+            android:id="@+id/tvNextSpell"
             android:textColor="@color/colorBlueLight"
             android:layout_gravity="center_horizontal"
             android:textStyle="bold|italic" />
@@ -113,7 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Start Over" />
+            android:text="Bắt đầu lại" />
 
     </LinearLayout>
 

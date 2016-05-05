@@ -158,7 +158,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 LessonActivity.this,
-                R.layout.simple_list_item,
+                android.R.layout.simple_list_item_1,
                 arrayListGram
         );
         listViewGrammar.setAdapter(adapter);
