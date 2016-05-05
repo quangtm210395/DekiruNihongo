@@ -104,6 +104,7 @@ public class splash extends AppCompatActivity {
             public void run() {
                 dp.closeDB();;
                 startActivity(new Intent(splash.this, MainActivity.class));
+                finish();
             }
         }, 3000);
     }
