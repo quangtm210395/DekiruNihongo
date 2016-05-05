@@ -7,15 +7,26 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="hmdq.js.codeproject.dekirunihongo.splash">
+    tools:context="hmdq.js.codeproject.dekirunihongo.splash"
+    android:background="@drawable/start_bg">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/start_logo"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="40dp" />
 
     <TextView
         android:id="@+id/splashText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Loading..."
-        android:textSize="35dp"
-        android:layout_centerVertical="true"
+        android:text="Đang tải"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="400dp"
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
