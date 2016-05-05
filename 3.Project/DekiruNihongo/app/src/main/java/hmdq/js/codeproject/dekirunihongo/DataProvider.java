@@ -3,11 +3,7 @@ package hmdq.js.codeproject.dekirunihongo;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.net.ConnectivityManager;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.util.StringBuilderPrinter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,8 +16,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.TreeMap;
 
 public class DataProvider {
     public static final String HOST_NAME = "http://dekirunihongo.esy.es/cf.php";
@@ -78,10 +74,10 @@ public class DataProvider {
         return sb.toString();
     }
 
-    public HashMap<String, String> getData(String book, String part, String lesson) {
+    public TreeMap<String, String> getData(String book, String part, String lesson) {
         String tableName = part + book;
         String lessonName = "l" + lesson;
-        HashMap<String, String> result = new HashMap<>();
+        TreeMap<String, String> result = new TreeMap<>();
         try {
             JSONObject root = new JSONObject(getLocalData());
             root = root.getJSONObject("data");
@@ -96,7 +92,7 @@ public class DataProvider {
         return result;
     }
 
-    List<String> getListLesson(String book, String part) {
+    public List<String> getListLesson(String book, String part) {
         String columnName = "b" + book;
         String tableName;
         if (part.equals("vocab")) tableName = "list1";
@@ -115,9 +111,9 @@ public class DataProvider {
         return result;
     }
 
-    HashMap<String, String> find(String text, int book) {
+    public TreeMap<String, String> find(String text, String book) {
         String tableName = "vocab" + book;
-        HashMap<String, String> result = new HashMap<>();
+        TreeMap<String, String> result = new TreeMap<>();
         try {
             JSONObject root = new JSONObject(getLocalData()).getJSONObject("data");
             JSONObject table = root.getJSONObject(tableName);

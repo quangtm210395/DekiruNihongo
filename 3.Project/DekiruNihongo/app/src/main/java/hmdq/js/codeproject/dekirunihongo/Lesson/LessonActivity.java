@@ -20,8 +20,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Locale;
+import java.util.TreeMap;
 
 import hmdq.js.codeproject.dekirunihongo.CommonData;
 import hmdq.js.codeproject.dekirunihongo.DataProvider;
@@ -44,8 +44,8 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     Button btnStartOverQuiz;
     Button btnNextQuiz;
     DataProvider dp = null;
-    HashMap<String, String> mapVocab;
-    HashMap<String, String> mapGram;
+    TreeMap<String, String> mapVocab;
+    TreeMap<String, String> mapGram;
     ListView listViewGrammar;
     // 2 mang sau đây là để test
 //    private String[] sTu = {"わたし", "なまえ", "くに", "にほん", "かんこく", "ちゅうごく", "アメリカ", "イタリア", "オーストラリア", "ロシア", "タイ"};
