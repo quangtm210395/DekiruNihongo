@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -119,7 +120,8 @@ public class DataProvider {
             root = root.getJSONObject("data");
             JSONObject table = root.getJSONObject(tableName);
             int numLesson = table.length();
-            for (int i = 0;i < numLesson;i++) {
+            Log.v("TAG", String.valueOf(numLesson));
+            for (int i = 1;i <= numLesson;i++) {
                 JSONArray unit = table.getJSONArray("l" + i);
                 for (int j = 0; j < unit.length();j++) {
                     JSONObject o = unit.getJSONObject(j);
@@ -158,7 +160,7 @@ public class DataProvider {
                 con = (HttpURLConnection) url.openConnection();
                 stream = con.getInputStream();
                 reader = new InputStreamReader(stream);
-                int temp = 0;
+                int temp;
                 while ((temp = reader.read()) != -1) result += (char) temp;
             } catch (MalformedURLException e) {
                 e.printStackTrace();
