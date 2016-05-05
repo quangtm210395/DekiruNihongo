@@ -3,12 +3,20 @@ package hmdq.js.codeproject.dekirunihongo;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.TextView;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.InetAddress;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.UnknownHostException;
 
 public class splash extends AppCompatActivity {
     DataProvider dp;
@@ -23,43 +31,52 @@ public class splash extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         txt = (TextView) findViewById(R.id.splashText);
         dp = new DataProvider(getApplicationContext());
-        if (isOnline()) {
-            final int localRev = dp.getLocalRev();
-            dp.requestData("getrev", new DataProvider.OnDataReceived() {
-                @Override
-                public void onReceive(String result) {
-                    try {
-                        Log.v("TAG", result);
-                        newestRev = Integer.parseInt(result);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        enterMain();
-                        return;
-                    }
-                    if (localRev != newestRev) {
-                        if (localRev == 0) txt.setText("Lần khởi động đầu tiên sẽ khá lâu\nXin vui lòng đợi trong giây lát");
-                        else txt.setText("Phát hiện cập nhật mới");
-                        new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
-                            @Override
-                            public void onReceive(String result) {
-                                if ((result.equals("")||(result.charAt(0) != '{'))) {
-                                    enterMain();
-                                    return;
-                                }
-                                result = dp.rebuild(result);
-                                dp.updateData(String.valueOf(newestRev), result);
-                                txt.setText("Cập nhật dữ liệu thành công");
+        netChecker checker = new netChecker(this);
+        checker.execute(new netChecker.OnCheckingDone() {
+            @Override
+            public void onDone(String result) {
+                if (result.equals("1")) {
+                    Log.v("TAG1","DKMVKL");
+                    final int localRev = dp.getLocalRev();
+                    dp.requestData("getrev", new DataProvider.OnDataReceived() {
+                        @Override
+                        public void onReceive(String result) {
+                            try {
+                                newestRev = Integer.parseInt(result);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                                enterMain();
+                                return;
+                            }
+                            if (localRev != newestRev) {
+                                if (localRev == 0) txt.setText("Lần khởi động đầu tiên sẽ khá lâu\nXin vui lòng đợi trong giây lát");
+                                else txt.setText("Phát hiện cập nhật mới");
+                                new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
+                                    @Override
+                                    public void onReceive(String result) {
+                                        if ((result.equals("")||(result.charAt(0) != '{'))) {
+                                            enterMain();
+                                            return;
+                                        }
+                                        result = dp.rebuild(result);
+                                        dp.updateData(String.valueOf(newestRev), result);
+                                        txt.setText("Cập nhật dữ liệu thành công");
+                                        enterMain();
+                                    }
+                                });
+                            } else {
+                                txt.setText("Không có cập nhật mới");
                                 enterMain();
                             }
-                        });
-                    } else {
-                        enterMain();
-                    }
+                        }
+                    });
                 }
-            });
-        } else {
-            enterMain();
-        }
+                else {
+                    txt.setText("Không thể kết nối mạng");
+                    enterMain();
+                }
+            }
+        });
     }
 
     void enterMain() {
@@ -83,10 +100,5 @@ public class splash extends AppCompatActivity {
         }
         startActivity(new Intent(splash.this, MainActivity.class));
         finish();
-    }
-
-    boolean isOnline() {
-        ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-        return (cm.getActiveNetworkInfo() != null)&&(cm.getActiveNetworkInfo().isConnected());
     }
 }
