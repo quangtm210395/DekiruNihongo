@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,11 +29,13 @@ import hmdq.js.codeproject.dekirunihongo.DataProvider;
 import hmdq.js.codeproject.dekirunihongo.Grammar.GrammarActivity;
 import hmdq.js.codeproject.dekirunihongo.Quiz.ArrayQuiz;
 import hmdq.js.codeproject.dekirunihongo.R;
+import hmdq.js.codeproject.dekirunihongo.SearchResult;
 import hmdq.js.codeproject.dekirunihongo.Vocabulary.ArrayAdapterVocabulary;
 import hmdq.js.codeproject.dekirunihongo.Vocabulary.Employee;
 
-public class LessonActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
+public class LessonActivity extends AppCompatActivity implements TextToSpeech.OnInitListener, SearchView.OnQueryTextListener {
 
+    private SearchView searchView;
     TabHost mTabHost;
     ListView listViewVocabulary;
     TextView tVToolbarLesson;
@@ -71,7 +74,6 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     private RandomInt rdQuiz;
     private int checkAnswer = 0;
     private int numCor, numIncor;
-    private RadioButton answer;
     private int idRBAnswer = -1;
     private int countQuestion;
 
@@ -83,6 +85,9 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         mTabHost.setup();
         // toolbar
         setToolbar();
+        //lưu dữ liệu vị trí bài hiện tại
+        CommonData cd = CommonData.getInstance();
+        cd.noLesson = lesson;
         // tabs
         tabVocabulary();
         tabGrammar();
@@ -136,9 +141,6 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
             book = bd.getString("book");
         }
 
-        //lưu dữ liệu vị trí bài hiện tại
-        CommonData cd = CommonData.getInstance();
-        cd.noLesson = lesson;
 
         dp = new DataProvider(this);
         if (dp != null) {
@@ -417,7 +419,11 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
+        MenuItem itemSearch = menu.findItem(R.id.mnSearch);
+        searchView = (SearchView) itemSearch.getActionView();
+        //set OnQueryTextListener cho search view để thực hiện search theo text
+        searchView.setOnQueryTextListener(this);
         return true;
     }
 
@@ -436,5 +442,18 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        Intent intentSearch = new Intent(LessonActivity.this, SearchResult.class);
+        intentSearch.putExtra("sSearch",query);
+        startActivity(intentSearch);
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
     }
 }

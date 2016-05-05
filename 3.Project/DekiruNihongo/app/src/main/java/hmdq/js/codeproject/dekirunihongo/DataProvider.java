@@ -115,12 +115,13 @@ public class DataProvider {
         String tableName = "vocab" + book;
         TreeMap<String, String> result = new TreeMap<>();
         try {
-            JSONObject root = new JSONObject(getLocalData()).getJSONObject("data");
+            JSONObject root = new JSONObject(getLocalData());
+            root = root.getJSONObject("data");
             JSONObject table = root.getJSONObject(tableName);
             int numLesson = table.length();
             for (int i = 0;i < numLesson;i++) {
                 JSONArray unit = table.getJSONArray("l" + i);
-                for (int j = 0; j > unit.length();j++) {
+                for (int j = 0; j < unit.length();j++) {
                     JSONObject o = unit.getJSONObject(j);
                     if (o.getString("n").contains(text)) result.put(o.getString("n"), o.getString("m"));
                 }

@@ -49,6 +49,10 @@
         <activity
             android:name=".Grammar.GrammarActivity"
             android:label="@string/title_activity_grammar"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SearchResult"
+            android:label="@string/title_activity_search_result"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
