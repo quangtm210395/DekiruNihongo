@@ -115,7 +115,12 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private void speakWords(String speech) {
 
         //speak straight away
-        myTTS.speak(speech, TextToSpeech.QUEUE_FLUSH, null);
+        if (myTTS == null){
+            myTTS = new TextToSpeech(this,this);
+        }
+        if (myTTS != null){
+            myTTS.speak(speech, TextToSpeech.QUEUE_FLUSH, null);
+        }
     }
 
     //kiểm tra kết quả của Text To Speech

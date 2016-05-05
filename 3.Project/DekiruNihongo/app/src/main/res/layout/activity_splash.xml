@@ -17,16 +17,19 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="40dp" />
+        android:layout_marginBottom="40dp"
+        android:id="@+id/imageView" />
 
     <TextView
         android:id="@+id/splashText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Đang tải"
-        android:textSize="25dp"
+        android:text="Đang tải..."
+        android:textSize="15dp"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:layout_marginTop="400dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginBottom="65dp"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

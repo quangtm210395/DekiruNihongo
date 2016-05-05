@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
+import hmdq.js.codeproject.dekirunihongo.CommonData;
 import hmdq.js.codeproject.dekirunihongo.DataProvider;
 import hmdq.js.codeproject.dekirunihongo.Grammar.GrammarActivity;
 import hmdq.js.codeproject.dekirunihongo.Quiz.ArrayQuiz;
@@ -134,6 +135,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
             lesson = bd.getString("lesson");
             book = bd.getString("book");
         }
+        CommonData.noLesson = lesson;
         dp = new DataProvider(this);
         if (dp != null) {
             mapGram = dp.getData(book, "gra", lesson);

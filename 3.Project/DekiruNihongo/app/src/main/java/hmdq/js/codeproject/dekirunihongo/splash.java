@@ -3,19 +3,12 @@ package hmdq.js.codeproject.dekirunihongo;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.annotation.IntegerRes;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.WindowManager;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.HashMap;
-import java.util.List;
 
 public class splash extends AppCompatActivity {
     DataProvider dp;
@@ -44,7 +37,7 @@ public class splash extends AppCompatActivity {
                         return;
                     }
                     if (localRev != newestRev) {
-                        if (localRev == 0) txt.setText("Đây là lần khởi động đầu tiên\nVì vậy thời gian tải có thể sẽ khá lâu");
+                        if (localRev == 0) txt.setText("Lần khởi động đầu tiên sẽ khá lâu\nXin vui lòng đợi trong giây lát");
                         else txt.setText("Phát hiện cập nhật mới");
                         new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
                             @Override

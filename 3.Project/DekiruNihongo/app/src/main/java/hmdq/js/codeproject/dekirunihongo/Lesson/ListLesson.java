@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import hmdq.js.codeproject.dekirunihongo.CommonData;
 import hmdq.js.codeproject.dekirunihongo.R;
 
 public class ListLesson extends AppCompatActivity {
@@ -37,6 +38,8 @@ public class ListLesson extends AppCompatActivity {
         if (bd != null){
             book = bd.getString("book");
         }
+        CommonData.noBook = book;
+
         // set tên sách lên toolbar;
         if (book != null) {
             tVToolbarBook.setText(getString(R.string.book) + " "+ book );
