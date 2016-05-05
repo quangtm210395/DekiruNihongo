@@ -135,7 +135,11 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
             lesson = bd.getString("lesson");
             book = bd.getString("book");
         }
-        CommonData.noLesson = lesson;
+
+        //lưu dữ liệu vị trí bài hiện tại
+        CommonData cd = CommonData.getInstance();
+        cd.noLesson = lesson;
+
         dp = new DataProvider(this);
         if (dp != null) {
             mapGram = dp.getData(book, "gra", lesson);

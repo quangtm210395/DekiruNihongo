@@ -38,7 +38,10 @@ public class ListLesson extends AppCompatActivity {
         if (bd != null){
             book = bd.getString("book");
         }
-        CommonData.noBook = book;
+
+        // lưu dữ liệu vị trí quyển sách hiện tại
+        CommonData cd = CommonData.getInstance();
+        cd.noBook = book;
 
         // set tên sách lên toolbar;
         if (book != null) {
