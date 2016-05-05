@@ -15,8 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import hmdq.js.codeproject.dekirunihongo.CommonData;
+import hmdq.js.codeproject.dekirunihongo.DataProvider;
 import hmdq.js.codeproject.dekirunihongo.R;
 import hmdq.js.codeproject.dekirunihongo.SearchResult;
 
@@ -25,6 +27,9 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
     ListView listViewLesson;
     TextView tVToolbarBook;
     String book;
+    DataProvider dp;
+    List<String> listLesson;
+    String[] sLesson;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,16 +51,39 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
         CommonData cd = CommonData.getInstance();
         cd.noBook = book;
 
+        // lấy danh sách tên bài
+        dp = new DataProvider(this);
+        if (dp != null){
+            listLesson = dp.getListLesson(book,"vocab");
+            sLesson = new String[listLesson.size()];
+            if (listLesson != null) sLesson = listLesson.toArray(sLesson);
+        }
+
         // set tên sách lên toolbar;
         if (book != null) {
-            tVToolbarBook.setText(getString(R.string.book) + " "+ book );
+            if (book.equals("1")){
+                tVToolbarBook.setText(getString(R.string.book) + " "+ book + ": しょきゅう");
+            } else if (book.equals("2")){
+                tVToolbarBook.setText(getString(R.string.book) + " "+ book + ": しょちゅうきゅう");
+            } else if (book.equals("3")){
+                tVToolbarBook.setText(getString(R.string.book) + " "+ book + ": ちゅうきゅう");
+            }
+
         }
         if (book != null && (book.equals("1") || book.equals("2"))) indexMax = 15;
         else indexMax = 20;
         ArrayList<String> arrayListLesson = new ArrayList<>();
-        for (int i = 1; i <= indexMax; i ++){
-            arrayListLesson.add(getString(R.string.lesson) + " "+ (i));
+        //set tên bài vào danh sách bài
+        if (sLesson.length != 0){
+            for (int i = 1; i <= indexMax; i ++){
+                arrayListLesson.add(getString(R.string.lesson) + " "+ (i) + ": " + sLesson[i-1]);
+            }
+        } else {
+            for (int i = 1; i <= indexMax; i ++){
+                arrayListLesson.add(getString(R.string.lesson) + " "+ (i));
+            }
         }
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 ListLesson.this,
                 R.layout.simple_list_item,
