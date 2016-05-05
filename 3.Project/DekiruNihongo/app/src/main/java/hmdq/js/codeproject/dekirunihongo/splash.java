@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -30,13 +31,17 @@ public class splash extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         txt = (TextView) findViewById(R.id.splashText);
-        dp = new DataProvider(getApplicationContext());
+        dp = new DataProvider(this);
+        beginLoading();
+    }
+
+    void beginLoading() {
+        super.onStart();
         netChecker checker = new netChecker(this);
         checker.execute(new netChecker.OnCheckingDone() {
             @Override
             public void onDone(String result) {
                 if (result.equals("1")) {
-                    Log.v("TAG1","DKMVKL");
                     final int localRev = dp.getLocalRev();
                     dp.requestData("getrev", new DataProvider.OnDataReceived() {
                         @Override
@@ -93,12 +98,13 @@ public class splash extends AppCompatActivity {
                     });
             ab.create().show();
         }
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        startActivity(new Intent(splash.this, MainActivity.class));
-        finish();
+        Handler h = new Handler();
+        h.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dp.closeDB();;
+                startActivity(new Intent(splash.this, MainActivity.class));
+            }
+        }, 3000);
     }
 }
