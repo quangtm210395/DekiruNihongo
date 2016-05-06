@@ -97,15 +97,16 @@ public class splash extends AppCompatActivity {
                         }
                     });
             ab.create().show();
+        } else {
+            Handler h = new Handler();
+            h.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    dp.closeDB();;
+                    startActivity(new Intent(splash.this, MainActivity.class));
+                    finish();
+                }
+            }, 3000);
         }
-        Handler h = new Handler();
-        h.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                dp.closeDB();;
-                startActivity(new Intent(splash.this, MainActivity.class));
-                finish();
-            }
-        }, 3000);
     }
 }
