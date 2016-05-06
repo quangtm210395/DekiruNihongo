@@ -65,7 +65,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     private TextToSpeech myTTS;
     //status check code
     private int MY_DATA_CHECK_CODE = 0;
-    private String lesson, book;
+    private String lesson, book, lessonName;
     private String answerQuiz;
     private int indexMax;
     private int indexMaxQuiz;
@@ -334,11 +334,12 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         if (bd != null) {
             lesson = bd.getString("lesson");
             book = bd.getString("book");
+            lessonName = bd.getString("lessonName");
         }
         // set tên bài lên toolbar;
-        if (lesson != null) {
-            tVToolbarLesson.setText(getString(R.string.lesson) + " " + lesson);
-        }
+        if (lessonName != null) {
+            tVToolbarLesson.setText(getString(R.string.lesson) + " " + lesson + ": " + lessonName);
+        } else tVToolbarLesson.setText(getString(R.string.lesson) + " " + lesson);
         // getdata
         dp = new DataProvider(this);
         if (dp != null) {

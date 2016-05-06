@@ -97,8 +97,8 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent mh3 = new Intent(ListLesson.this, LessonActivity.class);
                     if (sLesson.length != 0)
-                        mh3.putExtra("lesson", "" + (position + 1) + ": "+ sLesson[position]); else
-                        mh3.putExtra("lesson", "" + (position + 1));
+                        mh3.putExtra("lessonName", sLesson[position]);
+                    mh3.putExtra("lesson", "" + (position + 1));
                     mh3.putExtra("book", book);
                     startActivity(mh3);
                 }
