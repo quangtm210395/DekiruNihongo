@@ -67,7 +67,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     private int MY_DATA_CHECK_CODE = 0;
     private String lesson, book, lessonName;
     private String answerQuiz;
-    private int indexMax;
+    private int indexMax = 0;
     private int indexMaxQuiz;
     private int indexQuiz;
     private ArrayList<ArrayQuiz> arrayListQuiz = new ArrayList<>();
@@ -115,12 +115,17 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         btnLearn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intenLeanVocab = new Intent(LessonActivity.this, LearnVocabulary.class);
-                intenLeanVocab.putExtra("sTuLength", indexMax);
-                intenLeanVocab.putExtra("lesson", lesson);
-                intenLeanVocab.putExtra("Tu", sTu);
-                intenLeanVocab.putExtra("Nghia", sNghia);
-                startActivity(intenLeanVocab);
+                if (indexMax > 0) {
+                    Intent intenLeanVocab = new Intent(LessonActivity.this, LearnVocabulary.class);
+                    intenLeanVocab.putExtra("sTuLength", indexMax);
+                    if (lessonName != null)
+                        intenLeanVocab.putExtra("lesson", lesson + ": " + lessonName);
+                    else
+                        intenLeanVocab.putExtra("lesson", lesson);
+                    intenLeanVocab.putExtra("Tu", sTu);
+                    intenLeanVocab.putExtra("Nghia", sNghia);
+                    startActivity(intenLeanVocab);
+                }
             }
         });
     }
@@ -297,7 +302,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
         ArrayQuiz arrayQuiz = new ArrayQuiz();
         arrayQuiz = arrayListQuiz.get(indexQuiz);
         RandomInt rdAnsQuiz = new RandomInt(4);
-        tvQuestion.setText("Câu hỏi"+" "+countQuestion +": " + arrayQuiz.getQuestion());
+        tvQuestion.setText("Câu hỏi" + " " + countQuestion + ": " + arrayQuiz.getQuestion());
         rBAnswer1.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
         rBAnswer1.setChecked(false);
         rBAnswer1.setTextColor(Color.parseColor("#000000"));
@@ -448,7 +453,7 @@ public class LessonActivity extends AppCompatActivity implements TextToSpeech.On
     @Override
     public boolean onQueryTextSubmit(String query) {
         Intent intentSearch = new Intent(LessonActivity.this, SearchResult.class);
-        intentSearch.putExtra("sSearch",query);
+        intentSearch.putExtra("sSearch", query);
         startActivity(intentSearch);
         return false;
     }

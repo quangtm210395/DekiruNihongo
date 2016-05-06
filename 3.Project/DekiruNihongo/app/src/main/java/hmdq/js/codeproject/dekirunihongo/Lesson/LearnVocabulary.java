@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
+import java.util.TreeMap;
 
 import hmdq.js.codeproject.dekirunihongo.R;
 import hmdq.js.codeproject.dekirunihongo.SearchResult;
@@ -40,11 +41,12 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
     private TextToSpeech myTTS;
     //status check code
     private int MY_DATA_CHECK_CODE = 0;
-    private String[] sTu;
-    private String[] sNghia;
+    private String[] sTu,sTutmp;
+    private String[] sNghia,sNghiatmp;
     private int indexFCards, indexRemain, indexLearn, indexInCor, indexCor, indexFinish, indexSpell, sTuLength;
     private String lesson = null;
     private RandomInt rdLearn, rdSpell;
+    private boolean checkEditLearn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,23 +182,26 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
         tab.setIndicator("Learn");
         mTabHostLearn.addTab(tab);
         // TODO
-        resetLearn();
+        final TreeMap<String,String> sSai = new TreeMap<>();
+        resetLearn(sTuLength,sTu,sNghia);
         edtTuLearn.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                        (keyCode == KeyEvent.KEYCODE_ENTER) && checkEditLearn) {
                     String sAnswer = edtTuLearn.getText().toString();
+                    checkEditLearn = false;
                     STrim sLearnTrim = new STrim(sAnswer);
                     sAnswer = sLearnTrim.trim();
-                    if (sAnswer.equals(sTu[indexLearn])) {
+                    if (sAnswer.equals(sTutmp[indexLearn])) {
                         indexCor++;
                         setTextAnswerLearn(getString(R.string.CORRECT), "");
                         tvNumCor.setText(indexCor + "");
                     } else {
                         indexInCor++;
                         tvNumInCor.setText(indexInCor + "");
-                        setTextAnswerLearn(getString(R.string.INCORRECT), getString(R.string.correct) + ": " + sTu[indexLearn]);
+                        setTextAnswerLearn(getString(R.string.INCORRECT), getString(R.string.correct) + ": " + sTutmp[indexLearn]);
+                        sSai.put(sTutmp[indexLearn],sNghiatmp[indexLearn]);
                     }
                     return true;
                 }
@@ -206,7 +211,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
         btnStartOverLearn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resetLearn();
+                resetLearn(sTuLength,sTu,sNghia);
             }
         });
         btnNextLearn.setOnClickListener(new View.OnClickListener() {
@@ -219,6 +224,13 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
                         Toast.makeText(LearnVocabulary.this, "Bạn hãy viết câu trả lời trước khi qua câu tiếp theo", Toast.LENGTH_SHORT).show();
                     }
                 } else {
+                    if (sSai.size() != 0){
+                        sTutmp = new String[sSai.size()];
+                        sNghiatmp = new String[sSai.size()];
+                        sSai.keySet().toArray(sTutmp);
+                        sSai.values().toArray(sNghiatmp);
+                        resetLearn(sSai.size(), sTutmp, sNghiatmp);
+                    } else
                     tvNumRemain.setText(indexRemain + "");
                     Toast.makeText(LearnVocabulary.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
                 }
@@ -335,7 +347,11 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
     }
 
     // reset lại các biến trong tablearn;
-    private void resetLearn() {
+    private void resetLearn(int sTuLength,String[] sTu, String[] sNghia) {
+        sTutmp = new String[sTuLength];
+        sNghiatmp = new String[sTuLength];
+        sTutmp = sTu;
+        sNghia = sNghia;
         indexRemain = sTuLength;
         rdLearn = new RandomInt(indexRemain);
         indexCor = 0;
@@ -348,6 +364,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
 
     //tạo ra setText toàn bộ learn
     private void setTextLearn() {
+        checkEditLearn = true;
         indexLearn = rdLearn.Random();
         tvNumRemain.setText(indexRemain + "");
         tvNghiaLearn.setText(sNghia[indexLearn]);

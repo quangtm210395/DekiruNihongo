@@ -41,6 +41,10 @@ public class SearchResult extends AppCompatActivity implements SearchView.OnQuer
         setContentView(R.layout.activity_search_result);
         tVToolbarSearch = (TextView) findViewById(R.id.tVToolbarSearch);
         setToolbar();
+        //check for TTS data TextToSpeech;
+        Intent checkTTSIntent = new Intent();
+        checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
+        startActivityForResult(checkTTSIntent, MY_DATA_CHECK_CODE);
         Bundle bd = getIntent().getExtras();
         tVToolbarSearch.setText(bd.getString("sSearch"));
         searchTu(bd.getString("sSearch"));
