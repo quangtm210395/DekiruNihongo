@@ -5,13 +5,15 @@
     <string name="listen">Nghe</string>
     <string name="quiz">Quiz</string>
     <string name="flashcards">Flashcards</string>
+    <string name="learn">Learn</string>
+    <string name="speller">Speller</string>
     <string name="title_activity_lesson">LessonActivity</string>
     <string name="action_settings">Settings</string>
     <string name="action_search">Tìm kiếm</string>
-    <string name="book_1">Q1: しょきゅう</string>
-    <string name="book_2">Q2: しょちゅうきゅう</string>
-    <string name="book_3">Q3: ちゅうきゅう</string>
-    <string name="about">Thông tin</string>
+    <string name="book_1">しょきゅう</string>
+    <string name="book_2">しょちゅうきゅう</string>
+    <string name="book_3">ちゅうきゅう</string>
+    <string name="about">Giới thiệu</string>
     <string name="book">Quyển</string>
     <string name="lesson">Bài</string>
     <string name="correct">Kết quả</string>
@@ -22,4 +24,11 @@
     <string name="title_activity_about">Thông tin</string>
     <string name="title_activity_grammar">GrammarActivity</string>
     <string name="title_activity_search_result">SearchResult</string>
+    <string name="learn_vocabulary">Học Từ Vựng</string>
+    <string name="start_over">Bắt đầu lại</string>
+    <string name="next">Tiếp theo</string>
+    <string name="back">Trở lại</string>
+    <color name="silver_1">#D2D2D2</color>
+    <color name="silver_2">#9F9F9F</color>
+    <color name="silver_3">#B4B4B4</color>
 </resources>

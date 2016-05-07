@@ -36,7 +36,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
     TextView tvFlash, tvPhan;
     TextView tvNumRemain, tvNumInCor, tvNumCor, tvCheckInOrCorLearn, tvNghiaLearn, tvWriteTuLearn, tvNumFinish, tvCheckInOrCorSpell, tvNghiaSpell, tvWriteTuSpell;
     EditText edtTuLearn, edtTuSpell;
-    ImageButton iBtnSpeakFlash, iBtnSpeakSpell;
+    Button btnSpeakFlash, btnSpeakSpell;
     boolean checkFlash, checkLearn;
     private TextToSpeech myTTS;
     //status check code
@@ -95,7 +95,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
         tvFlash = (TextView) findViewById(R.id.tvFlash);
         tvPhan = (TextView) findViewById(R.id.tvPhan);
         tVToolbarLearn = (TextView) findViewById(R.id.tVToolbarLearn);
-        iBtnSpeakFlash = (ImageButton) findViewById(R.id.iBtnSpeakFlash);
+        btnSpeakFlash = (Button) findViewById(R.id.btnSpeakFlash);
         // setFromWidget layout Learn
         btnStartOverLearn = (Button) findViewById(R.id.btnStartOverLearn);
         btnNextLearn = (Button) findViewById(R.id.btnNextLearn);
@@ -113,7 +113,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
         tvNghiaSpell = (TextView) findViewById(R.id.tvNghiaSpell);
         tvWriteTuSpell = (TextView) findViewById(R.id.tvWriteTuSpell);
         edtTuSpell = (EditText) findViewById(R.id.edtTuSpell);
-        iBtnSpeakSpell = (ImageButton) findViewById(R.id.iBtnSpeakSpell);
+        btnSpeakSpell = (Button) findViewById(R.id.btnSpeakSpell);
         tvNextSpell = (TextView) findViewById(R.id.tvNextSpell);
 
     }
@@ -121,9 +121,9 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
     private void tabFlashCards() {
         //create tabFlashCards
         TabHost.TabSpec tab;
-        tab = mTabHostLearn.newTabSpec("flashcards");
+        tab = mTabHostLearn.newTabSpec(getString(R.string.flashcards));
         tab.setContent(R.id.tabFlashCards);
-        tab.setIndicator("Flashcards");
+        tab.setIndicator(getString(R.string.flashcards));
         mTabHostLearn.addTab(tab);
         // TODO
         indexFCards = 0;
@@ -165,7 +165,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
                 }
             }
         });
-        iBtnSpeakFlash.setOnClickListener(new View.OnClickListener() {
+        btnSpeakFlash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (checkFlash) {
@@ -178,9 +178,9 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
     private void tabLearn() {
         //create tabLearn
         TabHost.TabSpec tab;
-        tab = mTabHostLearn.newTabSpec("learn");
+        tab = mTabHostLearn.newTabSpec(getString(R.string.learn));
         tab.setContent(R.id.tabLearn);
-        tab.setIndicator("Learn");
+        tab.setIndicator(getString(R.string.learn));
         mTabHostLearn.addTab(tab);
         // TODO
         final TreeMap<String, String> sSai = new TreeMap<>();
@@ -197,11 +197,13 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
                         sAnswerLearn = sLearnTrim.trim();
                         if (sAnswerLearn.equals(sTutmp[indexLearn])) {
                             indexCor++;
+                            tvCheckInOrCorLearn.setTextColor(getResources().getColor(R.color.colorGreenCorrect));
                             setTextAnswerLearn(getString(R.string.CORRECT), "");
                             tvNumCor.setText(indexCor + "");
                         } else {
                             indexInCor++;
                             tvNumInCor.setText(indexInCor + "");
+                            tvCheckInOrCorLearn.setTextColor(getResources().getColor(R.color.colorRedIncor));
                             setTextAnswerLearn(getString(R.string.INCORRECT), getString(R.string.correct) + ": " + sTutmp[indexLearn]);
                             sSai.put(sTutmp[indexLearn], sNghiatmp[indexLearn]);
                         }
@@ -233,9 +235,10 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
                         sSai.keySet().toArray(sTutmp);
                         sSai.values().toArray(sNghiatmp);
                         resetLearn(sSai.size(), sTutmp, sNghiatmp);
-                    } else
+                    } else {
                         tvNumRemain.setText(indexRemain + "");
-                    Toast.makeText(LearnVocabulary.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LearnVocabulary.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -245,9 +248,9 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
     private void tabSpeller() {
         //create tabSpeller
         TabHost.TabSpec tab;
-        tab = mTabHostLearn.newTabSpec("speller");
+        tab = mTabHostLearn.newTabSpec(getString(R.string.speller));
         tab.setContent(R.id.tabSpeller);
-        tab.setIndicator("Speller");
+        tab.setIndicator(getString(R.string.speller));
         mTabHostLearn.addTab(tab);
         // TODO
         resetSpell();
@@ -276,8 +279,8 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
                             sAnswerSpell = sSpellTrim.trim();
                             tvNumFinish.setText(indexFinish + "");
                             if (sAnswerSpell.equals(sTu[indexSpell])) {
-                                tvCheckInOrCorSpell.setTextColor(Color.parseColor("#00FB36"));
-                                setTextAnswerSpell("CORRECT", "");
+                                tvCheckInOrCorSpell.setTextColor(getResources().getColor(R.color.colorGreenCorrect));
+                                setTextAnswerSpell(getString(R.string.CORRECT), "");
                                 indexFinish++;
                                 Handler handler = new Handler();
                                 handler.postDelayed(new Runnable() {
@@ -295,8 +298,8 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
                             } else {
                                 tvNextSpell.setText("Tiếp tục");
                                 rdSpell.remove(indexFinish % sTuLength);
-                                tvCheckInOrCorSpell.setTextColor(Color.parseColor("#FF0000"));
-                                setTextAnswerSpell("INCORRECT", "Correct: " + sTu[indexSpell]);
+                                tvCheckInOrCorSpell.setTextColor(getResources().getColor(R.color.colorRedIncor));
+                                setTextAnswerSpell(getString(R.string.INCORRECT), "Correct: " + sTu[indexSpell]);
                             }
                             checkLearn = false;
                         }
@@ -305,7 +308,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
                 return false;
             }
         });
-        iBtnSpeakSpell.setOnClickListener(new View.OnClickListener() {
+        btnSpeakSpell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 speakWords(sTu[indexSpell]);
@@ -358,7 +361,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
         sTutmp = new String[sTuLength];
         sNghiatmp = new String[sTuLength];
         sTutmp = sTu;
-        sNghia = sNghia;
+        sNghiatmp = sNghia;
         indexRemain = sTuLength;
         rdLearn = new RandomInt(indexRemain);
         indexCor = 0;
@@ -374,7 +377,7 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
         checkEditLearn = true;
         indexLearn = rdLearn.Random();
         tvNumRemain.setText(indexRemain + "");
-        tvNghiaLearn.setText(sNghia[indexLearn]);
+        tvNghiaLearn.setText(sNghiatmp[indexLearn]);
         edtTuLearn.setText("");
         indexRemain--;
         tvCheckInOrCorLearn.setText("");

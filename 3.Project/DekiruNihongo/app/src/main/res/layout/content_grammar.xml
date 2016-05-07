@@ -11,26 +11,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:orientation="vertical">
+        android:paddingTop="@dimen/activity_vertical_margin">
 
         <TextView
             android:id="@+id/tvNameGram"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:text="tên ngữ pháp"
-            android:textColor="@color/colorBlueDark"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorBlueDark" />
 
         <TextView
             android:id="@+id/tvGram"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="ngữ pháp"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorBlack" />
     </LinearLayout>
 
 

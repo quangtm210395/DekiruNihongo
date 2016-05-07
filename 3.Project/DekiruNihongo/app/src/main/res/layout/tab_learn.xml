@@ -11,75 +11,75 @@
 
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/ic_remain"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_remain" />
 
         <TextView
             android:id="@+id/tvNumRemain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="start"
             android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
             android:paddingRight="15dp"
             android:paddingTop="5dp"
             android:singleLine="true"
             android:text="0"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="30dp"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:paddingLeft="10dp" />
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/ic_correct"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_correct" />
 
         <TextView
             android:id="@+id/tvNumCor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="start"
             android:paddingBottom="5dp"
-            android:layout_weight="1"
+            android:paddingLeft="10dp"
             android:paddingRight="15dp"
             android:paddingTop="5dp"
             android:singleLine="true"
             android:text="0"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="30dp"
-            android:textStyle="bold"
-            android:paddingLeft="10dp" />
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/ic_incorrect"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_incorrect" />
 
         <TextView
             android:id="@+id/tvNumIncor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="start"
             android:paddingBottom="5dp"
-            android:layout_weight="1"
+            android:paddingLeft="10dp"
             android:paddingRight="15dp"
             android:paddingTop="5dp"
             android:singleLine="true"
             android:text="0"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="30dp"
-            android:textStyle="bold"
-            android:paddingLeft="10dp" />
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -107,15 +107,18 @@
 
             <EditText
                 android:id="@+id/edtTuLearn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:background="@drawable/edttext"
+                android:background="@drawable/edt_ans"
                 android:hint="@string/answer"
                 android:longClickable="false"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
                 android:singleLine="true"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textIsSelectable="false" />
+                android:textIsSelectable="false"
+                android:textSize="20dp" />
 
         </LinearLayout>
 
@@ -145,11 +148,12 @@
         android:orientation="horizontal">
 
         <Button
-        android:id="@+id/btnStartOverLearn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Start Over" />
+            android:id="@+id/btnStartOverLearn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button2"
+            android:text="@string/start_over" />
 
         <Button
             android:id="@+id/btnNextLearn"
@@ -157,7 +161,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
             android:layout_weight="1"
-            android:text="Next" />
+            android:background="@drawable/button2"
+            android:text="@string/next" />
     </LinearLayout>
 
 

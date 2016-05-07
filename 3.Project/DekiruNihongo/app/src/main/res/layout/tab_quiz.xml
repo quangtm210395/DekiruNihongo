@@ -140,7 +140,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
-            android:text="Start Over" />
+            android:text="@string/start_over" />
 
         <Button
             android:id="@+id/btnNextQuiz"
@@ -148,7 +148,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="75dp"
             android:layout_weight="1"
-            android:text="Next" />
+            android:text="@string/next" />
     </LinearLayout>
 
 </LinearLayout>

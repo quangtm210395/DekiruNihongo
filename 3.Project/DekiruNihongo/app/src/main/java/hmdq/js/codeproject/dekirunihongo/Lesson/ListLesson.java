@@ -30,6 +30,7 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
     DataProvider dp;
     List<String> listLesson;
     String[] sLesson;
+    private Integer[] imgIconid = {R.drawable.icon1,R.drawable.icon2,R.drawable.icon3,R.drawable.icon4,R.drawable.icon5,R.drawable.icon6,R.drawable.icon7,R.drawable.icon8,R.drawable.icon9,R.drawable.icon10,R.drawable.icon11,R.drawable.icon12,R.drawable.icon13,R.drawable.icon14,R.drawable.icon15,R.drawable.icon16,R.drawable.icon17,R.drawable.icon18,R.drawable.icon19,R.drawable.icon20};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,23 +73,7 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
         }
         if (book != null && (book.equals("1") || book.equals("2"))) indexMax = 15;
         else indexMax = 20;
-        ArrayList<String> arrayListLesson = new ArrayList<>();
-        //set tên bài vào danh sách bài
-        if (sLesson.length != 0){
-            for (int i = 1; i <= indexMax; i ++){
-                arrayListLesson.add(getString(R.string.lesson) + " "+ (i) + ": " + sLesson[i-1]);
-            }
-        } else {
-            for (int i = 1; i <= indexMax; i ++){
-                arrayListLesson.add(getString(R.string.lesson) + " "+ (i));
-            }
-        }
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                ListLesson.this,
-                R.layout.simple_list_item,
-                arrayListLesson
-        );
+        CustomListLessonAdapter adapter = new CustomListLessonAdapter(ListLesson.this, sLesson, imgIconid);
         listViewLesson.setAdapter(adapter);
 
         for (int i = 1; i <= indexMax; i++){
