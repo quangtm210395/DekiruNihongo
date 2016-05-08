@@ -9,6 +9,9 @@ public class CommonData {
     private static CommonData ourInstance = new CommonData();
 
     public static CommonData getInstance() {
+        if (ourInstance == null){
+            ourInstance = new CommonData();
+        }
         return ourInstance;
     }
 
