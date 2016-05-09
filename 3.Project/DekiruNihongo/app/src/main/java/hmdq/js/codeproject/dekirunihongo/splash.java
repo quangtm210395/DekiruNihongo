@@ -31,6 +31,11 @@ public class splash extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         txt = (TextView) findViewById(R.id.splashText);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         dp = new DataProvider(this);
         beginLoading();
     }
@@ -62,20 +67,17 @@ public class splash extends AppCompatActivity {
                                 new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
                                     @Override
                                     public void onReceive(String result) {
-                                        Log.v("JSDK",result);
                                         if (result.equals("")) {
                                             Log.v("JSDK", "Failed to update");
                                             enterMain();
                                             return;
                                         }
                                         dp.updateData(String.valueOf(newestRev), result);
-                                        txt.setText("Cập nhật dữ liệu thành công");
                                         Log.v("JSDK","Update succeeded");
                                         enterMain();
                                     }
                                 });
                             } else {
-                                txt.setText("Không có cập nhật mới");
                                 Log.v("JSDK","No new update");
                                 enterMain();
                             }
@@ -107,8 +109,7 @@ public class splash extends AppCompatActivity {
             Handler h = new Handler();
             h.postDelayed(new Runnable() {
                 @Override
-                public void run() {
-                    dp.closeDB();;
+                public void run() {;
                     startActivity(new Intent(splash.this, MainActivity.class));
                     finish();
                 }

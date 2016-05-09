@@ -139,10 +139,6 @@ public class DataProvider {
         gd.execute(url, callback);
     }
 
-    void closeDB() {
-        //db.close();
-    }
-
     interface OnDataReceived {
         void onReceive (String result);
     }
