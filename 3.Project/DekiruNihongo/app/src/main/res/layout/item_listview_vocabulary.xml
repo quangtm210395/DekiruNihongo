@@ -12,7 +12,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="New Text"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:textColor="@color/colorBlack"
                 android:layout_weight="1"
                 android:id="@+id/tvListTu" />
@@ -23,7 +23,7 @@
                 android:layout_weight="1"
                 android:text="New Text"
                 android:textColor="@color/colorBlack"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:id="@+id/tvListNghia" />
 
 </LinearLayout>
