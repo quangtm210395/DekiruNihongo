@@ -46,30 +46,37 @@ public class splash extends AppCompatActivity {
                     dp.requestData("getrev", new DataProvider.OnDataReceived() {
                         @Override
                         public void onReceive(String result) {
+                            Log.v("JSDK",result);
                             try {
                                 newestRev = Integer.parseInt(result);
                             } catch (Exception e) {
                                 e.printStackTrace();
+                                Log.v("JSDK","Failed to update database");
                                 enterMain();
                                 return;
                             }
                             if (localRev != newestRev) {
                                 if (localRev == 0) txt.setText("Lần khởi động đầu tiên sẽ khá lâu\nXin vui lòng đợi trong giây lát");
                                 else txt.setText("Phát hiện cập nhật mới");
+                                Log.v("JSDK","New update found");
                                 new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
                                     @Override
                                     public void onReceive(String result) {
-                                        if ((result.equals("")||(result.charAt(0) != '{'))) {
+                                        Log.v("JSDK",result);
+                                        if (result.equals("")) {
+                                            Log.v("JSDK", "Failed to update");
                                             enterMain();
                                             return;
                                         }
                                         dp.updateData(String.valueOf(newestRev), result);
                                         txt.setText("Cập nhật dữ liệu thành công");
+                                        Log.v("JSDK","Update succeeded");
                                         enterMain();
                                     }
                                 });
                             } else {
                                 txt.setText("Không có cập nhật mới");
+                                Log.v("JSDK","No new update");
                                 enterMain();
                             }
                         }

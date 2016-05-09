@@ -140,7 +140,7 @@ public class DataProvider {
     }
 
     void closeDB() {
-        db.close();
+        //db.close();
     }
 
     interface OnDataReceived {

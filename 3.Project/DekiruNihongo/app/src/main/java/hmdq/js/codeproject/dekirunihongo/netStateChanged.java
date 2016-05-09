@@ -40,7 +40,7 @@ public class netStateChanged extends BroadcastReceiver {
                         @Override
                         public void onReceive(String result) {
                             try {
-                                Log.v("TAG", result);
+                                Log.v("JSDK", result);
                                 newestRev = Integer.parseInt(result);
                             } catch (Exception e) {
                                 e.printStackTrace();
@@ -81,10 +81,5 @@ public class netStateChanged extends BroadcastReceiver {
                 } else manager.cancel(111);
             }
         });
-    }
-
-    boolean isOnline(Context context) {
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(context.CONNECTIVITY_SERVICE);
-        return (cm.getActiveNetworkInfo() != null)&&(cm.getActiveNetworkInfo().isConnected());
     }
 }
