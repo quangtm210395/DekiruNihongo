@@ -175,7 +175,7 @@ public class DataProvider {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            callback.onReceive(s);
+            callback.onReceive(rebuild(s));
         }
     }
 

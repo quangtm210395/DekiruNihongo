@@ -63,7 +63,6 @@ public class splash extends AppCompatActivity {
                                             enterMain();
                                             return;
                                         }
-                                        result = dp.rebuild(result);
                                         dp.updateData(String.valueOf(newestRev), result);
                                         txt.setText("Cập nhật dữ liệu thành công");
                                         enterMain();
