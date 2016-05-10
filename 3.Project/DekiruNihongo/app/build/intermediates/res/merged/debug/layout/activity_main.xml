@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/image_screen"
+    android:orientation="vertical"
+    tools:context="hmdq.js.codeproject.dekirunihongo.MainActivity"
+    android:paddingBottom="15dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_weight="8"
+        android:layout_height="wrap_content"></LinearLayout>
+
+    <ImageButton
+        android:id="@+id/iBtnIcLauncher"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/ic_launcher"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="50dp">
+
+        <ImageButton
+            android:id="@+id/iBtnBook1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/image_book_1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book_1"
+            android:id="@+id/tVBook1"
+            android:layout_gravity="center_vertical"
+            android:textColor="#000000"
+            android:paddingLeft="30dp"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="50dp">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/iBtnBook2"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/image_book_2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book_2"
+            android:id="@+id/tVBook2"
+            android:layout_gravity="center_vertical"
+            android:textColor="#000000"
+            android:paddingLeft="30dp"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="50dp">
+
+        <ImageButton
+            android:id="@+id/iBtnBook3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/image_book_3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="@string/book_3"
+            android:id="@+id/tVBook3"
+            android:layout_gravity="center_vertical"
+            android:textColor="#000000"
+            android:paddingLeft="30dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="50dp">
+
+        <ImageButton
+            android:id="@+id/iBtnAbout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/image_about" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/about"
+            android:id="@+id/tVAbout"
+            android:layout_gravity="center_vertical"
+            android:textColor="#000000"
+            android:paddingLeft="30dp" />
+    </LinearLayout>
+
+</LinearLayout>

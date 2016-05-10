@@ -1,0 +1,438 @@
+[
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_vocabulary.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\tab_vocabulary.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_methods_lesson.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\activity_methods_lesson.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_speller.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\tab_speller.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_splash.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_flashcards.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\tab_flashcards.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_grammar.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\activity_grammar.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_kanji.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\tab_kanji.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_search_result.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\content_search_result.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\layout\\design_layout_tab_text.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\activity_about.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_lean_vocabulary.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\activity_lean_vocabulary.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\layout\\design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_listen.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\tab_listen.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_search_result.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\activity_search_result.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_lesson.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\activity_lesson.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_lesson.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\content_lesson.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_lean_vocabulary.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\content_lean_vocabulary.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_list_lesson.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\activity_list_lesson.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_quiz.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\tab_quiz.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_grammar.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\content_grammar.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_listview_vocabulary.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\item_listview_vocabulary.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_about.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\content_about.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_learn.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\tab_learn.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_test.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\tab_test.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\simple_list_item.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\simple_list_item.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_list_lesson.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\content_list_lesson.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\layout\\design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_grammar.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\layout\\tab_grammar.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\layout\\select_dialog_item_material.xml"
+    }
+]

@@ -1,0 +1,394 @@
+[
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon12.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon12.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button2.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\button2.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\flcard.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\flcard.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_correct.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\ic_correct.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\speaker_click.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\speaker_click.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon1.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon1.png"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon11.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon11.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon14.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon14.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button3.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\button3.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon9.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon9.png"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\image_screen.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\image_screen.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\image_book_2.png",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\image_book_2.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon8.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon8.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\edt_ans.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\edt_ans.png"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\image_book_3.png",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\image_book_3.png"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\image_book_2.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\image_book_2.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon19.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon19.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon10.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon10.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon16.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon16.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon5.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon5.png"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button1.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\button1.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon2.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon2.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon13.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon13.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon18.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon18.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon20.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon20.png"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\image_book_1.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\image_book_1.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_incorrect.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\ic_incorrect.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\image_about.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\image_about.png"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon4.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon4.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\edttext.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\edttext.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon17.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon17.png"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\poster.png",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\poster.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\start_bg.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\start_bg.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon6.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon6.png"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\image_screen.png",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\image_screen.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\textview.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\textview.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon15.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon15.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\image_book_3.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\image_book_3.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\speaker.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\speaker.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\flcard_2.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\flcard_2.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_remain.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\ic_remain.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\start_logo.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\start_logo.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon3.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon3.png"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\dislay_screen.jpg",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\dislay_screen.jpg"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\speaker_2.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\speaker_2.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon7.png",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\icon7.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\image_book_1.png",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\src\\main\\res\\drawable\\image_book_1.png"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "D:\\Project\\GitHub\\DekiruNihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "E:\\Dekiru Nihongo\\trunk\\3.Project\\DekiruNihongo\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.1\\res\\drawable\\abc_btn_check_material.xml"
+    }
+]
