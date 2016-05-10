@@ -23,6 +23,7 @@
                 android:layout_width="match_parent"
                 android:background="?attr/colorPrimary"
                 android:theme="@style/AppTheme.AppBarOverlay"
+                android:gravity="center_vertical|center_horizontal"
                 android:layout_height="wrap_content"></TabWidget>
 
             <FrameLayout
@@ -56,7 +57,15 @@
 
                     <!--<include layout="@layout/tab_listen" />-->
                 <!--</LinearLayout>-->
+                <LinearLayout
+                    android:id="@+id/tabKanji"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
 
+                    <include layout="@layout/tab_kanji" />
+                </LinearLayout>
                 <LinearLayout
                     android:id="@+id/tabQuiz"
                     android:layout_width="match_parent"
@@ -64,14 +73,6 @@
                     android:orientation="vertical">
 
                     <include layout="@layout/tab_quiz" />
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/tabKanji"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <include layout="@layout/tab_kanji" />
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>

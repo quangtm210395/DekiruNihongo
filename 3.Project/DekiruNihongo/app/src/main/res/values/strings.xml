@@ -3,7 +3,8 @@
     <string name="vocabulary">Từ vựng</string>
     <string name="grammar">Ngữ pháp</string>
     <string name="listen">Nghe</string>
-    <string name="quiz">Quiz</string>
+    <string name="kanji">Kanji</string>
+    <string name="quiz">Kiểm tra</string>
     <string name="flashcards">Flashcards</string>
     <string name="learn">Learn</string>
     <string name="speller">Speller</string>
@@ -28,9 +29,12 @@
     <string name="start_over">Bắt đầu lại</string>
     <string name="next">Tiếp theo</string>
     <string name="back">Trở lại</string>
-    <color name="silver_1">#D2D2D2</color>
-    <color name="silver_2">#9F9F9F</color>
-    <color name="silver_3">#B4B4B4</color>
+    <string name="title_activity_kanji">KanjiActivity</string>
+    <string name="title_kanji">Phát âm và từ ghép</string>
+    <string name="title_gram">Giải thích và ví dụ</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name = "about_info">\tDekiru Nihongo là một app được viết để giúp đỡ các bạn sinh viên học tiếng Nhật ở trường Đại học
     FPT nói chung và sinh viên khối ngành SE nói riêng,\n
     \tỨng dụng bao gồm hệ thống các bài học trong sách Dekiru Nihongo, là giáo trình được giảng dạy tại ĐH FPT và gồm các phần Từ vựng,

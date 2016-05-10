@@ -1,35 +1,40 @@
-package hmdq.js.codeproject.dekirunihongo.Grammar;
+package hmdq.js.codeproject.dekirunihongo.Kanji;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import hmdq.js.codeproject.dekirunihongo.R;
 
-public class GrammarActivity extends AppCompatActivity {
-    TextView tvNameGram,tvGram,tVToolbarGram;
+public class KanjiActivity extends AppCompatActivity {
+    private TextView tVToolbarKanji;
+    private TextView tvNameKanji;
+    private TextView tvKanji;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grammar);
+        setContentView(R.layout.activity_kanji);
         setToolbar();
-        tVToolbarGram = (TextView) findViewById(R.id.tVToolbarGram);
-        tvNameGram = (TextView) findViewById(R.id.tvNameGram);
-        tvGram = (TextView) findViewById(R.id.tvGram);
+        tVToolbarKanji = (TextView) findViewById(R.id.tVToolbarKanji);
+        tvNameKanji= (TextView) findViewById(R.id.tvNameKanji);
+        tvKanji = (TextView) findViewById(R.id.tvKanji);
         Bundle bd = getIntent().getExtras();
         if (bd != null){
-            tvGram.setText(bd.getString("gram"));
-            tvNameGram.setText(bd.getString("namegram"));
-            tVToolbarGram.setText(getString(R.string.lesson) + " " + bd.getString("lesson"));
+            tvKanji.setText(bd.getString("kanji"));
+            tvNameKanji.setText(bd.getString("namekanji"));
+            tVToolbarKanji.setText(getString(R.string.lesson) + " " + bd.getString("lesson"));
         }
 
     }
     private void setToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarGram);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarKanji);
         setSupportActionBar(toolbar);
         //Không hiện tiêu đề
         getSupportActionBar().setDisplayShowTitleEnabled(false);

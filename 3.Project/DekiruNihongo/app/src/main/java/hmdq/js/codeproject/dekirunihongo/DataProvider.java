@@ -174,5 +174,4 @@ public class DataProvider {
             callback.onReceive(rebuild(s));
         }
     }
-
 }

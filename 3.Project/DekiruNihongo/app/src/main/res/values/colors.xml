@@ -8,5 +8,10 @@
     <color name="colorGreenCorrect">#00FB36</color>
     <color name="colorRedIncor">#FF0000</color>
     <color name="colorBlack">#000000</color>
+    <color name="silver_1">#D2D2D2</color>
+    <color name="silver_2">#9F9F9F</color>
+    <color name="silver_3">#B4B4B4</color>
+    <color name="colorWhile">#FFFFFF</color>
+    <color name="colorYellow">#ffdd00</color>
 </resources>
 

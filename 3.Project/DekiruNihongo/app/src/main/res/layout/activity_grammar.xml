@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbarLesson"
+            android:id="@+id/toolbarGram"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
@@ -25,14 +25,14 @@
                 android:id="@+id/tVToolbarGram"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:textColor="#ffffff" />
+                android:textColor="@color/colorWhile" />
         </android.support.v7.widget.Toolbar>
         <TextView
             android:layout_width="match_parent"
-            android:text="Giải thích và ví dụ"
+            android:text="@string/title_gram"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:textColor="#ffdd00"
+            android:textColor="@color/colorYellow"
             android:gravity="center_vertical|center_horizontal"
             android:textStyle="bold"
             android:paddingBottom="10dp" />
