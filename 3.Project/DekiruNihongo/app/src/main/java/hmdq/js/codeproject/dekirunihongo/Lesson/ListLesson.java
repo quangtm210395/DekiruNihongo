@@ -9,12 +9,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import hmdq.js.codeproject.dekirunihongo.CommonData;
@@ -38,9 +36,8 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
         // làm toolbar
         setToolbar();
         tVToolbarBook = (TextView) findViewById(R.id.tVToolbarBook);
-
         listViewLesson = (ListView)findViewById(R.id.listViewLesson);
-
+        // lấy dữ liệu được truyền từ MainActivity sang
         Bundle bd = getIntent().getExtras();
         book = "";
         int indexMax;
@@ -69,8 +66,8 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
             } else if (book.equals("3")){
                 tVToolbarBook.setText(getString(R.string.book) + " "+ book + ": ちゅうきゅう");
             }
-
         }
+        // set listView tên bài
         if (book != null && (book.equals("1") || book.equals("2"))) indexMax = 15;
         else indexMax = 20;
         CustomListLessonAdapter adapter = new CustomListLessonAdapter(ListLesson.this, sLesson, imgIconid);
