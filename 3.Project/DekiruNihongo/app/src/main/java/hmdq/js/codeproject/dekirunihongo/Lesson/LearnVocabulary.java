@@ -36,7 +36,7 @@ public class LearnVocabulary extends AppCompatActivity implements SearchView.OnQ
     private SearchView searchView;
     private TabLayout tabLearnVocab;
     private ViewPager viewPagerLearnVocab;
-    private TextView tVToolbarLearn;
+    TextView tVToolbarLearnVocab;
     private String[] sTu;
     private String[] sNghia;
     private String lesson;
@@ -51,7 +51,9 @@ public class LearnVocabulary extends AppCompatActivity implements SearchView.OnQ
         setToolbar();
         // getdata
         getData();
-        tVToolbarLearn = (TextView) findViewById(R.id.tVToolbarLearn);
+        // set tên bài lên toolbar;
+        tVToolbarLearnVocab = (TextView) findViewById(R.id.tVToolbarLearnVocab);
+        tVToolbarLearnVocab.setText(lesson);
         viewPagerLearnVocab = (ViewPager) findViewById(R.id.viewPagerLearnVocab);
         tabLearnVocab = (TabLayout) findViewById(R.id.tabsLearnVocab);
         setupViewPager(viewPagerLearnVocab);
@@ -78,9 +80,6 @@ public class LearnVocabulary extends AppCompatActivity implements SearchView.OnQ
             sTu = bd.getStringArray("Tu");
             sNghia = bd.getStringArray("Nghia");
         }
-        // set tên bài lên toolbar;
-        tVToolbarLearn.setText(getString(R.string.lesson) + " " + lesson);
-        // set tên bài lên toolbar;
     }
 
     private void setupTabText() {
@@ -148,7 +147,7 @@ public class LearnVocabulary extends AppCompatActivity implements SearchView.OnQ
     }
 
     private void setToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarLesson);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarLearn);
         setSupportActionBar(toolbar);
         //Không hiện tiêu đề
         getSupportActionBar().setDisplayShowTitleEnabled(false);

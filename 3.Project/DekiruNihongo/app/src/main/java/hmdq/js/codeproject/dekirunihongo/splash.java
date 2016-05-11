@@ -136,7 +136,7 @@ public class splash extends AppCompatActivity implements TextToSpeech.OnInitList
 
         //speak straight away
         if (myTTS == null){
-            myTTS = new TextToSpeech(this,this);
+            myTTS = new TextToSpeech(splash.this,this);
         }
         if (myTTS != null){
             myTTS.speak(speech, TextToSpeech.QUEUE_FLUSH, null);
@@ -150,7 +150,7 @@ public class splash extends AppCompatActivity implements TextToSpeech.OnInitList
         if (requestCode == MY_DATA_CHECK_CODE) {
             if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
                 //the user has the necessary data - create the TTS
-                myTTS = new TextToSpeech(this, this);
+                myTTS = new TextToSpeech(splash.this, this);
             } else {
                 //no data - install it now
                 Intent installTTSIntent = new Intent();
@@ -168,7 +168,7 @@ public class splash extends AppCompatActivity implements TextToSpeech.OnInitList
             if (myTTS.isLanguageAvailable(Locale.JAPANESE) == TextToSpeech.LANG_AVAILABLE)
                 myTTS.setLanguage(Locale.JAPANESE);
         } else if (initStatus == TextToSpeech.ERROR) {
-            Toast.makeText(this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();
+            Toast.makeText(splash.this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();
         }
     }
 }

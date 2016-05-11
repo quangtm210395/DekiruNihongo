@@ -13,22 +13,21 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbarLesson"
+            android:id="@+id/toolbarLearn"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay">
-
             <TextView
-                android:id="@+id/tVToolbarLearn"
+                android:id="@+id/tVToolbarLearnVocab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bài ...."
                 android:textColor="#ffffff"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-        </android.support.v7.widget.Toolbar>
 
+        </android.support.v7.widget.Toolbar>
         <android.support.design.widget.TabLayout
             android:id="@+id/tabsLearnVocab"
             android:layout_width="match_parent"

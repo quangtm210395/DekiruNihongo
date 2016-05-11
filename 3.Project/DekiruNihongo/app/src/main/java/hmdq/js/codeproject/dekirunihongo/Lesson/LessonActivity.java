@@ -57,7 +57,7 @@ public class LessonActivity extends AppCompatActivity implements SearchView.OnQu
             book = bd.getString("book");
             lessonName = bd.getString("lessonName");
         }
-        tVToolBarLesson.setText("Bài "+ lesson + ": " + lessonName);
+        tVToolBarLesson.setText(getString(R.string.lesson)+ lesson + ": " + lessonName);
         gd = new GetData(this, book, lesson);
     }
 
@@ -94,7 +94,7 @@ public class LessonActivity extends AppCompatActivity implements SearchView.OnQu
     }
 
     public String getLesson() {
-        return lesson;
+        return getString(R.string.lesson)+ lesson + ": " + lessonName;
     }
 
     private void setupTabText() {
