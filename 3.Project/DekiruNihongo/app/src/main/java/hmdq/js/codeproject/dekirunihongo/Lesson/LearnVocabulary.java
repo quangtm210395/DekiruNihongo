@@ -6,68 +6,66 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.TreeMap;
 
 import hmdq.js.codeproject.dekirunihongo.R;
 import hmdq.js.codeproject.dekirunihongo.SearchResult;
+import hmdq.js.codeproject.dekirunihongo.TabFlashcardsFragment;
+import hmdq.js.codeproject.dekirunihongo.TabLearnFragment;
+import hmdq.js.codeproject.dekirunihongo.TabSpellerFragment;
 
-public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.OnInitListener, SearchView.OnQueryTextListener {
+public class LearnVocabulary extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private SearchView searchView;
-    private TextView tvNextSpell;
-    TabHost mTabHostLearn;
-    Button btnBack, btnNext;
-    Button btnStartOverLearn, btnNextLearn, btnStartOverSpell;
-    TextView tVToolbarLearn;
-    TextView tvFlash, tvPhan;
-    TextView tvNumRemain, tvNumInCor, tvNumCor, tvCheckInOrCorLearn, tvNghiaLearn, tvWriteTuLearn, tvNumFinish, tvCheckInOrCorSpell, tvNghiaSpell, tvWriteTuSpell;
-    EditText edtTuLearn, edtTuSpell;
-    Button btnSpeakFlash, btnSpeakSpell;
-    boolean checkFlash, checkLearn;
-    private TextToSpeech myTTS;
-    //status check code
-    private int MY_DATA_CHECK_CODE = 0;
-    private String[] sTu, sTutmp;
-    private String[] sNghia, sNghiatmp;
-    private int indexFCards, indexRemain, indexLearn, indexInCor, indexCor, indexFinish, indexSpell, sTuLength;
-    private String lesson = null;
-    private RandomInt rdLearn, rdSpell;
-    private String sAnswerLearn, sAnswerSpell;
-    private boolean checkEditLearn, checkEditSpell;
+    private TabLayout tabLearnVocab;
+    private ViewPager viewPagerLearnVocab;
+    private TextView tVToolbarLearn;
+    private String[] sTu;
+    private String[] sNghia;
+    private String lesson;
+    private int sTuLength;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lean_vocabulary);
+        setContentView(R.layout.activity_learn_vocabulary);
         // không cho màn hình xoay ngang
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setFromWidget();
         // toolbar
         setToolbar();
         // getdata
         getData();
-        // tabs
-        tabFlashCards();
-        tabLearn();
-        tabSpeller();
-        //check for TTS data TextToSpeech;
-        Intent checkTTSIntent = new Intent();
-        checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
-        startActivityForResult(checkTTSIntent, MY_DATA_CHECK_CODE);
+        tVToolbarLearn = (TextView) findViewById(R.id.tVToolbarLearn);
+        viewPagerLearnVocab = (ViewPager) findViewById(R.id.viewPagerLearnVocab);
+        tabLearnVocab = (TabLayout) findViewById(R.id.tabsLearnVocab);
+        setupViewPager(viewPagerLearnVocab);
+        tabLearnVocab.setupWithViewPager(viewPagerLearnVocab);
+        setupTabText();
+
+    }
+
+    public String[] getsTu() {
+        return sTu;
+    }
+
+    public String[] getsNghia() {
+        return sNghia;
     }
 
     private void getData() {
@@ -81,347 +79,73 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
             sNghia = bd.getStringArray("Nghia");
         }
         // set tên bài lên toolbar;
-        if (lesson != null) {
-            tVToolbarLearn.setText(getString(R.string.lesson) + " " + lesson);
+        tVToolbarLearn.setText(getString(R.string.lesson) + " " + lesson);
+        // set tên bài lên toolbar;
+    }
+
+    private void setupTabText() {
+        TextView tabOne = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tabOne.setText(getString(R.string.flashcards));
+        tabLearnVocab.getTabAt(0).setCustomView(tabOne);
+
+        TextView tabTwo = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tabTwo.setText(getString(R.string.learn));
+        tabLearnVocab.getTabAt(1).setCustomView(tabTwo);
+
+        TextView tabThree = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tabThree.setText(getString(R.string.speller));
+        tabLearnVocab.getTabAt(2).setCustomView(tabThree);
+    }
+
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new TabFlashcardsFragment(), getString(R.string.flashcards));
+        adapter.addFragment(new TabLearnFragment(), getString(R.string.learn));
+        adapter.addFragment(new TabSpellerFragment(), getString(R.string.speller));
+        viewPager.setAdapter(adapter);
+    }
+
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
         }
     }
 
-    private void setFromWidget() {
-        mTabHostLearn = (TabHost) findViewById(R.id.tabHostLearn);
-        mTabHostLearn.setup();
-        // setFromWidget layout flashcards
-        btnBack = (Button) findViewById(R.id.btnBack);
-        btnNext = (Button) findViewById(R.id.btnNext);
-        tvFlash = (TextView) findViewById(R.id.tvFlash);
-        tvPhan = (TextView) findViewById(R.id.tvPhan);
-        tVToolbarLearn = (TextView) findViewById(R.id.tVToolbarLearn);
-        btnSpeakFlash = (Button) findViewById(R.id.btnSpeakFlash);
-        // setFromWidget layout Learn
-        btnStartOverLearn = (Button) findViewById(R.id.btnStartOverLearn);
-        btnNextLearn = (Button) findViewById(R.id.btnNextLearn);
-        tvNumRemain = (TextView) findViewById(R.id.tvNumRemain);
-        tvNumInCor = (TextView) findViewById(R.id.tvNumIncor);
-        tvNumCor = (TextView) findViewById(R.id.tvNumCor);
-        tvCheckInOrCorLearn = (TextView) findViewById(R.id.tvCheckInOrCorLearn);
-        tvNghiaLearn = (TextView) findViewById(R.id.tvNghiaLearn);
-        tvWriteTuLearn = (TextView) findViewById(R.id.tvWriteTuLearn);
-        edtTuLearn = (EditText) findViewById(R.id.edtTuLearn);
-        // setFromWidget layout Speller
-        btnStartOverSpell = (Button) findViewById(R.id.btnStartOverSpell);
-        tvNumFinish = (TextView) findViewById(R.id.tvNumFinish);
-        tvCheckInOrCorSpell = (TextView) findViewById(R.id.tvCheckInOrCorSpell);
-        tvNghiaSpell = (TextView) findViewById(R.id.tvNghiaSpell);
-        tvWriteTuSpell = (TextView) findViewById(R.id.tvWriteTuSpell);
-        edtTuSpell = (EditText) findViewById(R.id.edtTuSpell);
-        btnSpeakSpell = (Button) findViewById(R.id.btnSpeakSpell);
-        tvNextSpell = (TextView) findViewById(R.id.tvNextSpell);
-
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        Intent intentSearch = new Intent(LearnVocabulary.this, SearchResult.class);
+        intentSearch.putExtra("sSearch", query);
+        startActivity(intentSearch);
+        return false;
     }
 
-    private void tabFlashCards() {
-        //create tabFlashCards
-        TabHost.TabSpec tab;
-        tab = mTabHostLearn.newTabSpec(getString(R.string.flashcards));
-        tab.setContent(R.id.tabFlashCards);
-        tab.setIndicator(getString(R.string.flashcards));
-        mTabHostLearn.addTab(tab);
-        // TODO
-        indexFCards = 0;
-        tvFlash.setText(sNghia[indexFCards]);
-        tvPhan.setText((indexFCards + 1) + " / " + sTuLength);
-        checkFlash = false;
-        tvFlash.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (checkFlash) {
-                    tvFlash.setText(sNghia[indexFCards]);
-                    checkFlash = false;
-                } else {
-                    tvFlash.setText(sTu[indexFCards]);
-                    speakWords(sTu[indexFCards]);
-                    checkFlash = true;
-                }
-            }
-        });
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (indexFCards < sTuLength - 1) {
-                    indexFCards = indexFCards + 1;
-                    tvFlash.setText(sNghia[indexFCards]);
-                    tvPhan.setText((indexFCards + 1) + " / " + sTuLength);
-                    checkFlash = false;
-                }
-            }
-        });
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (indexFCards > 0) {
-                    indexFCards = indexFCards - 1;
-                    tvFlash.setText(sNghia[indexFCards]);
-                    tvPhan.setText((indexFCards + 1) + " / " + sTuLength);
-                    checkFlash = false;
-                }
-            }
-        });
-        btnSpeakFlash.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (checkFlash) {
-                    speakWords(sTu[indexFCards]);
-                }
-            }
-        });
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
     }
-
-    private void tabLearn() {
-        //create tabLearn
-        TabHost.TabSpec tab;
-        tab = mTabHostLearn.newTabSpec(getString(R.string.learn));
-        tab.setContent(R.id.tabLearn);
-        tab.setIndicator(getString(R.string.learn));
-        mTabHostLearn.addTab(tab);
-        // TODO
-        final TreeMap<String, String> sSai = new TreeMap<>();
-        resetLearn(sTuLength, sTu, sNghia);
-        edtTuLearn.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    if (checkEditLearn) {
-                        sAnswerLearn = edtTuLearn.getText().toString();
-                        checkEditLearn = false;
-                        STrim sLearnTrim = new STrim(sAnswerLearn);
-                        sAnswerLearn = sLearnTrim.trim();
-                        if (sAnswerLearn.equals(sTutmp[indexLearn])) {
-                            indexCor++;
-                            tvCheckInOrCorLearn.setTextColor(getResources().getColor(R.color.colorGreenCorrect));
-                            setTextAnswerLearn(getString(R.string.CORRECT), "");
-                            tvNumCor.setText(indexCor + "");
-                        } else {
-                            indexInCor++;
-                            tvNumInCor.setText(indexInCor + "");
-                            tvCheckInOrCorLearn.setTextColor(getResources().getColor(R.color.colorRedIncor));
-                            setTextAnswerLearn(getString(R.string.INCORRECT), getString(R.string.correct) + ": " + sTutmp[indexLearn]);
-                            sSai.put(sTutmp[indexLearn], sNghiatmp[indexLearn]);
-                        }
-                    } else edtTuLearn.setText(sAnswerLearn);
-                    return true;
-                }
-                return false;
-            }
-        });
-        btnStartOverLearn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resetLearn(sTuLength, sTu, sNghia);
-            }
-        });
-        btnNextLearn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (indexRemain > 0) {
-                    if (!tvCheckInOrCorLearn.getText().equals("")) {
-                        setTextLearn();
-                    } else {
-                        Toast.makeText(LearnVocabulary.this, "Bạn hãy viết câu trả lời trước khi qua câu tiếp theo", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    if (sSai.size() != 0) {
-                        sTutmp = new String[sSai.size()];
-                        sNghiatmp = new String[sSai.size()];
-                        sSai.keySet().toArray(sTutmp);
-                        sSai.values().toArray(sNghiatmp);
-                        resetLearn(sSai.size(), sTutmp, sNghiatmp);
-                    } else {
-                        tvNumRemain.setText(indexRemain + "");
-                        Toast.makeText(LearnVocabulary.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-        });
-    }
-
-    // thiết lập chức năng speller
-    private void tabSpeller() {
-        //create tabSpeller
-        TabHost.TabSpec tab;
-        tab = mTabHostLearn.newTabSpec(getString(R.string.speller));
-        tab.setContent(R.id.tabSpeller);
-        tab.setIndicator(getString(R.string.speller));
-        mTabHostLearn.addTab(tab);
-        // TODO
-        resetSpell();
-        tvNextSpell.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                indexSpell = rdSpell.Random();
-                if (indexSpell > -1) {
-                    speakWords(sTu[indexSpell]);
-                    nextSpell();
-                } else {
-                    Toast.makeText(LearnVocabulary.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        edtTuSpell.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    if (checkEditSpell) {
-                        checkEditSpell = false;
-                        if (checkLearn) {
-                            sAnswerSpell = edtTuSpell.getText().toString();
-                            STrim sSpellTrim = new STrim(sAnswerSpell);
-                            sAnswerSpell = sSpellTrim.trim();
-                            tvNumFinish.setText(indexFinish + "");
-                            if (sAnswerSpell.equals(sTu[indexSpell])) {
-                                tvCheckInOrCorSpell.setTextColor(getResources().getColor(R.color.colorGreenCorrect));
-                                setTextAnswerSpell(getString(R.string.CORRECT), "");
-                                indexFinish++;
-                                Handler handler = new Handler();
-                                handler.postDelayed(new Runnable() {
-                                    public void run() {
-                                        indexSpell = rdSpell.Random();
-                                        if (indexSpell > -1) {
-                                            speakWords(sTu[indexSpell]);
-                                            nextSpell();
-                                        } else {
-                                            Toast.makeText(LearnVocabulary.this, "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
-                                        }
-
-                                    }
-                                }, 2000);
-                            } else {
-                                tvNextSpell.setText("Tiếp tục");
-                                rdSpell.remove(indexFinish % sTuLength);
-                                tvCheckInOrCorSpell.setTextColor(getResources().getColor(R.color.colorRedIncor));
-                                setTextAnswerSpell(getString(R.string.INCORRECT), "Correct: " + sTu[indexSpell]);
-                            }
-                            checkLearn = false;
-                        }
-                    } else edtTuSpell.setText(sAnswerSpell);
-                }
-                return false;
-            }
-        });
-        btnSpeakSpell.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                speakWords(sTu[indexSpell]);
-            }
-        });
-        btnStartOverSpell.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resetSpell();
-                speakWords(sTu[indexSpell]);
-            }
-        });
-
-    }
-
-    private void setTextAnswerSpell(String inCorOrCor, String correct) {
-        tvNghiaSpell.setText(sNghia[indexSpell]);
-        tvCheckInOrCorSpell.setText(inCorOrCor);
-        tvWriteTuSpell.setText(correct);
-    }
-
-    private void resetSpell() {
-        rdSpell = new RandomInt(sTuLength);
-        indexFinish = 0;
-        tvNumFinish.setText(indexFinish + "");
-        indexSpell = rdSpell.Random();
-        nextSpell();
-    }
-
-    private void nextSpell() {
-        checkEditSpell = true;
-        tvNextSpell.setText("");
-        tvCheckInOrCorSpell.setText("");
-        tvNghiaSpell.setText("");
-        edtTuSpell.setText("");
-        checkLearn = true;
-        tvWriteTuSpell.setText("");
-
-    }
-
-    //TABLEARN
-    // setText khi chọn buttun Answer
-    private void setTextAnswerLearn(String inCorOrCor, String correct) {
-        tvCheckInOrCorLearn.setText(inCorOrCor);
-        tvWriteTuLearn.setText(correct);
-    }
-
-    // reset lại các biến trong tablearn;
-    private void resetLearn(int sTuLength, String[] sTu, String[] sNghia) {
-        sTutmp = new String[sTuLength];
-        sNghiatmp = new String[sTuLength];
-        sTutmp = sTu;
-        sNghiatmp = sNghia;
-        indexRemain = sTuLength;
-        rdLearn = new RandomInt(indexRemain);
-        indexCor = 0;
-        indexInCor = 0;
-        tvNumCor.setText("" + indexCor);
-        tvNumInCor.setText("" + indexInCor);
-        setTextLearn();
-
-    }
-
-    //tạo ra setText toàn bộ learn
-    private void setTextLearn() {
-        checkEditLearn = true;
-        indexLearn = rdLearn.Random();
-        tvNumRemain.setText(indexRemain + "");
-        tvNghiaLearn.setText(sNghiatmp[indexLearn]);
-        edtTuLearn.setText("");
-        indexRemain--;
-        tvCheckInOrCorLearn.setText("");
-        tvWriteTuLearn.setText("");
-    }
-    //TABLEARN
-
-    // TEXT TO SPEECH
-    //speak text
-    private void speakWords(String speech) {
-
-        //speak straight away
-        myTTS.speak(speech, TextToSpeech.QUEUE_FLUSH, null);
-    }
-
-    //kiểm tra kết quả của Text To Speech
-
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        if (requestCode == MY_DATA_CHECK_CODE) {
-            if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
-                //the user has the necessary data - create the TTS
-                myTTS = new TextToSpeech(this, this);
-            } else {
-                //no data - install it now
-                Intent installTTSIntent = new Intent();
-                installTTSIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
-                startActivity(installTTSIntent);
-            }
-        }
-    }
-
-    //thiết lập Text To Speech
-    public void onInit(int initStatus) {
-
-        //check for successful instantiation
-        if (initStatus == TextToSpeech.SUCCESS) {
-            if (myTTS.isLanguageAvailable(Locale.JAPANESE) == TextToSpeech.LANG_AVAILABLE)
-                myTTS.setLanguage(Locale.JAPANESE);
-        } else if (initStatus == TextToSpeech.ERROR) {
-            Toast.makeText(this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();
-        }
-    }
-    // TEXT TO SPEECH
 
     private void setToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarLesson);
@@ -431,7 +155,6 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
         //Hiện nút back
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -461,17 +184,5 @@ public class LearnVocabulary extends AppCompatActivity implements TextToSpeech.O
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        Intent intentSearch = new Intent(LearnVocabulary.this, SearchResult.class);
-        intentSearch.putExtra("sSearch", query);
-        startActivity(intentSearch);
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        return false;
-    }
 
 }

@@ -84,7 +84,7 @@
         android:id="@+id/tvQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Question"
+        android:text="No data"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/colorBlueDark"
         android:textSize="25dp"
@@ -100,7 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Answer 1"
+            android:text="No data"
             android:textSize="20dp" />
 
         <RadioButton
@@ -108,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Answer 2"
+            android:text="No data"
             android:textSize="20dp" />
 
         <RadioButton
@@ -116,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Answer 3"
+            android:text="No data"
             android:textSize="20dp" />
 
         <RadioButton
@@ -124,7 +124,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Answer 4"
+            android:text="No data"
             android:textSize="20dp" />
 
     </RadioGroup>
@@ -138,8 +138,9 @@
             android:id="@+id/btnStartOverQuiz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="bottom|center_horizontal"
             android:layout_weight="1"
+            android:background="@drawable/button2"
             android:text="@string/start_over" />
 
         <Button
@@ -147,8 +148,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="75dp"
+            android:background="@drawable/button2"
             android:layout_weight="1"
-            android:text="@string/next" />
+            android:text="@string/next"
+            android:layout_gravity="bottom" />
     </LinearLayout>
 
 </LinearLayout>

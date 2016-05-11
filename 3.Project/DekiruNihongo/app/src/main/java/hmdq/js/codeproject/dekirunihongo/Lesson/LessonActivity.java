@@ -32,8 +32,8 @@ public class LessonActivity extends AppCompatActivity implements SearchView.OnQu
     private SearchView searchView;
     private String lesson;
     private String book;
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
+    private TabLayout tabLesson;
+    private ViewPager viewPagerLesson;
     private GetData gd;
     private TextView tVToolBarLesson;
     private String lessonName;
@@ -45,10 +45,10 @@ public class LessonActivity extends AppCompatActivity implements SearchView.OnQu
         setToolbar();
 
         tVToolBarLesson = (TextView) findViewById(R.id.tVToolbarLesson);
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
-        tabLayout = (TabLayout) findViewById(R.id.tabsLesson);
-        setupViewPager(viewPager);
-        tabLayout.setupWithViewPager(viewPager);
+        viewPagerLesson = (ViewPager) findViewById(R.id.viewPagerLesson);
+        tabLesson = (TabLayout) findViewById(R.id.tabsLesson);
+        setupViewPager(viewPagerLesson);
+        tabLesson.setupWithViewPager(viewPagerLesson);
         setupTabText();
 
         Bundle bd = getIntent().getExtras();
@@ -100,19 +100,19 @@ public class LessonActivity extends AppCompatActivity implements SearchView.OnQu
     private void setupTabText() {
         TextView tabOne = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tabOne.setText(getString(R.string.vocabulary));
-        tabLayout.getTabAt(0).setCustomView(tabOne);
+        tabLesson.getTabAt(0).setCustomView(tabOne);
 
         TextView tabTwo = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tabTwo.setText(getString(R.string.grammar));
-        tabLayout.getTabAt(1).setCustomView(tabTwo);
+        tabLesson.getTabAt(1).setCustomView(tabTwo);
 
         TextView tabThree = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tabThree.setText(getString(R.string.kanji));
-        tabLayout.getTabAt(2).setCustomView(tabThree);
+        tabLesson.getTabAt(2).setCustomView(tabThree);
 
         TextView tabQuz = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tabQuz.setText(getString(R.string.quiz));
-        tabLayout.getTabAt(3).setCustomView(tabQuz);
+        tabLesson.getTabAt(3).setCustomView(tabQuz);
     }
 
     private void setupViewPager(ViewPager viewPager) {

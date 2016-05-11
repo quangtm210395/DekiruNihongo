@@ -32,6 +32,7 @@ public class TabKanjiFragment extends Fragment {
         sNameKanji = activity.getsNameKanji();
         sKanji = activity.getsKanji();
         lesson = activity.getLesson();
+        if (sKanji.length > 0)
         setListview();
         return view;
     }

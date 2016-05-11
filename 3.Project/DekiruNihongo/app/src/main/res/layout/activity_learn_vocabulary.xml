@@ -17,18 +17,32 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" >
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
             <TextView
+                android:id="@+id/tVToolbarLearn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bài ...."
-                android:id="@+id/tVToolbarLearn"
-                android:textSize="20dp"
                 android:textColor="#ffffff"
-                android:textStyle="bold"/>
+                android:textSize="20dp"
+                android:textStyle="bold" />
         </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabsLearnVocab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="fill"
+            app:tabMode="fixed" />
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_lean_vocabulary" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPagerLearnVocab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    <!--<include layout="@layout/content_lean_vocabulary" />-->
 
 </android.support.design.widget.CoordinatorLayout>
+

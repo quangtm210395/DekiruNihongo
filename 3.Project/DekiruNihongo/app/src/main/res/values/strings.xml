@@ -32,10 +32,12 @@
     <string name="title_activity_kanji">KanjiActivity</string>
     <string name="title_kanji">Phát âm và từ ghép</string>
     <string name="title_gram">Giải thích và ví dụ</string>
-
+    <string name="title_about_info">Giới thiệu</string>
+    <string name="title_about_setting">Cài đặt</string>
+    <string name="welcome">こんにちは!わたしは　できるにほんごです。　いっしょに　べんきょうしましょう。</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name = "about_info">\tDekiru Nihongo là một app được viết để giúp đỡ các bạn sinh viên học tiếng Nhật ở trường Đại học
+    <string name="about_info">\tDekiru Nihongo là một app được viết để giúp đỡ các bạn sinh viên học tiếng Nhật ở trường Đại học
     FPT nói chung và sinh viên khối ngành SE nói riêng,\n
     \tỨng dụng bao gồm hệ thống các bài học trong sách Dekiru Nihongo, là giáo trình được giảng dạy tại ĐH FPT và gồm các phần Từ vựng,
     Ngữ pháp, Kanji và Kiểm tra.\n

@@ -40,6 +40,7 @@ public class TabGrammarFragment extends Fragment {
         sNameGram = activity.getsNameGram();
         sGram = activity.getsGram();
         lesson = activity.getLesson();
+        if (sNameGram.length > 0)
         setListview();
         return view;
     }
