@@ -54,6 +54,10 @@
             android:name=".SearchResult"
             android:label="@string/title_activity_search_result"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Kanji.KanjiActivity"
+            android:label="@string/title_activity_kanji"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

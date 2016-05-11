@@ -1,8 +1,6 @@
 package hmdq.js.codeproject.dekirunihongo.Quiz;
 
-import android.content.Context;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,7 +16,6 @@ import java.util.ArrayList;
 
 import hmdq.js.codeproject.dekirunihongo.Lesson.LessonActivity;
 import hmdq.js.codeproject.dekirunihongo.Lesson.RandomInt;
-import hmdq.js.codeproject.dekirunihongo.Quiz.ArrayQuiz;
 import hmdq.js.codeproject.dekirunihongo.R;
 
 public class TabQuizFragment extends Fragment {
@@ -111,6 +108,9 @@ public class TabQuizFragment extends Fragment {
                     checkAnswer = 0;
                     setQuestion();
                 } else {
+                    if (indexMax == 0){
+                        tvNumRemainTest.setText(0 + "");
+                    } else
                     tvNumRemainTest.setText(indexMax - countQuestion + "");
                     Toast.makeText(getActivity(), "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
                 }
@@ -171,23 +171,26 @@ public class TabQuizFragment extends Fragment {
         countQuestion++;
         rBAnswer1.setText(arrayListQuiz.size() + "");
         ArrayQuiz arrayQuiz = new ArrayQuiz();
-        arrayQuiz = arrayListQuiz.get(indexQuiz);
-        RandomInt rdAnsQuiz = new RandomInt(4);
-        tvQuestion.setText("Câu hỏi" + " " + countQuestion + ": " + arrayQuiz.getQuestion());
-        rBAnswer1.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
-        rBAnswer1.setChecked(false);
-        rBAnswer1.setTextColor(Color.parseColor("#000000"));
-        rBAnswer2.setChecked(false);
-        rBAnswer2.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
-        rBAnswer2.setTextColor(Color.parseColor("#000000"));
-        rBAnswer3.setChecked(false);
-        rBAnswer3.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
-        rBAnswer3.setTextColor(Color.parseColor("#000000"));
-        rBAnswer4.setChecked(false);
-        rBAnswer4.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
-        rBAnswer4.setTextColor(Color.parseColor("#000000"));
-        answerQuiz = arrayQuiz.getAnswer(4).toString();
-        checkAnswer++;
+        if (arrayListQuiz.size() > 0){
+            arrayQuiz = arrayListQuiz.get(indexQuiz);
+            RandomInt rdAnsQuiz = new RandomInt(4);
+            tvQuestion.setText("Câu hỏi" + " " + countQuestion + ": " + arrayQuiz.getQuestion());
+            rBAnswer1.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
+            rBAnswer1.setChecked(false);
+            rBAnswer1.setTextColor(Color.parseColor("#000000"));
+            rBAnswer2.setChecked(false);
+            rBAnswer2.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
+            rBAnswer2.setTextColor(Color.parseColor("#000000"));
+            rBAnswer3.setChecked(false);
+            rBAnswer3.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
+            rBAnswer3.setTextColor(Color.parseColor("#000000"));
+            rBAnswer4.setChecked(false);
+            rBAnswer4.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
+            rBAnswer4.setTextColor(Color.parseColor("#000000"));
+            answerQuiz = arrayQuiz.getAnswer(4).toString();
+            checkAnswer++;
+        }
+
     }
 
 }
