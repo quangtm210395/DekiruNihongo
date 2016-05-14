@@ -11,6 +11,10 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
 
+/**
+ * Class này có nhệm vụ nhận Intent từ Broadcast và kiểm tra kết nối Internet khi trạng thái mạng thay đổi
+ * Tình trạng kết nối đã được comment tại các vị trí
+ */
 public class netStateChanged extends BroadcastReceiver {
     DataProvider dp;
     Context ct;
@@ -25,7 +29,6 @@ public class netStateChanged extends BroadcastReceiver {
         manager = (NotificationManager) ct.getSystemService(Context.NOTIFICATION_SERVICE);
         builder = new NotificationCompat.Builder(ct);
         builder.setSmallIcon(R.drawable.start_logo)
-                .setOngoing(true)
                 .setContentTitle("Dekiru Nihongo")
                 .setContentText("Đã phát hiện kết nối mạng\nĐang kiểm tra cập  nhật");
         manager.notify(111, builder.build());
@@ -67,7 +70,6 @@ public class netStateChanged extends BroadcastReceiver {
                                         PendingIntent p = PendingIntent.getActivity(ct, 1, t, 0);
                                         builder.setContentIntent(p)
                                                 .setAutoCancel(true)
-                                                .setOngoing(false)
                                                 .setPriority(NotificationCompat.PRIORITY_HIGH);
                                         manager.notify(111, builder.build());
                                     }

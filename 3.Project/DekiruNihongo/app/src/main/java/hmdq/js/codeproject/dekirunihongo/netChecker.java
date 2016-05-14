@@ -10,8 +10,13 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Class này có nhiệm vụ kiểm tra kết nối Internet
+ * Cách hoạt động chủ yếu là PING đế Google và xem kết quả
+ */
 public class netChecker extends AsyncTask<netChecker.OnCheckingDone, Void, String> {
     Context context;
+
     OnCheckingDone callback;
 
     interface OnCheckingDone {
