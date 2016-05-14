@@ -11,20 +11,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/ic_remain" />
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/ic_remain"
+            android:layout_gravity="center_vertical" />
 
         <TextView
             android:id="@+id/tvNumRemainTest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="start"
+            android:gravity="center_vertical|start|center_horizontal"
             android:paddingBottom="5dp"
             android:paddingLeft="10dp"
             android:paddingRight="15dp"
@@ -32,12 +34,13 @@
             android:singleLine="true"
             android:text="0"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/ic_correct" />
 
@@ -46,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="start"
+            android:gravity="center_vertical|start|center_horizontal"
             android:paddingBottom="5dp"
             android:paddingLeft="10dp"
             android:paddingRight="15dp"
@@ -54,12 +57,13 @@
             android:singleLine="true"
             android:text="0"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical" />
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/ic_incorrect" />
 
@@ -67,8 +71,7 @@
             android:id="@+id/tvNumIncorTest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="start"
+            android:gravity="center_vertical|start|center_horizontal"
             android:paddingBottom="5dp"
             android:paddingRight="15dp"
             android:paddingLeft="10dp"
@@ -76,8 +79,9 @@
             android:singleLine="true"
             android:text="0"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical" />
     </LinearLayout>
 
     <TextView
@@ -87,8 +91,10 @@
         android:text="No data"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/colorBlueDark"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp" />
 
     <RadioGroup
         android:id="@+id/rGGram"
@@ -101,7 +107,8 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="No data"
-            android:textSize="20dp" />
+            android:textSize="17dp"
+            android:gravity="center_vertical|center_horizontal" />
 
         <RadioButton
             android:id="@+id/rBAnswer2"
@@ -109,7 +116,8 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="No data"
-            android:textSize="20dp" />
+            android:textSize="17dp"
+            android:gravity="center_vertical|center_horizontal" />
 
         <RadioButton
             android:id="@+id/rBAnswer3"
@@ -117,7 +125,8 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="No data"
-            android:textSize="20dp" />
+            android:textSize="17dp"
+            android:gravity="center_vertical|center_horizontal" />
 
         <RadioButton
             android:id="@+id/rBAnswer4"
@@ -125,7 +134,8 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="No data"
-            android:textSize="20dp" />
+            android:textSize="17dp"
+            android:gravity="center_vertical|center_horizontal" />
 
     </RadioGroup>
 
@@ -141,6 +151,7 @@
             android:layout_gravity="bottom|center_horizontal"
             android:layout_weight="1"
             android:background="@drawable/button2"
+            android:textColor="@color/colorWhile"
             android:text="@string/start_over" />
 
         <Button
@@ -151,6 +162,7 @@
             android:background="@drawable/button2"
             android:layout_weight="1"
             android:text="@string/next"
+            android:textColor="@color/colorWhile"
             android:layout_gravity="bottom" />
     </LinearLayout>
 

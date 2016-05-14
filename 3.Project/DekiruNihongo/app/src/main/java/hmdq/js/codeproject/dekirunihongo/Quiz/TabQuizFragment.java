@@ -44,6 +44,7 @@ public class TabQuizFragment extends Fragment {
     private int idRBAnswer = -1;
     private int countQuestion;
     private RandomInt rdQuiz;
+    private Toast toast;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -100,12 +101,25 @@ public class TabQuizFragment extends Fragment {
         btnNextQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                indexQuiz = rdQuiz.Random();
-                if (indexQuiz > -1) {
-                    setQuestion();
+                if (toast != null)
+                    toast.cancel();
+                if (indexMax - countQuestion > 0) {
+                    if (idRBAnswer != -1) {
+                        indexQuiz = rdQuiz.Random();
+                        setQuestion();
+                    } else {
+                        toast = Toast.makeText(getContext(), "Bạn hãy chọn đáp án trước khi làm câu tiếp theo", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
                 } else {
-                    tvNumRemainTest.setText(indexMax - countQuestion + "");
-                    Toast.makeText(getActivity(), "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
+                    if (idRBAnswer != -1) {
+                        tvNumRemainTest.setText(indexMax - countQuestion + "");
+                        toast = Toast.makeText(getActivity(), "Bạn đã hoàn thành", Toast.LENGTH_SHORT);
+                        toast.show();
+                    } else {
+                        toast = Toast.makeText(getContext(), "Bạn hãy chọn đáp án trước khi kết thúc", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
                 }
 
             }
@@ -169,7 +183,7 @@ public class TabQuizFragment extends Fragment {
         ArrayQuiz arrayQuiz = new ArrayQuiz();
         arrayQuiz = arrayListQuiz.get(indexQuiz);
         RandomInt rdAnsQuiz = new RandomInt(4);
-        tvQuestion.setText("Câu hỏi" + " " + countQuestion + ": " + arrayQuiz.getQuestion());
+        tvQuestion.setText("Câu" + " " + countQuestion + ": " + arrayQuiz.getQuestion());
         rBAnswer1.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
         rBAnswer1.setChecked(false);
         rBAnswer1.setTextColor(getResources().getColor(R.color.colorBlack));

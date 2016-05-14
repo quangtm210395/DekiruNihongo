@@ -42,11 +42,12 @@ public class TabKanjiFragment extends Fragment {
         indexMax = sNameKanji.length;
         ArrayList<String> arrayListKanji = new ArrayList<>();
         for (int i = 0; i < indexMax; i++) {
+            sNameKanji[i] = sNameKanji[i].substring(5);
             arrayListKanji.add(sNameKanji[i]);
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 getActivity(),
-                android.R.layout.simple_list_item_1,
+                R.layout.simple_list_item_1,
                 arrayListKanji
         );
         listViewKanji.setAdapter(adapter);

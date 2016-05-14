@@ -22,17 +22,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="tên ngữ pháp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/colorBlueDark" />
+            android:textSize="18dp"
+            android:textColor="@color/colorBlueDark2" />
 
         <TextView
             android:id="@+id/tvGram"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="ngữ pháp"
-            android:textSize="16dp"
+            android:textSize="15dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/colorBlack" />
+            android:textColor="@color/colorBlack"
+            android:paddingTop="10dp" />
     </LinearLayout>
 
 

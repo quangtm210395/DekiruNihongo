@@ -3,6 +3,7 @@ package hmdq.js.codeproject.dekirunihongo.Grammar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -22,9 +23,10 @@ public class GrammarActivity extends AppCompatActivity {
         tvGram = (TextView) findViewById(R.id.tvGram);
         Bundle bd = getIntent().getExtras();
         if (bd != null){
-            tvGram.setText(bd.getString("gram"));
+            String sGram = bd.getString("gram").replaceAll("@","'");
+            tvGram.setText(Html.fromHtml(sGram));
             tvNameGram.setText(bd.getString("namegram"));
-            tVToolbarGram.setText(getString(R.string.lesson) + " " + bd.getString("lesson"));
+            tVToolbarGram.setText(bd.getString("lesson"));
         }
 
     }
@@ -51,9 +53,6 @@ public class GrammarActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
-            case R.id.mnSearch:
-                Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
-                break;
             case android.R.id.home:
                 finish();
                 break;

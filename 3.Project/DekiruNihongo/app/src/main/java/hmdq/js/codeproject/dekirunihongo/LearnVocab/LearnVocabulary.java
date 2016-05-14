@@ -1,65 +1,56 @@
-package hmdq.js.codeproject.dekirunihongo.Lesson;
+package hmdq.js.codeproject.dekirunihongo.LearnVocab;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import hmdq.js.codeproject.dekirunihongo.GetData;
 import hmdq.js.codeproject.dekirunihongo.R;
 import hmdq.js.codeproject.dekirunihongo.SearchResult;
-import hmdq.js.codeproject.dekirunihongo.Grammar.TabGrammarFragment;
-import hmdq.js.codeproject.dekirunihongo.Kanji.TabKanjiFragment;
-import hmdq.js.codeproject.dekirunihongo.Quiz.TabQuizFragment;
-import hmdq.js.codeproject.dekirunihongo.Vocabulary.TabVocabularyFragment;
 
-public class LessonActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
-
+public class LearnVocabulary extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private SearchView searchView;
+    private TabLayout tabLearnVocab;
+    private ViewPager viewPagerLearnVocab;
+    TextView tVToolbarLearnVocab;
+    private String[] sTu;
+    private String[] sNghia;
     private String lesson;
-    private String book;
-    private TabLayout tabLesson;
-    private ViewPager viewPagerLesson;
-    private GetData gd;
-    private TextView tVToolBarLesson;
-    private String lessonName;
+    private int sTuLength;
     private Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson);
-        setToolbar();
-
+        setContentView(R.layout.activity_learn_vocabulary);
         // không cho màn hình xoay ngang
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-        tVToolBarLesson = (TextView) findViewById(R.id.tVToolbarLesson);
-        viewPagerLesson = (ViewPager) findViewById(R.id.viewPagerLesson);
-        tabLesson = (TabLayout) findViewById(R.id.tabsLesson);
-        setupViewPager(viewPagerLesson);
-        tabLesson.setupWithViewPager(viewPagerLesson);
+        // toolbar
+        setToolbar();
+        tVToolbarLearnVocab = (TextView) findViewById(R.id.tVToolbarLearnVocab);
+        viewPagerLearnVocab = (ViewPager) findViewById(R.id.viewPagerLearnVocab);
+        tabLearnVocab = (TabLayout) findViewById(R.id.tabsLearnVocab);
+        setupViewPager(viewPagerLearnVocab);
+        tabLearnVocab.setupWithViewPager(viewPagerLearnVocab);
         setupTabText();
-        //getData
+        // getdata
         getData();
-        viewPagerLesson.setCurrentItem(0);
-        viewPagerLesson.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        viewPagerLearnVocab.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -69,11 +60,12 @@ public class LessonActivity extends AppCompatActivity implements SearchView.OnQu
             public void onPageSelected(int position) {
                 if (toast != null)
                     toast.cancel();
-                if (position == 0){
-
+                if (position == 1) {
+                    toast = Toast.makeText(LearnVocabulary.this, "Viết từ theo nghĩa đã cho", Toast.LENGTH_LONG);
+                    toast.show();
                 }
-                if (position == 3) {
-                    toast = Toast.makeText(LessonActivity.this, "Trả lời câu hỏi với đáp án đúng nhất", Toast.LENGTH_LONG);
+                if (position == 2) {
+                    toast = Toast.makeText(LearnVocabulary.this, "Bấm loa để nghe và viết câu trả lời", Toast.LENGTH_LONG);
                     toast.show();
                 }
             }
@@ -85,93 +77,55 @@ public class LessonActivity extends AppCompatActivity implements SearchView.OnQu
         });
     }
 
-    private void getData() {
-        Bundle bd = getIntent().getExtras();
-        if (bd != null) {
-            lesson = bd.getString("lesson");
-            book = bd.getString("book");
-            lessonName = bd.getString("lessonName");
-        }
-        tVToolBarLesson.setText(getString(R.string.lesson) + " " + lesson + ": " + lessonName);
-        gd = new GetData(this, book, lesson);
-    }
-
     public String[] getsTu() {
-        return gd.getsTu();
+        return sTu;
     }
 
     public String[] getsNghia() {
-        return gd.getsNghia();
+        return sNghia;
     }
 
-    public String[] getsNameGram() {
-        return gd.getsNameGram();
-    }
-
-    public String[] getsGram() {
-        return gd.getsGram();
-    }
-
-    public String[] getsNameKanji() {
-        return gd.getsNameKanji();
-    }
-
-    public String[] getsKanji() {
-        return gd.getsKanji();
-    }
-
-    public String[] getsQuestion() {
-        return gd.getsQuestion();
-    }
-
-    public String[] getsAnswer() {
-        return gd.getsAnswer();
-    }
-
-    public String getLesson() {
-        return getString(R.string.lesson) + " " + lesson + ": " + lessonName;
+    private void getData() {
+        Bundle bd = getIntent().getExtras();
+        if (bd != null) {
+            sTuLength = bd.getInt("sTuLength");
+            sTu = new String[sTuLength];
+            sNghia = new String[sTuLength];
+            lesson = bd.getString("lesson");
+            sTu = bd.getStringArray("Tu");
+            sNghia = bd.getStringArray("Nghia");
+        }
+        tVToolbarLearnVocab.setText(lesson);
     }
 
     private void setupTabText() {
         TextView tabOne = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        tabOne.setText(getString(R.string.vocabulary));
-        tabLesson.getTabAt(0).setCustomView(tabOne);
+        tabOne.setText(getString(R.string.flashcards));
+        tabLearnVocab.getTabAt(0).setCustomView(tabOne);
 
         TextView tabTwo = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        tabTwo.setText(getString(R.string.grammar));
-        tabLesson.getTabAt(1).setCustomView(tabTwo);
+        tabTwo.setText(getString(R.string.learn));
+        tabLearnVocab.getTabAt(1).setCustomView(tabTwo);
 
         TextView tabThree = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        tabThree.setText(getString(R.string.kanji));
-        tabLesson.getTabAt(2).setCustomView(tabThree);
-
-        TextView tabFour = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        tabFour.setText(getString(R.string.quiz));
-        tabLesson.getTabAt(3).setCustomView(tabFour);
+        tabThree.setText(getString(R.string.speller));
+        tabLearnVocab.getTabAt(2).setCustomView(tabThree);
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new TabVocabularyFragment(), getString(R.string.vocabulary));
-        adapter.addFragment(new TabGrammarFragment(), getString(R.string.grammar));
-        adapter.addFragment(new TabKanjiFragment(), getString(R.string.kanji));
-        adapter.addFragment(new TabQuizFragment(), getString(R.string.quiz));
+        adapter.addFragment(new TabFlashcardsFragment(), getString(R.string.flashcards));
+        adapter.addFragment(new TabLearnFragment(), getString(R.string.learn));
+        adapter.addFragment(new TabSpellerFragment(), getString(R.string.speller));
         viewPager.setAdapter(adapter);
     }
 
-
     class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final ArrayList<Fragment> mFragmentList = new ArrayList<>();
-        private final ArrayList<String> mFragmentTitleList = new ArrayList<>();
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
 
         public ViewPagerAdapter(FragmentManager manager) {
             super(manager);
-        }
-
-        @Override
-        public long getItemId(int position) {
-
-            return super.getItemId(position);
         }
 
         @Override
@@ -191,20 +145,31 @@ public class LessonActivity extends AppCompatActivity implements SearchView.OnQu
 
         @Override
         public CharSequence getPageTitle(int position) {
-
             return mFragmentTitleList.get(position);
         }
     }
 
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        Intent intentSearch = new Intent(LearnVocabulary.this, SearchResult.class);
+        intentSearch.putExtra("sSearch", query);
+        startActivity(intentSearch);
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
+    }
+
     private void setToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarLesson);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarLearn);
         setSupportActionBar(toolbar);
         //Không hiện tiêu đề
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         //Hiện nút back
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -231,16 +196,5 @@ public class LessonActivity extends AppCompatActivity implements SearchView.OnQu
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        Intent intentSearch = new Intent(LessonActivity.this, SearchResult.class);
-        intentSearch.putExtra("sSearch", query);
-        startActivity(intentSearch);
-        return false;
-    }
 
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        return false;
-    }
 }

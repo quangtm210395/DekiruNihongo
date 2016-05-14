@@ -98,7 +98,18 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        Intent intentSearch = new Intent(ListLesson.this, SearchResult.class);
+        intentSearch.putExtra("sSearch",query);
+        startActivity(intentSearch);
+        return false;
+    }
 
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -116,27 +127,11 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
-            case R.id.mnSearch:
-                Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
-                break;
             case android.R.id.home:
                 finish();
                 break;
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        Intent intentSearch = new Intent(ListLesson.this, SearchResult.class);
-        intentSearch.putExtra("sSearch",query);
-        startActivity(intentSearch);
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        return false;
     }
 }

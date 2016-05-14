@@ -1,5 +1,6 @@
 package hmdq.js.codeproject.dekirunihongo;
 
+import android.app.Application;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -136,7 +137,7 @@ public class splash extends AppCompatActivity implements TextToSpeech.OnInitList
 
         //speak straight away
         if (myTTS == null){
-            myTTS = new TextToSpeech(splash.this,this);
+            myTTS = new TextToSpeech(this, this);
         }
         if (myTTS != null){
             myTTS.speak(speech, TextToSpeech.QUEUE_FLUSH, null);
@@ -150,7 +151,7 @@ public class splash extends AppCompatActivity implements TextToSpeech.OnInitList
         if (requestCode == MY_DATA_CHECK_CODE) {
             if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
                 //the user has the necessary data - create the TTS
-                myTTS = new TextToSpeech(splash.this, this);
+                myTTS = new TextToSpeech(this, this);
             } else {
                 //no data - install it now
                 Intent installTTSIntent = new Intent();
@@ -171,4 +172,15 @@ public class splash extends AppCompatActivity implements TextToSpeech.OnInitList
             Toast.makeText(splash.this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();
         }
     }
+//    @Override
+//    public void onDestroy()
+//    {
+//        // Don't forget to shutdown!
+//        if (myTTS != null)
+//        {
+//            myTTS.stop();
+//            myTTS.shutdown();
+//        }
+//        super.onDestroy();
+//    }
 }

@@ -19,7 +19,7 @@ public class CustomListLessonAdapter extends ArrayAdapter<String> {
     private final Integer[] imgid;
 
     public CustomListLessonAdapter(Activity context, String[] itemname, Integer[] imgid) {
-        super(context, R.layout.simple_list_item, itemname);
+        super(context, R.layout.simple_list_item_2, itemname);
         // TODO Auto-generated constructor stub
 
         this.context = context;
@@ -30,7 +30,7 @@ public class CustomListLessonAdapter extends ArrayAdapter<String> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
-        View rowView = inflater.inflate(R.layout.simple_list_item, null, true);
+        View rowView = inflater.inflate(R.layout.simple_list_item_2, null, true);
 
         TextView txtTitle = (TextView) rowView.findViewById(R.id.tvListLesson);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.imageIcon);

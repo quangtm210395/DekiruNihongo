@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="hmdq.js.codeproject.dekirunihongo.TabSpellerFragment">
+    tools:context=".LearnVocab.TabSpellerFragment">
 
     <include layout="@layout/tab_speller"></include>
 

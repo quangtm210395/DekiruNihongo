@@ -1,4 +1,4 @@
-package hmdq.js.codeproject.dekirunihongo;
+package hmdq.js.codeproject.dekirunihongo.LearnVocab;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-import hmdq.js.codeproject.dekirunihongo.Lesson.LearnVocabulary;
+import hmdq.js.codeproject.dekirunihongo.R;
 
 
 public class TabFlashcardsFragment extends Fragment implements TextToSpeech.OnInitListener{

@@ -39,11 +39,11 @@
         </receiver>
 
         <activity
-            android:name=".Lesson.LearnVocabulary"
+            android:name=".LearnVocab.LearnVocabulary"
             android:label="@string/title_activity_lean_vocabulary"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".About"
+            android:name=".About.About"
             android:label="@string/title_activity_about"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

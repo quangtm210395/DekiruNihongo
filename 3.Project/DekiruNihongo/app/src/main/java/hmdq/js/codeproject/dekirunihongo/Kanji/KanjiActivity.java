@@ -29,7 +29,7 @@ public class KanjiActivity extends AppCompatActivity {
         if (bd != null){
             tvKanji.setText(bd.getString("kanji"));
             tvNameKanji.setText(bd.getString("namekanji"));
-            tVToolbarKanji.setText(getString(R.string.lesson) + " " + bd.getString("lesson"));
+            tVToolbarKanji.setText(bd.getString("lesson"));
         }
 
     }

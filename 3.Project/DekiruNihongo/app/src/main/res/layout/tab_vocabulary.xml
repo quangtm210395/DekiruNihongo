@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <ListView
+        android:id="@+id/listViewVocabulary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listViewVocabulary"
         android:layout_weight="1" />
 
     <Button
+        android:id="@+id/btnLearn"
+        android:text="@string/learn_vocabulary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/learn_vocabulary"
+        android:layout_weight="1"
+        android:textColor="@color/colorWhile"
         android:background="@drawable/button2"
-        android:id="@+id/btnLearn" />
+        android:layout_gravity="bottom"
+         />
 </LinearLayout>

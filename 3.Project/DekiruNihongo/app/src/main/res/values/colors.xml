@@ -13,5 +13,7 @@
     <color name="silver_3">#B4B4B4</color>
     <color name="colorWhile">#FFFFFF</color>
     <color name="colorYellow">#ffdd00</color>
+    <color name="colorBlueDark2">#0b50c7</color>
+    <color name="colorBlueLight2">#00a17e</color>
 </resources>
 

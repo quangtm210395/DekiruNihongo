@@ -60,20 +60,20 @@ public class DataProvider {
         db.execSQL("UPDATE info SET rev=" + rev + ", dat='" + data + "' where (num=1)");
     }
 
-    public String rebuild(String s) {
-        StringBuilder sb = new StringBuilder();
-        char[] chars = s.toCharArray();
-        for (char c : chars) {
-            switch (c) {
-                case '*':
-                    sb.append(System.getProperty("line.separator"));
-                    break;
-                default:
-                    sb.append(c);
-            }
-        }
-        return sb.toString();
-    }
+//    public String rebuild(String s) {
+//        StringBuilder sb = new StringBuilder();
+//        char[] chars = s.toCharArray();
+//        for (char c : chars) {
+//            switch (c) {
+//                case '*':
+//                    sb.append(System.getProperty("line.separator"));
+//                    break;
+//                default:
+//                    sb.append(c);
+//            }
+//        }
+//        return sb.toString();
+//    }
 
     public TreeMap<String, String> getData(String book, String part, String lesson) {
         String tableName = part + book;
@@ -171,7 +171,7 @@ public class DataProvider {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            callback.onReceive(rebuild(s));
+            callback.onReceive(s);
         }
     }
 }

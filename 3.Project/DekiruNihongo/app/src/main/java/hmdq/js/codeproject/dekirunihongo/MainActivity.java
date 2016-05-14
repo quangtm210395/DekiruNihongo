@@ -2,7 +2,6 @@ package hmdq.js.codeproject.dekirunihongo;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.os.Handler;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
@@ -11,8 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Locale;
-
+import hmdq.js.codeproject.dekirunihongo.About.About;
 import hmdq.js.codeproject.dekirunihongo.Lesson.ListLesson;
 
 public class MainActivity extends AppCompatActivity{

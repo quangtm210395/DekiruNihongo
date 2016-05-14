@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import hmdq.js.codeproject.dekirunihongo.Lesson.LearnVocabulary;
+import hmdq.js.codeproject.dekirunihongo.LearnVocab.LearnVocabulary;
 import hmdq.js.codeproject.dekirunihongo.Lesson.LessonActivity;
 import hmdq.js.codeproject.dekirunihongo.R;
 
