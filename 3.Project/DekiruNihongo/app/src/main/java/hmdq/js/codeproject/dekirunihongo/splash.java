@@ -1,12 +1,9 @@
 package hmdq.js.codeproject.dekirunihongo;
 
-import android.app.Application;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.content.pm.ActivityInfo;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -18,11 +15,12 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
 
 import java.util.Locale;
 
-public class splash extends AppCompatActivity implements TextToSpeech.OnInitListener {
+public class splash extends AppCompatActivity implements TextToSpeech.OnInitListener{
     DataProvider dp;
     TextView txt;
     ImageView bg;
@@ -36,6 +34,10 @@ public class splash extends AppCompatActivity implements TextToSpeech.OnInitList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        //check for TTS data TextToSpeech;
+        Intent checkTTSIntent = new Intent();
+        checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
+        startActivityForResult(checkTTSIntent, MY_DATA_CHECK_CODE);
         // không cho màn hình xoay ngang
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // full screen
@@ -46,10 +48,6 @@ public class splash extends AppCompatActivity implements TextToSpeech.OnInitList
         lg = (RelativeLayout) findViewById(R.id.logo);
         cp = (CircularProgressView) findViewById(R.id.cp);
         bg.setAlpha(0f);
-        //check for TTS data TextToSpeech;
-        Intent checkTTSIntent = new Intent();
-        checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
-        startActivityForResult(checkTTSIntent, MY_DATA_CHECK_CODE);
     }
 
     @Override
@@ -65,7 +63,7 @@ public class splash extends AppCompatActivity implements TextToSpeech.OnInitList
     void beginLoading() {
         super.onStart();
         cp.startAnimation();
-        cp.setColor(Color.parseColor("#01579B"));
+        cp.setColor(Color.parseColor("#289335"));
         netChecker checker = new netChecker(this);
         checker.execute(new netChecker.OnCheckingDone() {
             @Override
@@ -87,7 +85,7 @@ public class splash extends AppCompatActivity implements TextToSpeech.OnInitList
                             if (localRev != newestRev) {
                                 if (localRev == 0) txt.setText("Lần khởi động đầu tiên sẽ khá lâu\nXin vui lòng đợi trong giây lát");
                                 else txt.setText("Phát hiện cập nhật mới");
-                                cp.setColor(Color.parseColor("#E57373"));
+                                cp.setColor(Color.parseColor("#289335"));
                                 Log.v("JSDK","New update found");
                                 new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
                                     @Override
@@ -133,12 +131,12 @@ public class splash extends AppCompatActivity implements TextToSpeech.OnInitList
         } else {
             txt.setText("Tải dữ liệu xong");
             cp.setIndeterminate(false);
-            cp.setColor(Color.parseColor("#8BC34A"));
+            cp.setColor(Color.parseColor("#2bae2a"));
             cp.setProgress(100);
             Handler h = new Handler();
             h.postDelayed(new Runnable() {
                 @Override
-                public void run() {;
+                public void run() {
                     speakWords(getString(R.string.welcome));
                     startActivity(new Intent(splash.this, MainActivity.class));
                     finish();
@@ -184,18 +182,7 @@ public class splash extends AppCompatActivity implements TextToSpeech.OnInitList
             if (myTTS.isLanguageAvailable(Locale.JAPANESE) == TextToSpeech.LANG_AVAILABLE)
                 myTTS.setLanguage(Locale.JAPANESE);
         } else if (initStatus == TextToSpeech.ERROR) {
-            Toast.makeText(splash.this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();
         }
     }
-//    @Override
-//    public void onDestroy()
-//    {
-//        // Don't forget to shutdown!
-//        if (myTTS != null)
-//        {
-//            myTTS.stop();
-//            myTTS.shutdown();
-//        }
-//        super.onDestroy();
-//    }
 }

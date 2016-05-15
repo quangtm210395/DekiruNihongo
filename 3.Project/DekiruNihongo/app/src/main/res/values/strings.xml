@@ -38,18 +38,20 @@
     <string name="title_about_setting">Cài đặt</string>
     <string name="title_about_info_team">Thông tin</string>
     <string name="title_about_note">Lưu ý</string>
-    <string name="welcome">こんにちは!わたしは　できるにほんごです。　いっしょに　べんきょうしましょう。</string>
+    <string name="welcome">ようこそ!できるにほんごです。  </string>
+    <string name="linktts">https://play.google.com/store/apps/details?id=com.google.android.tts</string>
+    <string name="link_input">https://play.google.com/store/apps/details?id=com.google.android.inputmethod.japanese</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="about_note">Note</string>
-    <string name="about_info">\t\t\tDekiru Nihongo là một ứng dụng được viết để giúp đỡ các bạn sinh viên học tiếng Nhật ở trường Đại học
-    FPT nói chung và sinh viên khối ngành SE nói riêng,\n\n
+    <string name="about_info">\n\t\t\tDekiru Nihongo là một ứng dụng được viết để giúp đỡ các bạn sinh viên học tiếng Nhật ở trường Đại học
+    FPT nói chung và sinh viên khối ngành SE nói riêng. Ứng dụng được phát triển bởi HMĐQ Team gồm các thành viên thuộc câu lạc bộ JS -
+        Kĩ sư cầu nối Nhật Bản.\n\n
     \t\t\tỨng dụng bao gồm hệ thống các bài học trong sách Dekiru Nihongo, là giáo trình được giảng dạy tại ĐH FPT và gồm các phần Từ vựng,
     Ngữ pháp, Kanji và Kiểm tra.\n\n
     \t\t\tỞ phần từ vựng có các tùy chọn để luyện tập và học thuộc từ mới một cách dễ dàng nhất. Ngoài ra ứng dụng còn hỗ trợ phát âm các từ vựng.\n\n
-    \t\t\tVì vậy các bạn phải cài đặt Text To Speech (chuyển văn bản sang giọng nói) để có thể trải nghiệm tính năng hữu ích này, cách cài đặt sẽ được hướng dẫn ở phần cài đặt.\n\n
-        \t\t\tỨng dụng được phát triển bởi HMĐQ Team gồm các thành viên thuộc clb JS - Kĩ sư cầu nối Nhật Bản.\n\n
+    \t\t\tĐể có thể sử dụng tính năng này, bạn cần cài đặt Text To Speech (chuyển văn bản sang giọng nói), cách cài đặt sẽ được hướng dẫn chi tiết ở phần Cài đặt.\n\n
     </string>
-    <string name="about_setting">\t\t\tĐể sử dụng ứng dụng đầy đủ chức năng chúng ta cần cài đặt một số phần mềm hỗ trợ như sau.\n\n
+    <string name="about_setting">\n\t\t\tĐể sử dụng ứng dụng đầy đủ chức năng chúng ta cần cài đặt một số phần mềm hỗ trợ như sau.\n\n
     \t\t\t- Đầu tiên các bạn vào Play Store (CH play), gõ \"Google Text To Speech( Chuyển văn bản thành giọng nói của Google)\" và ấn cài đặt. Sau khi cài đặt xong:\n
         \t\t\t\tB1: Các bạn vào Setting -> Language and Input
         (Ngôn ngữ và bàn phím) -> Text To Speech (Chuyển văn bản sang giọng nói).\n

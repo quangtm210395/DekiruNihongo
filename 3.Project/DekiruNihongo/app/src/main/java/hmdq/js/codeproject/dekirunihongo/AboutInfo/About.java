@@ -41,16 +41,12 @@ public class About extends AppCompatActivity {
         tabAbout.getTabAt(0).setCustomView(tabOne);
 
         TextView tabTwo = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        tabTwo.setText(getString(R.string.title_about_note));
+        tabTwo.setText(getString(R.string.title_about_info_team));
         tabAbout.getTabAt(1).setCustomView(tabTwo);
 
         TextView tabThree = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        tabThree.setText(getString(R.string.title_about_info_team));
+        tabThree.setText(getString(R.string.title_about_setting));
         tabAbout.getTabAt(2).setCustomView(tabThree);
-
-        TextView tabFour = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
-        tabFour.setText(getString(R.string.title_about_setting));
-        tabAbout.getTabAt(3).setCustomView(tabFour);
 
 
     }
@@ -58,7 +54,6 @@ public class About extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new AboutInfoFragment(), getString(R.string.title_about_info));
-        adapter.addFragment(new AboutNoteFragment(), getString(R.string.title_about_note));
         adapter.addFragment(new AboutInfoTeamFragment(), getString(R.string.title_about_info_team));
         adapter.addFragment(new AboutSettingFragment(), getString(R.string.title_about_setting));
         viewPager.setAdapter(adapter);

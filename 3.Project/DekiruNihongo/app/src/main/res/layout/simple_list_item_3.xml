@@ -39,6 +39,7 @@
             android:id="@+id/tvListBook"
             android:layout_width="match_parent"
             android:textSize="20dp"
+            android:textColor="@color/colorBlack"
             android:layout_height="wrap_content"
             android:text="name book"/>
         <TextView

@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/title_book"
                     android:textColor="@color/colorWhite"
-                    android:textSize="28dp" />
+                    android:textSize="30dp" />
 
                 <TextView
                     android:id="@+id/tvWelcomeVN"
@@ -76,6 +76,7 @@
         android:background="@drawable/button4"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/about"
+        android:textColor="@color/colorWhite"
         android:textAllCaps="false" />
 </LinearLayout>
 
