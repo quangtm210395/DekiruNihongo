@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="hmdq.js.codeproject.dekirunihongo.Grammar.GrammarActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarGram"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bài ...."
+                android:id="@+id/tVToolbarGram"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorWhite" />
+        </android.support.v7.widget.Toolbar>
+        <TextView
+            android:layout_width="match_parent"
+            android:text="@string/title_gram"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/colorYellow"
+            android:gravity="center_vertical|center_horizontal"
+            android:textStyle="bold"
+            android:paddingBottom="10dp" />
+
+    </android.support.design.widget.AppBarLayout>
+    <include layout="@layout/content_grammar" />
+
+</android.support.design.widget.CoordinatorLayout>

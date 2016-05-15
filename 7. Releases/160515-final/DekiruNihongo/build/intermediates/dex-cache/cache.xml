@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.0.1_2497e272a0d5990d83ea59bad3cc415e1dcda1d4\classes.dex" />
+    </item>
+    <item
+        jar="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c60288d0cffdeee73993ccac6c2129ad52de8ba8">
+        <dex dex="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_a0435ad82664af3174306fe8630d8b019f41d534\classes.dex" />
+    </item>
+    <item
+        jar="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.1_34d12712c8f35548c46a38032978346188a00e78\classes.dex" />
+    </item>
+    <item
+        jar="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d8872411ae18e659f0b616a7207788f820b86b1f">
+        <dex dex="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2a50105b8d3722c634e4d6d94c266d7818db3374\classes.dex" />
+    </item>
+    <item
+        jar="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\exploded-aar\com.github.rahatarmanahmed\circularprogressview\2.5.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="83546b0a7a55c89fcaa55ff282812a4e052e81fe">
+        <dex dex="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.rahatarmanahmed-circularprogressview-2.5.0_451bddb186b9849fd0ec7237e30d349ab8ccfb92\classes.dex" />
+    </item>
+    <item
+        jar="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.0.1_c102ac405a6b6298b3189d430797d598891f39df\classes.dex" />
+    </item>
+    <item
+        jar="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.0.1_a22120077bb70c0272e8a1fcc5724bb305897590\classes.dex" />
+    </item>
+    <item
+        jar="D:\Android-sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="F:\New folder (5)\trunk\3.Project\DekiruNihongo\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.0.1_57f60bca40773f00e7d3f65f36e959c52671c4fa\classes.dex" />
+    </item>
+
+</items>
