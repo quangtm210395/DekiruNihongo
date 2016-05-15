@@ -36,7 +36,7 @@ public class    splash extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         lg.animate().setDuration(1500).translationY(-90);
-        bg.animate().setDuration(3000).alpha(1.0f);
+        bg.animate().setDuration(2000).alpha(1.0f);
         txt.setText("Đang tải...");
         dp = new DataProvider(this);
         beginLoading();
