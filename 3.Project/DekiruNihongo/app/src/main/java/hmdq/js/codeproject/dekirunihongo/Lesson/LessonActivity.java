@@ -70,7 +70,7 @@ public class LessonActivity extends AppCompatActivity implements SearchView.OnQu
                 if (position == 0) {
 
                 }
-                if (position == 3) {
+                if (position == 3 && gd.getsQuestion().length > 0) {
                     toast = Toast.makeText(LessonActivity.this, "Trả lời câu hỏi với đáp án đúng nhất", Toast.LENGTH_LONG);
                     toast.show();
                 }
