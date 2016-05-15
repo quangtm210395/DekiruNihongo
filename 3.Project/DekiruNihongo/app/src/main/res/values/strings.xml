@@ -49,18 +49,22 @@
     \t\t\tỨng dụng bao gồm hệ thống các bài học trong sách Dekiru Nihongo, là giáo trình được giảng dạy tại ĐH FPT và gồm các phần Từ vựng,
     Ngữ pháp, Kanji và Kiểm tra.\n\n
     \t\t\tỞ phần từ vựng có các tùy chọn để luyện tập và học thuộc từ mới một cách dễ dàng nhất. Ngoài ra ứng dụng còn hỗ trợ phát âm các từ vựng.\n\n
-    \t\t\tĐể có thể sử dụng tính năng này, bạn cần cài đặt Text To Speech (chuyển văn bản sang giọng nói), cách cài đặt sẽ được hướng dẫn chi tiết ở phần Cài đặt.\n\n
+    \t\t\tĐể có thể sử dụng tính năng này, bạn cần cài đặt Text To Speech (chuyển văn bản sang giọng nói), bạn có thể xem hướng dẫn chi tiết ở phần Cài đặt.\n\n
+        \t\t\tỞ phần Ngữ pháp và Kanji thì mỗi bài đều có một lượng kiến thức nhất định trong sách và đã được giải thích bằng tiếng Việt, có ví dụ minh họa cho dễ hiểu.\n\n
+        \t\t\tPhần Kiểm tra thì ứng dụng hỗ trợ các bạn luyện tập với một số câu hỏi trắc nghiệm bám sát bài học để các bạn có thể ôn tập và nắm vững kiến thức.\n\n
+        \t\t\tVới những chức năng được xây dựng hoàn toàn phục vụ sinh viên học tập tiếng Nhật, đội ngũ Developer mong muốn tất cả các sinh viên đều có thể Passed các môn Nhật
+        đều đều. Chúc các bạn trải nghiệm Ứng dụng thật vui vẻ và hữu ích.\n
     </string>
     <string name="about_setting">\n\t\t\tĐể sử dụng ứng dụng đầy đủ chức năng chúng ta cần cài đặt một số phần mềm hỗ trợ như sau.\n\n
-    \t\t\t- Đầu tiên các bạn vào Play Store (CH play), gõ \"Google Text To Speech( Chuyển văn bản thành giọng nói của Google)\" và ấn cài đặt. Sau khi cài đặt xong:\n
+    \t\t\t- Đầu tiên bạn cần cài \"Google Text To Speech( Chuyển văn bản thành giọng nói của Google)\", link trực tiếp từ Google Play được đặt ở ngay cuối trang. Sau khi cài đặt xong:\n
         \t\t\t\tB1: Các bạn vào Setting -> Language and Input
         (Ngôn ngữ và bàn phím) -> Text To Speech (Chuyển văn bản sang giọng nói).\n
         \t\t\t\tB2: Chuyển dấu tích sang Google Text To Speech (Chuyển văn bản sang giọng nói của Google). Rồi ấn vào icon setting của lựa chọn này.\n
         \t\t\t\tB3: Các bạn lựa chọn ngôn ngữ là Japanese.\n
         \t\t\t\tB4: Setting voice Data ( Cài đặt dữ liệu thoại), kéo xuống chọn Japanese và tải xuống Voice của ngôn ngữ này.\n
         \t\t\t\tB5: Sau đó bạn trở lại cài đặt Text To Speech và chọn Listen to an example để nghe ví dụ.\n\n
-    \t\t\t- Tiếp theo các bạn cần phải cài đặt bàn phím tiếng Nhật để gõ được tiếng Nhật trong ứng dụng. Các bạn cũng vào Play Store và gõ \"Google Japanese
-        input( Phương thức nhập tiếng Nhật của Google)\", và ấn cài đặt. Sau khi cài đặt xong:\n
+    \t\t\t- Tiếp theo bạn cần cài đặt bàn phím tiếng Nhật để gõ được tiếng Nhật trong ứng dụng cũng như các mục đích học tập tiếng Nhật khác.
+        Link trực tiếp từ Google Play được đặt ở ngay cuối trang. Sau khi cài đặt xong:\n
         \t\t\t\tB1: Các bạn vào Setting -> Language and Input
         (Ngôn ngữ và bàn phím) -> Tích vào ô của Google Japanese Input để kích hoạt bàn phím.\n
         \t\t\t\tB2: Các bạn ấn vào setting của Google Japanese Input để cài đặt.\n
@@ -68,7 +72,7 @@
         \t\t\t\tB4: Ở phần Software keyboard preferences for portrait mode các bạn chỉnh layout sang QWERTY và kéo xuống phần
         Software keyboard preferences for landscape mode, tắt tích use portrait setting đi và cũng chỉnh layout lại thành QWERTY.\n\n
         \t\t\t\tHoàn thành, lúc nào cần nhập tiếng Nhật các bạn chỉ cần chọn bàn phím tiếng Nhật và dùng thôi.
-        Như vậy là các bạn đã hoàn thành phần cài đặt phần bổ trợ, bây giờ chỉ thì hãy trải nghiệm ứng dụng thôi nào!
+        Như vậy là các bạn đã hoàn thành phần cài đặt phần bổ trợ, bây giờ thì hãy trải nghiệm ứng dụng thôi nào!
     </string>
     <string name="about_info_team">
 <![CDATA[
