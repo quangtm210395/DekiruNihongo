@@ -141,7 +141,7 @@ public class splash extends AppCompatActivity implements TextToSpeech.OnInitList
                     startActivity(new Intent(splash.this, MainActivity.class));
                     finish();
                 }
-            }, 1000);
+            }, 2000);
         }
     }
     // TEXT TO SPEECH
