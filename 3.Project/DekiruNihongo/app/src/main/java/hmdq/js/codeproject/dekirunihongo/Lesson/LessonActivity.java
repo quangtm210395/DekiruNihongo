@@ -69,7 +69,7 @@ public class LessonActivity extends AppCompatActivity implements SearchView.OnQu
             public void onPageSelected(int position) {
                 if (toast != null)
                     toast.cancel();
-                if (position == 0){
+                if (position == 0) {
 
                 }
                 if (position == 3) {
@@ -218,6 +218,20 @@ public class LessonActivity extends AppCompatActivity implements SearchView.OnQu
     }
 
     @Override
+    public boolean onQueryTextSubmit(String query) {
+        Intent intentSearch = new Intent(LessonActivity.this, SearchResult.class);
+        intentSearch.putExtra("sSearch", query);
+        searchView.clearFocus();
+        startActivity(intentSearch);
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -231,16 +245,5 @@ public class LessonActivity extends AppCompatActivity implements SearchView.OnQu
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        Intent intentSearch = new Intent(LessonActivity.this, SearchResult.class);
-        intentSearch.putExtra("sSearch", query);
-        startActivity(intentSearch);
-        return false;
-    }
 
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        return false;
-    }
 }

@@ -22,13 +22,14 @@ import hmdq.js.codeproject.dekirunihongo.SearchResult;
 
 public class ListLesson extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private SearchView searchView;
-    ListView listViewLesson;
-    TextView tVToolbarBook;
-    String book;
-    DataProvider dp;
-    List<String> listLesson;
-    String[] sLesson;
-    private Integer[] imgIconid = {R.drawable.icon1,R.drawable.icon2,R.drawable.icon3,R.drawable.icon4,R.drawable.icon5,R.drawable.icon6,R.drawable.icon7,R.drawable.icon8,R.drawable.icon9,R.drawable.icon10,R.drawable.icon11,R.drawable.icon12,R.drawable.icon13,R.drawable.icon14,R.drawable.icon15,R.drawable.icon16,R.drawable.icon17,R.drawable.icon18,R.drawable.icon19,R.drawable.icon20};
+    private ListView listViewLesson;
+    private TextView tVToolbarBook;
+    private String book;
+    private DataProvider dp;
+    private List<String> listLesson;
+    private String[] sLesson;
+    private Integer[] imgIconid = {R.drawable.icon1, R.drawable.icon2, R.drawable.icon3, R.drawable.icon4, R.drawable.icon5, R.drawable.icon6, R.drawable.icon7, R.drawable.icon8, R.drawable.icon9, R.drawable.icon10, R.drawable.icon11, R.drawable.icon12, R.drawable.icon13, R.drawable.icon14, R.drawable.icon15, R.drawable.icon16, R.drawable.icon17, R.drawable.icon18, R.drawable.icon19, R.drawable.icon20};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +37,12 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
         // làm toolbar
         setToolbar();
         tVToolbarBook = (TextView) findViewById(R.id.tVToolbarBook);
-        listViewLesson = (ListView)findViewById(R.id.listViewLesson);
+        listViewLesson = (ListView) findViewById(R.id.listViewLesson);
         // lấy dữ liệu được truyền từ MainActivity sang
         Bundle bd = getIntent().getExtras();
         book = "";
         int indexMax;
-        if (bd != null){
+        if (bd != null) {
             book = bd.getString("book");
         }
 
@@ -51,20 +52,20 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
 
         // lấy danh sách tên bài
         dp = new DataProvider(this);
-        if (dp != null){
-            listLesson = dp.getListLesson(book,"vocab");
+        if (dp != null) {
+            listLesson = dp.getListLesson(book, "vocab");
             sLesson = new String[listLesson.size()];
             if (listLesson != null) sLesson = listLesson.toArray(sLesson);
         }
 
         // set tên sách lên toolbar;
         if (book != null) {
-            if (book.equals("1")){
-                tVToolbarBook.setText(getString(R.string.book) + " "+ book + ": しょきゅう");
-            } else if (book.equals("2")){
-                tVToolbarBook.setText(getString(R.string.book) + " "+ book + ": しょちゅうきゅう");
-            } else if (book.equals("3")){
-                tVToolbarBook.setText(getString(R.string.book) + " "+ book + ": ちゅうきゅう");
+            if (book.equals("1")) {
+                tVToolbarBook.setText(getString(R.string.book) + " " + book + ": しょきゅう");
+            } else if (book.equals("2")) {
+                tVToolbarBook.setText(getString(R.string.book) + " " + book + ": しょちゅうきゅう");
+            } else if (book.equals("3")) {
+                tVToolbarBook.setText(getString(R.string.book) + " " + book + ": ちゅうきゅう");
             }
         }
         // set listView tên bài
@@ -73,20 +74,17 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
         CustomListLessonAdapter adapter = new CustomListLessonAdapter(ListLesson.this, sLesson, imgIconid);
         listViewLesson.setAdapter(adapter);
 
-        for (int i = 1; i <= indexMax; i++){
-            listViewLesson.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent mh3 = new Intent(ListLesson.this, LessonActivity.class);
-                    if (sLesson.length != 0)
-                        mh3.putExtra("lessonName", sLesson[position]);
-                    mh3.putExtra("lesson", "" + (position + 1));
-                    mh3.putExtra("book", book);
-                    startActivity(mh3);
-                }
-            });
-        }
-
+        listViewLesson.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent mh3 = new Intent(ListLesson.this, LessonActivity.class);
+                if (sLesson.length != 0)
+                    mh3.putExtra("lessonName", sLesson[position]);
+                mh3.putExtra("lesson", "" + (position + 1));
+                mh3.putExtra("book", book);
+                startActivity(mh3);
+            }
+        });
     }
 
     private void setToolbar() {
@@ -98,10 +96,12 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
+
     @Override
     public boolean onQueryTextSubmit(String query) {
         Intent intentSearch = new Intent(ListLesson.this, SearchResult.class);
-        intentSearch.putExtra("sSearch",query);
+        intentSearch.putExtra("sSearch", query);
+        searchView.clearFocus();
         startActivity(intentSearch);
         return false;
     }
@@ -110,6 +110,7 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
     public boolean onQueryTextChange(String newText) {
         return false;
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

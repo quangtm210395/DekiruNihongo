@@ -1,4 +1,6 @@
 <resources>
+    <string name="title_book">できる日本語</string>
+    <string name="title_book_vn">Tiếng Nhật trong tầm tay</string>
     <string name="app_name">Dekiru Nihongo</string>
     <string name="vocabulary">Từ vựng</string>
     <string name="grammar">Ngữ pháp</string>
@@ -14,7 +16,7 @@
     <string name="book_1">しょきゅう</string>
     <string name="book_2">しょちゅうきゅう</string>
     <string name="book_3">ちゅうきゅう</string>
-    <string name="about">Giới thiệu</string>
+    <string name="about">Thông tin và cài đặt</string>
     <string name="book">Quyển</string>
     <string name="lesson">Bài</string>
     <string name="correct">Kết quả</string>
@@ -35,8 +37,10 @@
     <string name="title_about_info">Giới thiệu</string>
     <string name="title_about_setting">Cài đặt</string>
     <string name="title_about_info_team">Thông tin</string>
+    <string name="title_about_note">Lưu ý</string>
     <string name="welcome">こんにちは!わたしは　できるにほんごです。　いっしょに　べんきょうしましょう。</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="about_note">Note</string>
     <string name="about_info">\t\t\tDekiru Nihongo là một ứng dụng được viết để giúp đỡ các bạn sinh viên học tiếng Nhật ở trường Đại học
     FPT nói chung và sinh viên khối ngành SE nói riêng,\n\n
     \t\t\tỨng dụng bao gồm hệ thống các bài học trong sách Dekiru Nihongo, là giáo trình được giảng dạy tại ĐH FPT và gồm các phần Từ vựng,
@@ -61,12 +65,15 @@
         \t\t\t\tB3: Ngay ở Keyboard layout các bạn chuyển sang dạng QWERTY để dễ dùng. Sau đó ấn vào SoftWare keyboard advance...\n
         \t\t\t\tB4: Ở phần Software keyboard preferences for portrait mode các bạn chỉnh layout sang QWERTY và kéo xuống phần
         Software keyboard preferences for landscape mode, tắt tích use portrait setting đi và cũng chỉnh layout lại thành QWERTY.\n\n
-        \t\t\t\tHoàn thành, lúc nào cần nhập tiếng nhật các bạn chỉ cần chọn bàn phím tiếng Nhật và dùng thôi.
+        \t\t\t\tHoàn thành, lúc nào cần nhập tiếng Nhật các bạn chỉ cần chọn bàn phím tiếng Nhật và dùng thôi.
         Như vậy là các bạn đã hoàn thành phần cài đặt phần bổ trợ, bây giờ chỉ thì hãy trải nghiệm ứng dụng thôi nào!
     </string>
     <string name="about_info_team">
 <![CDATA[
-<font color=#00a17e>Supporter :</font> <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lê Tuấn Anh </div><div><br></div><div>   <font color=#00a17e> Leader: </font></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phan Minh Dương </div><div><br></div><div><font color=@#00a17e@>    Member:</font> </div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Trần Minh Quang </div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nguyễn Đức Minh </div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Huỳnh Phương Hà </div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dắn Thị Thu Hương </div>
+<font color=#00a17e>Supporter :</font> <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lê Tuấn Anh </div><div><br></div><div>   <font color=#00a17e> Leader: </font></div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phan Minh Dương </div><div><br></div><div><font color=#00a17e>    Member:</font> </div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Trần Minh Quang </div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nguyễn Đức Minh </div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Huỳnh Phương Hà </div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dắn Thị Thu Hương </div>
 ]]>
 </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

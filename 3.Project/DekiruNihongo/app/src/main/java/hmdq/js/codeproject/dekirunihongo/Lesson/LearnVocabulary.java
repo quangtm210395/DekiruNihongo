@@ -1,11 +1,7 @@
 package hmdq.js.codeproject.dekirunihongo.Lesson;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
-import android.speech.tts.TextToSpeech;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,7 +10,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,14 +18,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.TreeMap;
 
+import hmdq.js.codeproject.dekirunihongo.LearnVocab.TabFlashcardsFragment;
+import hmdq.js.codeproject.dekirunihongo.LearnVocab.TabLearnFragment;
+import hmdq.js.codeproject.dekirunihongo.LearnVocab.TabSpellerFragment;
 import hmdq.js.codeproject.dekirunihongo.R;
 import hmdq.js.codeproject.dekirunihongo.SearchResult;
-import hmdq.js.codeproject.dekirunihongo.TabFlashcardsFragment;
-import hmdq.js.codeproject.dekirunihongo.TabLearnFragment;
-import hmdq.js.codeproject.dekirunihongo.TabSpellerFragment;
 
 public class LearnVocabulary extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private SearchView searchView;

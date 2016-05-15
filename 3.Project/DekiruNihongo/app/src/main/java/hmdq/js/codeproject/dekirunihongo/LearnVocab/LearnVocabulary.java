@@ -153,6 +153,7 @@ public class LearnVocabulary extends AppCompatActivity implements SearchView.OnQ
     public boolean onQueryTextSubmit(String query) {
         Intent intentSearch = new Intent(LearnVocabulary.this, SearchResult.class);
         intentSearch.putExtra("sSearch", query);
+        searchView.clearFocus();
         startActivity(intentSearch);
         return false;
     }

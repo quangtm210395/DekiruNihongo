@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".About.AboutInfoFragment">
+    tools:context=".AboutInfo.AboutInfoFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <include layout="@layout/activity_about_info"></include>

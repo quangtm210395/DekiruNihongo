@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="hmdq.js.codeproject.dekirunihongo.About.AboutInfoTeamFragment">
+    tools:context="hmdq.js.codeproject.dekirunihongo.AboutInfo.AboutInfoTeamFragment">
 
     <include layout="@layout/activity_about_info_team"></include>
 </FrameLayout>

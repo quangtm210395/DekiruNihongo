@@ -49,8 +49,8 @@ public class SearchResult extends AppCompatActivity implements SearchView.OnQuer
         tVToolbarSearch.setText(bd.getString("sSearch"));
         searchTu(bd.getString("sSearch"));
     }
+
     private void searchTu(String query) {
-        Toast.makeText(SearchResult.this,query,Toast.LENGTH_SHORT).show();
         listViewSearch = (ListView) findViewById(R.id.listViewSearch);
         CommonData cd = CommonData.getInstance();
         ArrayList<Employee> arrayListVocabulary = new ArrayList<>();
@@ -61,9 +61,8 @@ public class SearchResult extends AppCompatActivity implements SearchView.OnQuer
             mapSearch = dp.find(query, cd.noBook);
             indexMax = mapSearch.size();
             if (indexMax == 0) {
-                Toast.makeText(SearchResult.this,"Từ không được tìm thấy",Toast.LENGTH_SHORT).show();
+                Toast.makeText(SearchResult.this, "Từ không được tìm thấy", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(SearchResult.this,"Từ đã được tìm thấy",Toast.LENGTH_SHORT).show();
                 sTu = new String[indexMax];
                 sNghia = new String[indexMax];
                 mapSearch.keySet().toArray(sTu);
@@ -89,6 +88,7 @@ public class SearchResult extends AppCompatActivity implements SearchView.OnQuer
             }
         }
     }
+
     private void setToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarLesson);
         setSupportActionBar(toolbar);
@@ -108,7 +108,6 @@ public class SearchResult extends AppCompatActivity implements SearchView.OnQuer
         searchView.setOnQueryTextListener(this);
         return true;
     }
-
 
 
     // TEXT TO SPEECH
@@ -147,6 +146,7 @@ public class SearchResult extends AppCompatActivity implements SearchView.OnQuer
             Toast.makeText(this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();
         }
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

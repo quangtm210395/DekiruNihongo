@@ -1,8 +1,6 @@
 package hmdq.js.codeproject.dekirunihongo.Quiz;
 
-import android.content.Context;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,7 +16,6 @@ import java.util.ArrayList;
 
 import hmdq.js.codeproject.dekirunihongo.Lesson.LessonActivity;
 import hmdq.js.codeproject.dekirunihongo.Lesson.RandomInt;
-import hmdq.js.codeproject.dekirunihongo.Quiz.ArrayQuiz;
 import hmdq.js.codeproject.dekirunihongo.R;
 
 public class TabQuizFragment extends Fragment {
@@ -47,6 +44,7 @@ public class TabQuizFragment extends Fragment {
     private int idRBAnswer = -1;
     private int countQuestion;
     private RandomInt rdQuiz;
+    private Toast toast;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,6 +55,7 @@ public class TabQuizFragment extends Fragment {
         sQuestion = activity.getsQuestion();
         sAnswer = activity.getsAnswer();
         lesson = activity.getLesson();
+        if (sQuestion.length > 0)
         setQuiz();
         // Inflate the layout for this fragment
         return view;
@@ -102,17 +101,25 @@ public class TabQuizFragment extends Fragment {
         btnNextQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                indexQuiz = rdQuiz.Random();
-                if (indexQuiz > -1) {
+                if (toast != null)
+                    toast.cancel();
+                if (indexMax - countQuestion > 0) {
                     if (idRBAnswer != -1) {
-                        RadioButton radio = (RadioButton) view.findViewById(idRBAnswer);
-                        radio.setChecked(false);
+                        indexQuiz = rdQuiz.Random();
+                        setQuestion();
+                    } else {
+                        toast = Toast.makeText(getContext(), "Bạn hãy chọn đáp án trước khi làm câu tiếp theo", Toast.LENGTH_SHORT);
+                        toast.show();
                     }
-                    checkAnswer = 0;
-                    setQuestion();
                 } else {
-                    tvNumRemainTest.setText(indexMax - countQuestion + "");
-                    Toast.makeText(getActivity(), "Bạn đã hoàn thành", Toast.LENGTH_SHORT).show();
+                    if (idRBAnswer != -1) {
+                        tvNumRemainTest.setText(indexMax - countQuestion + "");
+                        toast = Toast.makeText(getActivity(), "Bạn đã hoàn thành", Toast.LENGTH_SHORT);
+                        toast.show();
+                    } else {
+                        toast = Toast.makeText(getContext(), "Bạn hãy chọn đáp án trước khi kết thúc", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
                 }
 
             }
@@ -123,26 +130,27 @@ public class TabQuizFragment extends Fragment {
                 if (checkAnswer == 1) {
                     checkAnswer++;
                     if (answerQuiz.equals(rBAnswer1.getText().toString())) {
-                        rBAnswer1.setTextColor(Color.parseColor("#00FB36"));
+                        rBAnswer1.setTextColor(getResources().getColor(R.color.colorGreenCorrect));
                     } else if (answerQuiz.equals(rBAnswer2.getText().toString())) {
-                        rBAnswer2.setTextColor(Color.parseColor("#00FB36"));
+                        rBAnswer2.setTextColor(getResources().getColor(R.color.colorGreenCorrect));
                     } else if (answerQuiz.equals(rBAnswer3.getText().toString())) {
-                        rBAnswer3.setTextColor(Color.parseColor("#00FB36"));
+                        rBAnswer3.setTextColor(getResources().getColor(R.color.colorGreenCorrect));
                     } else if (answerQuiz.equals(rBAnswer4.getText().toString())) {
-                        rBAnswer4.setTextColor(Color.parseColor("#00FB36"));
+                        rBAnswer4.setTextColor(getResources().getColor(R.color.colorGreenCorrect));
                     }
                     RadioButton radioAnswer = (RadioButton) view.findViewById(checkedId);
                     String sAnswer = radioAnswer.getText().toString();
                     idRBAnswer = checkedId;
+                    radioAnswer.setChecked(true);
                     if (sAnswer.equals(answerQuiz)) {
                         numCor++;
                         tvNumCorTest.setText(numCor + "");
                     } else {
                         numIncor++;
                         tvNumIncorTest.setText(numIncor + "");
-                        radioAnswer.setTextColor(Color.parseColor("#FF0000"));
+                        radioAnswer.setTextColor(getResources().getColor(R.color.colorRedIncor));
                     }
-                } else if (checkAnswer == 2) {
+                } else if (idRBAnswer != -1){
                     RadioButton radio = (RadioButton) view.findViewById(idRBAnswer);
                     radio.setChecked(true);
                 }
@@ -150,6 +158,7 @@ public class TabQuizFragment extends Fragment {
         });
 
     }
+
     private String[] convertData(String s) {
         return s.split("｜");
     }
@@ -169,25 +178,26 @@ public class TabQuizFragment extends Fragment {
     private void setQuestion() {
         tvNumRemainTest.setText(indexMax - countQuestion + "");
         countQuestion++;
+        idRBAnswer = -1;
         rBAnswer1.setText(arrayListQuiz.size() + "");
         ArrayQuiz arrayQuiz = new ArrayQuiz();
         arrayQuiz = arrayListQuiz.get(indexQuiz);
         RandomInt rdAnsQuiz = new RandomInt(4);
-        tvQuestion.setText("Câu hỏi" + " " + countQuestion + ": " + arrayQuiz.getQuestion());
+        tvQuestion.setText("Câu" + " " + countQuestion + ": " + arrayQuiz.getQuestion());
         rBAnswer1.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
         rBAnswer1.setChecked(false);
-        rBAnswer1.setTextColor(Color.parseColor("#000000"));
+        rBAnswer1.setTextColor(getResources().getColor(R.color.colorBlack));
         rBAnswer2.setChecked(false);
         rBAnswer2.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
-        rBAnswer2.setTextColor(Color.parseColor("#000000"));
+        rBAnswer2.setTextColor(getResources().getColor(R.color.colorBlack));
         rBAnswer3.setChecked(false);
         rBAnswer3.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
-        rBAnswer3.setTextColor(Color.parseColor("#000000"));
+        rBAnswer3.setTextColor(getResources().getColor(R.color.colorBlack));
         rBAnswer4.setChecked(false);
         rBAnswer4.setText(arrayQuiz.getAnswer(rdAnsQuiz.Random()));
-        rBAnswer4.setTextColor(Color.parseColor("#000000"));
+        rBAnswer4.setTextColor(getResources().getColor(R.color.colorBlack));
         answerQuiz = arrayQuiz.getAnswer(4).toString();
-        checkAnswer++;
+        checkAnswer = 1;
     }
 
 }

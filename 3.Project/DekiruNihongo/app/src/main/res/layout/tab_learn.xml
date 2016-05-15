@@ -159,7 +159,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/button2"
-            android:textColor="@color/colorWhile"
+            android:textColor="@color/colorWhite"
             android:text="@string/start_over" />
 
         <Button
@@ -167,7 +167,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
-            android:textColor="@color/colorWhile"
+            android:textColor="@color/colorWhite"
             android:layout_weight="1"
             android:background="@drawable/button2"
             android:text="@string/next" />

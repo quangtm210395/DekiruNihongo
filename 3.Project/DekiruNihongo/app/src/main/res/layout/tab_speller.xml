@@ -48,7 +48,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="top|right"
-            android:textColor="@color/colorWhile"
+            android:textColor="@color/colorWhite"
             android:background="@drawable/speaker_click" />
     </LinearLayout>
 
@@ -133,7 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/colorWhile"
+            android:textColor="@color/colorWhite"
             android:background="@drawable/button2"
             android:text="@string/start_over" />
 
