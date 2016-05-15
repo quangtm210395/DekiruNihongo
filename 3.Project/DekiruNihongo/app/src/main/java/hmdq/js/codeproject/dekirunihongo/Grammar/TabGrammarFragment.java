@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +40,6 @@ public class TabGrammarFragment extends Fragment {
         sNameGram = activity.getsNameGram();
         sGram = activity.getsGram();
         lesson = activity.getLesson();
-        if (sNameGram.length > 0)
         setListview();
         return view;
     }
@@ -51,12 +49,11 @@ public class TabGrammarFragment extends Fragment {
         indexMax = sNameGram.length;
         ArrayList<String> arrayListGram = new ArrayList<>();
         for (int i = 0; i < indexMax; i++) {
-            sNameGram[i] = String.valueOf(Html.fromHtml(sNameGram[i].substring(5).replaceAll("@","'")));
             arrayListGram.add(sNameGram[i]);
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 getActivity(),
-                R.layout.simple_list_item_1,
+                android.R.layout.simple_list_item_1,
                 arrayListGram
         );
         listViewGrammar.setAdapter(adapter);

@@ -1,6 +1,10 @@
 package hmdq.js.codeproject.dekirunihongo.Vocabulary;
 
+import android.app.Activity;
+import android.app.ListFragment;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
@@ -16,9 +20,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import hmdq.js.codeproject.dekirunihongo.LearnVocab.LearnVocabulary;
+import hmdq.js.codeproject.dekirunihongo.Lesson.LearnVocabulary;
 import hmdq.js.codeproject.dekirunihongo.Lesson.LessonActivity;
 import hmdq.js.codeproject.dekirunihongo.R;
+import hmdq.js.codeproject.dekirunihongo.Vocabulary.ArrayAdapterVocabulary;
+import hmdq.js.codeproject.dekirunihongo.Vocabulary.Employee;
+
 
 public class TabVocabularyFragment extends Fragment implements TextToSpeech.OnInitListener{
     private String[] sTu;
@@ -40,10 +47,8 @@ public class TabVocabularyFragment extends Fragment implements TextToSpeech.OnIn
         sNghia = activity.getsNghia();
         lesson = activity.getLesson();
         indexMax = sTu.length;
-        if (sNghia.length > 0) {
-            setLisview();
-            learnVocab();
-        }
+        setLisview();
+        learnVocab();
         Intent checkTTSIntent = new Intent();
         checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
         startActivityForResult(checkTTSIntent, MY_DATA_CHECK_CODE);

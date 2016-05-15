@@ -7,7 +7,6 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Kanji.KanjiActivity"
     tools:showIn="@layout/activity_kanji">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,17 +22,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="Kanji"
-            android:textColor="@color/colorBlueDark2"
-            android:textSize="18dp" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorBlueDark" />
 
         <TextView
             android:id="@+id/tvKanji"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="10dp"
             android:text="giải nghĩa Kanji"
+            android:textSize="16dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/colorBlack"
-            android:textSize="15dp" />
+            android:textColor="@color/colorBlack" />
     </LinearLayout>
 </RelativeLayout>
