@@ -2,9 +2,6 @@ package hmdq.js.codeproject.dekirunihongo;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
@@ -15,21 +12,12 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.github.rahatarmanahmed.cpv.CircularProgressView;
-
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.InetAddress;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.UnknownHostException;
 
 public class splash extends AppCompatActivity {
     DataProvider dp;
     TextView txt;
     ImageView bg;
     RelativeLayout lg;
-    CircularProgressView cp;
     int newestRev;
 
     @Override
@@ -41,7 +29,6 @@ public class splash extends AppCompatActivity {
         txt = (TextView) findViewById(R.id.splashText);
         bg = (ImageView) findViewById(R.id.bg_logo);
         lg = (RelativeLayout) findViewById(R.id.logo);
-        cp = (CircularProgressView) findViewById(R.id.cp);
         bg.setAlpha(0f);
     }
 
@@ -57,8 +44,6 @@ public class splash extends AppCompatActivity {
 
     void beginLoading() {
         super.onStart();
-        cp.startAnimation();
-        cp.setColor(Color.parseColor("#01579B"));
         netChecker checker = new netChecker(this);
         checker.execute(new netChecker.OnCheckingDone() {
             @Override
@@ -80,7 +65,6 @@ public class splash extends AppCompatActivity {
                             if (localRev != newestRev) {
                                 if (localRev == 0) txt.setText("Lần khởi động đầu tiên sẽ khá lâu\nXin vui lòng đợi trong giây lát");
                                 else txt.setText("Phát hiện cập nhật mới");
-                                cp.setColor(Color.parseColor("#E57373"));
                                 Log.v("JSDK","New update found");
                                 new DataProvider(getApplicationContext()).requestData("getAll", new DataProvider.OnDataReceived() {
                                     @Override
@@ -125,9 +109,6 @@ public class splash extends AppCompatActivity {
             ab.create().show();
         } else {
             txt.setText("Tải dữ liệu xong");
-            cp.setIndeterminate(false);
-            cp.setColor(Color.parseColor("#8BC34A"));
-            cp.setProgress(100);
             Handler h = new Handler();
             h.postDelayed(new Runnable() {
                 @Override
