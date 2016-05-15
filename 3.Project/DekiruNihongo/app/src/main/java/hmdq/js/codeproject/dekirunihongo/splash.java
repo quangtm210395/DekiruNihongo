@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
-public class splash extends AppCompatActivity {
+public class    splash extends AppCompatActivity {
     DataProvider dp;
     TextView txt;
     ImageView bg;
@@ -35,7 +35,7 @@ public class splash extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        lg.animate().setDuration(1500).translationY(-100);
+        lg.animate().setDuration(1500).translationY(-90);
         bg.animate().setDuration(3000).alpha(1.0f);
         txt.setText("Đang tải...");
         dp = new DataProvider(this);
