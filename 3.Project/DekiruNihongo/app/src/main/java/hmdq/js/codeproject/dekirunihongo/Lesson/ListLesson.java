@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -85,6 +87,9 @@ public class ListLesson extends AppCompatActivity implements SearchView.OnQueryT
                 startActivity(mh3);
             }
         });
+        listViewLesson.setTextFilterEnabled(true);
+        LayoutAnimationController controller = AnimationUtils.loadLayoutAnimation(this,R.anim.list_layout_controller);
+        listViewLesson.setLayoutAnimation(controller);
     }
 
     private void setToolbar() {

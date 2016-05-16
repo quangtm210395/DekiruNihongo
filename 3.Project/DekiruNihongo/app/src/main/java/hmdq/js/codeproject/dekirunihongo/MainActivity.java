@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
@@ -67,6 +69,9 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         tvWelcome.setTypeface(tfKoz);
         tvWelcomeVN.setTypeface(tfLato);
         btnAbout.setTypeface(tfLato);
+        listViewBook.setTextFilterEnabled(true);
+        LayoutAnimationController controller = AnimationUtils.loadLayoutAnimation(this,R.anim.list_layout_controller_2);
+        listViewBook.setLayoutAnimation(controller);
     }
 
     private void getFromWidget() {
