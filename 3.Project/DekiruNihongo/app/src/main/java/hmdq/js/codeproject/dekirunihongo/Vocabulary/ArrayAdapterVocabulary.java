@@ -39,7 +39,6 @@ public class ArrayAdapterVocabulary extends ArrayAdapter<Employee> {
         tvListTu.setText(emp.getTu());
         final TextView tvListNghia = (TextView) convertView.findViewById(R.id.tvListNghia);
         tvListNghia.setText(emp.getNghia());
-        convertView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.push_in));
         return convertView;
     }
 }
